@@ -8,49 +8,47 @@
 </head>
 <body>
 
-  <!-- ==================== HEADER & NAVEGACIÓN ==================== -->
-  <header class="topbar">
-    <div class="logo">🎬 CineMagic</div>
-    <div class="menu">
-      <!-- Selector de ciudad -->
+  <!-- ==================== ENCABEZADO ==================== -->
+  <header class="encabezado">
+    <div class="marca">🎬 CineMagic</div>
+    <div class="opciones">
       <select>
         <option>La Paz</option>
         <option>El alto</option>
         <option>Santa Cruz</option>
       </select>
-      <!-- Botón de autenticación -->
-      <button class="btn">Iniciar Sesión</button>
+      <button class="boton-principal">Iniciar Sesión</button>
     </div>
   </header>
 
-  <!-- ==================== MODAL DE AUTENTICACIÓN ==================== -->
-  <div id="authModal" class="modal-overlay" style="display:none;">
-    <div class="modal">
-      <button class="close-btn" id="closeModal">✖</button>
+  <!-- ==================== VENTANA LOGIN ==================== -->
+  <div id="ventanaLogin" class="fondo-modal" style="display:none;">
+    <div class="cuadro-modal">
+      <button class="boton-cerrar" id="cerrarModal">✖</button>
 
       <h2>Bienvenido a CineMagic</h2>
-      <p class="subtxt">Inicia sesión o crea una cuenta para disfrutar de todas las ventajas</p>
+      <p class="texto-secundario">Inicia sesión o crea una cuenta para disfrutar de todas las ventajas</p>
 
-      <!-- Selector de pestañas Login/Registro -->
-      <div class="tab-selector">
-        <button id="tabLogin" class="tab active">Iniciar Sesión</button>
-        <button id="tabRegister" class="tab">Registrarse</button>
+      <!-- Selector de pestañas -->
+      <div class="selector-pestanas">
+        <button id="pestanaIngresar" class="pestana activa">Iniciar Sesión</button>
+        <button id="pestanaRegistrar" class="pestana">Registrarse</button>
       </div>
 
       <!-- Formulario de Login -->
-      <form id="loginForm" class="form-section">
+      <form id="formIngresar" class="formulario-seccion">
         <label>Email</label>
         <input type="email" placeholder="tu@email.com" />
 
         <label>Contraseña</label>
         <input type="password" placeholder="••••••••" />
 
-        <button type="submit" class="main-btn">Iniciar Sesión</button>
-        <button type="button" class="secondary-btn" id="closeBtnLogin">Cerrar</button>
+        <button type="submit" class="boton-accion">Iniciar Sesión</button>
+        <button type="button" class="boton-secundario" id="cerrarIngresar">Cerrar</button>
       </form>
 
       <!-- Formulario de Registro -->
-      <form id="registerForm" class="form-section" style="display:none;">
+      <form id="formRegistrar" class="formulario-seccion" style="display:none;">
         <label>Nombre</label>
         <input type="text" placeholder="Tu nombre" />
 
@@ -63,1382 +61,1095 @@
         <label>Confirmar contraseña</label>
         <input type="password" placeholder="••••••••" />
 
-        <button type="submit" class="main-btn">Crear cuenta</button>
-        <button type="button" class="secondary-btn" id="closeBtnRegister">Cerrar</button>
+        <button type="submit" class="boton-accion">Crear cuenta</button>
+        <button type="button" class="boton-secundario" id="cerrarRegistrar">Cerrar</button>
       </form>
     </div>
   </div>
 
-  <!-- ==================== HERO SECTION ==================== -->
-  <section class="hero">
+  <!-- ==================== SECCIÓN PRINCIPAL ==================== -->
+  <section class="portada">
     <h1>CineMagic</h1>
     <p>Descubre las mejores películas en cartelera y próximos estrenos</p>
     
     <!-- Barra de búsqueda -->
-    <input type="text" class="search" placeholder="Buscar películas por título o género...">
+    <input type="text" class="buscador" placeholder="Buscar películas por título o género...">
 
     <!-- Navegación por pestañas -->
-    <div class="tabs">
-      <button id="tabCartelera" class="active">En Cartelera</button>
-      <button id="tabProximamente">Próximamente</button>
-      <button id="tabCandy">Candy Bar</button>
+    <div class="navegacion-pestanas">
+      <button id="btnCartelera" class="activa">En Cartelera</button>
+      <button id="btnProximos">Próximamente</button>
+      <button id="btnSnacks">Candy Bar</button>
     </div>
   </section>
 
-  <!-- ==================== SECCIÓN CARTELERA ==================== -->
-  <section id="carteleraSection" class="movies">
+  <!-- ==================== PELÍCULAS EN CARTELERA ==================== -->
+  <section id="seccionCartelera" class="contenedor-peliculas">
     
     <!-- Película: TRANSFORMERS -->
-    <div class="card">
-      <div class="tag">Accion</div>
+    <div class="tarjeta-pelicula">
+      <div class="etiqueta-genero">Accion</div>
       <img src="TRANSFORMERS.jpg" alt="Poster TRANSFORMERS">
-      <div class="info">
+      <div class="info-pelicula">
         <h3>TRANSFORMERS</h3>
         <p>⏱ 142 min 📅 15 Nov 2025 ⭐ 7.0</p>
-        <button onclick="abrirModal('TRANSFORMERS')" class="main-btn">Información</button>
+        <button onclick="mostrarDetallePelicula('TRANSFORMERS')" class="boton-info">Información</button>
       </div>
     </div>
 
     <!-- Película: BAD BOYS -->
-    <div class="card">
-      <div class="tag">Accion - Comedia</div>
+    <div class="tarjeta-pelicula">
+      <div class="etiqueta-genero">Accion - Comedia</div>
       <img src="BAD BOYS.jpg" alt="Poster BAD BOYS">
-      <div class="info">
+      <div class="info-pelicula">
         <h3>BAD BOYS</h3>
         <p>⏱ 128 min 📅 10 Nov 2025 ⭐ 8.5</p>
-        <button onclick="abrirModal('BAD')" class="main-btn">Información</button>
+        <button onclick="mostrarDetallePelicula('BAD')" class="boton-info">Información</button>
       </div>
     </div>
 
     <!-- Película: GUARDIANES DE LA GALAXIA -->
-    <div class="card">
-      <div class="tag">Accion - Comedia</div>
+    <div class="tarjeta-pelicula">
+      <div class="etiqueta-genero">Accion - Comedia</div>
       <img src="GUARDIANES.jpg" alt="Poster Guardianes de la Galaxia">
-      <div class="info">
+      <div class="info-pelicula">
         <h3>Guardianes de la Galaxia</h3>
         <p>⏱ 156 min 📅 8 Nov 2025 ⭐ 8.0</p>
-        <button onclick="abrirModal('GUARDIANES')" class="main-btn">Información</button>
+        <button onclick="mostrarDetallePelicula('GUARDIANES')" class="boton-info">Información</button>
       </div>
     </div>
 
     <!-- Película: DEADPOOL -->
-    <div class="card">
-      <div class="tag">Accion - Comedia</div>
+    <div class="tarjeta-pelicula">
+      <div class="etiqueta-genero">Accion - Comedia</div>
       <img src="DEADPOOL.jpg" alt="Poster DEADPOOL">
-      <div class="info">
+      <div class="info-pelicula">
         <h3>DEADPOOL</h3>
         <p>⏱ 98 min 📅 12 Nov 2025 ⭐ 8.1</p>
-        <button onclick="abrirModal('DEADPOOL')" class="main-btn">Información</button>
+        <button onclick="mostrarDetallePelicula('DEADPOOL')" class="boton-info">Información</button>
       </div>
     </div>
 
     <!-- Película: FLOW -->
-    <div class="card">
-      <div class="tag">Aventuras</div>
+    <div class="tarjeta-pelicula">
+      <div class="etiqueta-genero">Aventuras</div>
       <img src="FLOW.jpg" alt="Poster FLOW">
-      <div class="info">
+      <div class="info-pelicula">
         <h3>FLOW</h3>
         <p>⏱ 128 min 📅 20 Nov 2025 ⭐ 8.0</p>
-        <button onclick="abrirModal('FLOW')" class="main-btn">Información</button>
+        <button onclick="mostrarDetallePelicula('FLOW')" class="boton-info">Información</button>
       </div>
     </div>
 
     <!-- Película: ROBOT SALVAJE -->
-    <div class="card">
-      <div class="tag">Aventura</div>
+    <div class="tarjeta-pelicula">
+      <div class="etiqueta-genero">Aventura</div>
       <img src="ROBOT.jpg" alt="Poster ROBOT SALVAJE">
-      <div class="info">
+      <div class="info-pelicula">
         <h3>ROBOT SALVAJE</h3>
         <p>⏱ 145 min 📅 25 Nov 2025 ⭐ 7.0</p>
-        <button onclick="abrirModal('ROBOTSALVAJE')" class="main-btn">Información</button>
+        <button onclick="mostrarDetallePelicula('ROBOTSALVAJE')" class="boton-info">Información</button>
       </div>
     </div>
 
     <!-- Película: SIN NOVEDAD -->
-    <div class="card">
-      <div class="tag">Accion</div>
+    <div class="tarjeta-pelicula">
+      <div class="etiqueta-genero">Accion</div>
       <img src="SIN NOVEDAD.jpg" alt="Poster SIN NOVEDAD">
-      <div class="info">
+      <div class="info-pelicula">
         <h3>Sin Novedad al Frente</h3>
         <p>⏱ 110 min 📅 28 Nov 2025 ⭐ 6.8</p>
-        <button onclick="abrirModal('SINNOVEDAD')" class="main-btn">Información</button>
+        <button onclick="mostrarDetallePelicula('SINNOVEDAD')" class="boton-info">Información</button>
       </div>
     </div>
 
     <!-- Película: AVENGERS ENDGAME -->
-    <div class="card">
-      <div class="tag">Acción</div>
+    <div class="tarjeta-pelicula">
+      <div class="etiqueta-genero">Acción</div>
       <img src="AVERGERS.jpg" alt="Poster Avengers Endgame">
-      <div class="info">
+      <div class="info-pelicula">
         <h3>Avengers Endgame</h3>
         <p>⏱ 135 min 📅 30 Nov 2025 ⭐ 9.0</p>
-        <button onclick="abrirModal('ENDGAME')" class="main-btn">Información</button>
+        <button onclick="mostrarDetallePelicula('ENDGAME')" class="boton-info">Información</button>
       </div>
     </div>
 
     <!-- Película: OPPENHEIMER -->
-    <div class="card">
-      <div class="tag">Accion</div>
+    <div class="tarjeta-pelicula">
+      <div class="etiqueta-genero">Accion</div>
       <img src="OPENHAIMER.jpg" alt="Poster oppenheimer">
-      <div class="info">
+      <div class="info-pelicula">
         <h3>Oppenheimer</h3>
         <p>⏱ 135 min 📅 30 Nov 2025 ⭐ 8.3</p>
-        <button onclick="abrirModal('OPPENHEIMER')" class="main-btn">Información</button>
+        <button onclick="mostrarDetallePelicula('OPPENHEIMER')" class="boton-info">Información</button>
       </div>
     </div>
 
     <!-- Película: JURASSIC WORLD -->
-    <div class="card">
-      <div class="tag">Accion</div>
+    <div class="tarjeta-pelicula">
+      <div class="etiqueta-genero">Accion</div>
       <img src="JURRSIC.jpg" alt="Poster jurassic world">
-      <div class="info">
+      <div class="info-pelicula">
         <h3>Jurassic World</h3>
         <p>⏱ 135 min 📅 30 Nov 2025 ⭐ 7.9</p>
-        <button onclick="abrirModal('JURASSIC')" class="main-btn">Información</button>
+        <button onclick="mostrarDetallePelicula('JURASSIC')" class="boton-info">Información</button>
       </div>
     </div>
 
     <!-- Película: JOKER -->
-    <div class="card">
-      <div class="tag">Drama - Suspenso</div>
+    <div class="tarjeta-pelicula">
+      <div class="etiqueta-genero">Drama - Suspenso</div>
       <img src="JOKER.jpg" alt="Poster JOKER">
-      <div class="info">
+      <div class="info-pelicula">
         <h3>JOKER</h3>
         <p>⏱ 135 min 📅 30 Nov 2025 ⭐ 8.5</p>
-        <button onclick="abrirModal('JOKER')" class="main-btn">Información</button>
+        <button onclick="mostrarDetallePelicula('JOKER')" class="boton-info">Información</button>
       </div>
     </div>
 
     <!-- Película: INTERESTELAR -->
-    <div class="card">
-      <div class="tag">Ciencia Ficcion</div>
+    <div class="tarjeta-pelicula">
+      <div class="etiqueta-genero">Ciencia Ficcion</div>
       <img src="INTERESTELAR.jpg" alt="Poster INTERESTELAR">
-      <div class="info">
+      <div class="info-pelicula">
         <h3>INTERESTELAR</h3>
         <p>⏱ 135 min 📅 30 Nov 2025 ⭐ 9.5</p>
-        <button onclick="abrirModal('INTERSTELLAR')" class="main-btn">Información</button>
+        <button onclick="mostrarDetallePelicula('INTERSTELLAR')" class="boton-info">Información</button>
       </div>
     </div>
 
   </section>
 
-  <!-- ==================== MODALES DE DETALLE DE PELÍCULAS ==================== -->
+  <!-- ==================== DETALLES DE PELÍCULAS ==================== -->
   
-  <!-- Ficha de detalle TRANSFORMERS -->
-<section id="detallesTRANSFORMERS" class="details-section hidden">
-  <div id="modalTRANSFORMERS" class="movie-modal movie-hidden">
-    <div class="movie-modal-content">
+  <!-- ==================== DETALLES DE PELÍCULAS ==================== -->
 
-      <!-- Botón cerrar -->
-      <button class="movie-close-btn" onclick="volverCartelera()">x</button>
-
-      <!-- =================== COLUMNA IZQUIERDA =================== -->
-      <div class="movie-left">
+<!-- Detalle: TRANSFORMERS -->
+<section id="detalle-transformers" class="detalle-pelicula oculto">
+  <div id="modal-transformers" class="modal-pelicula modal-oculto">
+    <div class="contenido-pelicula">
+      <button class="btn-cerrar" onclick="volver-cartelera()">×</button>
+      
+      <div class="columna-imagen">
         <img src="TRANSFORMERS.jpg" alt="Poster TRANSFORMERS">
       </div>
-
-      <!-- =================== COLUMNA DERECHA =================== -->
-      <div class="movie-right">
-
-        <!-- Encabezado -->
-        <div class="movie-header">
+      
+      <div class="columna-info">
+        <div class="encabezado-pelicula">
           <h2>TRANSFORMERS</h2>
         </div>
-
-        <!-- Detalles -->
-        <div class="movie-info-row">
+        
+        <div class="info-pelicula">
           <span>🎬 <strong>Acción</strong></span>
           <span>⭐ <strong>7.0</strong></span>
           <span>⏱ <strong>142 min</strong></span>
           <span>📅 <strong>2007</strong></span>
         </div>
-
-        <!-- Descripción -->
-        <p class="movie-description">
+        
+        <p class="descripcion-pelicula">
           <strong>Director:</strong> Michael Bay<br>
-            <strong>Actores:</strong> Shia LaBeouf, Megan Fox, Josh Duhamel, Tyrese Gibson<br><br>
-
-            <strong>Sinopsis:</strong>  
-            Los Autobots, robots alienígenas que pueden transformarse en vehículos, llegan a la Tierra  
-            para proteger el planeta de los malvados Decepticons. Sam Witwicky, un joven estudiante,  
-            descubre que posee la clave para la supervivencia de la humanidad y se ve envuelto en  
-            una batalla épica entre estas poderosas fuerzas.  
-            Con impresionantes efectos visuales y secuencias de acción espectaculares, la película combina  
-            aventura, humor y momentos emotivos que muestran la valentía y el sacrificio de sus personajes.<br><br>
-
-            <strong>Extras:</strong>  
-            - Tecnología avanzada y transformaciones impresionantes de los robots.<br>
-            - Escenas memorables de persecuciones y explosiones.<br>
-            - Temas de amistad, responsabilidad y heroísmo frente a amenazas imposibles.
+          <strong>Actores:</strong> Shia LaBeouf, Megan Fox, Josh Duhamel, Tyrese Gibson<br><br>
+          <strong>Sinopsis:</strong> Los Autobots, robots alienígenas que pueden transformarse en vehículos, llegan a la Tierra para proteger el planeta de los malvados Decepticons. Sam Witwicky, un joven estudiante, descubre que posee la clave para la supervivencia de la humanidad y se ve envuelto en una batalla épica entre estas poderosas fuerzas.<br><br>
+          <strong>Extras:</strong>  
+          - Tecnología avanzada y transformaciones impresionantes<br>
+          - Escenas memorables de persecuciones y explosiones<br>
+          - Temas de amistad, responsabilidad y heroísmo
         </p>
-
-        <!-- Trailer -->
-        <div class="movie-trailer">
+        
+        <div class="trailer-pelicula">
           <video controls poster="TRANSFORMERS.jpg">
             <source src="transformerV.mp4" type="video/mp4">
             Tu navegador no soporta el video.
           </video>
         </div>
-
-        <!-- Botón de compra -->
-        <button onclick="mostrarFormularioCompra('compraTRANSFORMERS')" class="movie-main-btn">
-            Comprar Boletos
+        
+        <button onclick="mostrar-formulario('compra-transformers')" class="btn-comprar">
+          Comprar Boletos
         </button>
-
-
-        <!-- Formulario oculto -->
-        <form id="compraTRANSFORMERS" class="movie-compra-form movie-hidden">
-
+        
+        <form id="compra-transformers" class="form-compra modal-oculto">
           <label>Cantidad:</label>
           <input type="number" min="1" max="10" value="1">
-
+          
           <label>Fecha:</label>
           <input type="date">
-
+          
           <label>Horario:</label>
           <select>
             <option>15:00</option>
             <option>18:00</option>
             <option>21:00</option>
           </select>
-
+          
           <label>Nombre:</label>
           <input type="text" placeholder="Tu nombre">
-
+          
           <label>Email:</label>
           <input type="email" placeholder="tu@email.com">
-
-          <button type="submit" class="movie-main-btn">Confirmar compra</button>
+          
+          <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
-
-        <!-- Botón Volver -->
-        <button onclick="volverCartelera()" class="movie-main-btn" style="background:#555; margin-top:10px;">
+        
+        <button onclick="volver-cartelera()" class="btn-volver">
           Volver
         </button>
-
-      </div> <!-- FIN COLUMNA DERECHA -->
-
+      </div>
     </div>
   </div>
 </section>
 
-
-
-<!-- Ficha de detalle BAD BOYS -->
-<section id="detallesBAD" class="details-section hidden">
-  <div id="modalBAD" class="movie-modal movie-hidden">
-    <div class="movie-modal-content">
-
-      <!-- Botón cerrar -->
-      <button class="movie-close-btn" onclick="volverCartelera()">x</button>
-
-      <!-- =================== COLUMNA IZQUIERDA =================== -->
-      <div class="movie-left">
+<!-- Detalle: BAD BOYS -->
+<section id="detalle-badboys" class="detalle-pelicula oculto">
+  <div id="modal-badboys" class="modal-pelicula modal-oculto">
+    <div class="contenido-pelicula">
+      <button class="btn-cerrar" onclick="volver-cartelera()">×</button>
+      
+      <div class="columna-imagen">
         <img src="BAD BOYS.jpg" alt="Poster BAD BOYS">
       </div>
-
-      <!-- =================== COLUMNA DERECHA =================== -->
-      <div class="movie-right">
-
-        <!-- Encabezado -->
-        <div class="movie-header">
+      
+      <div class="columna-info">
+        <div class="encabezado-pelicula">
           <h2>BAD BOYS</h2>
         </div>
-
-        <!-- Detalles -->
-        <div class="movie-info-row">
+        
+        <div class="info-pelicula">
           <span>🎬 <strong>Acción / Comedia</strong></span>
           <span>⭐ <strong>7.2</strong></span>
           <span>⏱ <strong>119 min</strong></span>
           <span>📅 <strong>1995</strong></span>
         </div>
-
-        <!-- Descripción -->
-        <p class="movie-description">
+        
+        <p class="descripcion-pelicula">
           <strong>Director:</strong> Michael Bay<br>
           <strong>Actores:</strong> Will Smith, Martin Lawrence, Téa Leoni, Joe Pantoliano<br><br>
-
-          <strong>Sinopsis:</strong><br>
-          Marcus Burnett y Mike Lowrey, dos carismáticos detectives de Miami,  
-          deben recuperar un cargamento de drogas robado antes de que su propio  
-          departamento quede desacreditado. Su misión se complica cuando una testigo  
-          clave se ve involucrada, llevándolos a una serie de persecuciones, balaceras  
-          y situaciones absurdamente divertidas.  
-          Con la mezcla perfecta de acción explosiva y humor caótico,  
-          *Bad Boys* se convirtió en un clásico de los 90 y lanzó al estrellato a Will Smith.<br><br>
-
-          <strong>Extras:</strong><br>
-          - Escenas icónicas de persecuciones en Miami.<br>
-          - La comedia natural entre Will Smith y Martin Lawrence.<br>
-          - Explosiones masivas en estilo Michael Bay.<br>
-          - Frases memorables como “We ride together, we die together”.<br>
+          <strong>Sinopsis:</strong> Marcus Burnett y Mike Lowrey, dos carismáticos detectives de Miami, deben recuperar un cargamento de drogas robado antes de que su propio departamento quede desacreditado. Su misión se complica cuando una testigo clave se ve involucrada.<br><br>
+          <strong>Extras:</strong>  
+          - Escenas icónicas de persecuciones en Miami<br>
+          - La comedia natural entre Will Smith y Martin Lawrence<br>
+          - Explosiones masivas en estilo Michael Bay
         </p>
-
-        <!-- Trailer -->
-        <div class="movie-trailer">
-          <video controls poster="BAD.jpg">
+        
+        <div class="trailer-pelicula">
+          <video controls poster="BAD BOYS.jpg">
             <source src="badboysV.mp4" type="video/mp4">
             Tu navegador no soporta el video.
           </video>
         </div>
-
-        <!-- Botón de compra -->
-        <button onclick="mostrarFormularioCompra('compraBAD')" class="movie-main-btn">
+        
+        <button onclick="mostrar-formulario('compra-badboys')" class="btn-comprar">
           Comprar Boletos
         </button>
-
-        <!-- Formulario oculto -->
-        <form id="compraBAD" class="movie-compra-form movie-hidden">
-
+        
+        <form id="compra-badboys" class="form-compra modal-oculto">
           <label>Cantidad:</label>
           <input type="number" min="1" max="10" value="1">
-
+          
           <label>Fecha:</label>
           <input type="date">
-
+          
           <label>Horario:</label>
           <select>
             <option>15:00</option>
             <option>18:00</option>
             <option>21:00</option>
           </select>
-
+          
           <label>Nombre:</label>
           <input type="text" placeholder="Tu nombre">
-
+          
           <label>Email:</label>
           <input type="email" placeholder="tu@email.com">
-
-          <button type="submit" class="movie-main-btn">Confirmar compra</button>
+          
+          <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
-
-        <!-- Botón Volver -->
-        <button onclick="volverCartelera()" class="movie-main-btn" style="background:#555; margin-top:10px;">
+        
+        <button onclick="volver-cartelera()" class="btn-volver">
           Volver
         </button>
-
-      </div> <!-- FIN COLUMNA DERECHA -->
-
+      </div>
     </div>
   </div>
 </section>
 
-
-
-<!-- Ficha de detalle GUARDIANES DE LA GALAXIA -->
-<section id="detallesGUARDIANES" class="details-section hidden">
-  <div id="modalGUARDIANES" class="movie-modal movie-hidden">
-    <div class="movie-modal-content">
-
-      <!-- Botón cerrar -->
-      <button class="movie-close-btn" onclick="volverCartelera()">x</button>
-
-      <!-- =================== COLUMNA IZQUIERDA =================== -->
-      <div class="movie-left">
+<!-- Detalle: GUARDIANES DE LA GALAXIA -->
+<section id="detalle-guardianes" class="detalle-pelicula oculto">
+  <div id="modal-guardianes" class="modal-pelicula modal-oculto">
+    <div class="contenido-pelicula">
+      <button class="btn-cerrar" onclick="volver-cartelera()">×</button>
+      
+      <div class="columna-imagen">
         <img src="GUARDIANES.jpg" alt="Poster Guardianes de la Galaxia">
       </div>
-
-      <!-- =================== COLUMNA DERECHA =================== -->
-      <div class="movie-right">
-
-        <!-- Encabezado -->
-        <div class="movie-header">
+      
+      <div class="columna-info">
+        <div class="encabezado-pelicula">
           <h2>GUARDIANES DE LA GALAXIA</h2>
         </div>
-
-        <!-- Detalles -->
-        <div class="movie-info-row">
+        
+        <div class="info-pelicula">
           <span>🎬 <strong>Acción / Ciencia ficción</strong></span>
           <span>⭐ <strong>8.0</strong></span>
           <span>⏱ <strong>121 min</strong></span>
           <span>📅 <strong>2014</strong></span>
         </div>
-
-        <!-- Descripción -->
-        <p class="movie-description">
+        
+        <p class="descripcion-pelicula">
           <strong>Director:</strong> James Gunn<br>
           <strong>Actores:</strong> Chris Pratt, Zoe Saldaña, Dave Bautista, Vin Diesel, Bradley Cooper<br><br>
-
-          <strong>Sinopsis:</strong><br>
-          Peter Quill, un aventurero espacial, roba un misterioso orbe buscado por el cruel Ronan.  
-          Para sobrevivir, deberá formar equipo con un grupo de inadaptados galácticos:  
-          Gamora, una letal asesina; Drax, un guerrero obsesionado con la venganza;  
-          Rocket, un ingenioso mapache cazarrecompensas; y Groot, un humanoide con forma de árbol.  
-          Juntos descubrirán que el orbe esconde un poder capaz de destruir mundos y deberán  
-          unirse para evitar una catástrofe universal.  
-          Con humor, acción explosiva y una banda sonora inolvidable, la película se convirtió  
-          en uno de los éxitos más grandes del Universo Marvel.<br><br>
-
-          <strong>Extras:</strong><br>
-          - Una de las bandas sonoras más icónicas del cine moderno (*Awesome Mix Vol. 1*).<br>
-          - Efectos visuales espectaculares y combates espaciales.<br>
-          - Humor característico y química entre personajes.<br>
-          - Participación de Thanos y conexión con las Gemas del Infinito.<br>
+          <strong>Sinopsis:</strong> Peter Quill, un aventurero espacial, roba un misterioso orbe buscado por el cruel Ronan. Para sobrevivir, deberá formar equipo con un grupo de inadaptados galácticos.<br><br>
+          <strong>Extras:</strong>  
+          - Una de las bandas sonoras más icónicas del cine moderno<br>
+          - Efectos visuales espectaculares y combates espaciales<br>
+          - Humor característico y química entre personajes
         </p>
-
-        <!-- Trailer -->
-        <div class="movie-trailer">
+        
+        <div class="trailer-pelicula">
           <video controls poster="GUARDIANES.jpg">
             <source src="guardianesV.mp4" type="video/mp4">
             Tu navegador no soporta el video.
           </video>
         </div>
-
-        <!-- Botón de compra -->
-        <button onclick="mostrarFormularioCompra('compraGUARDIANES')" class="movie-main-btn">
+        
+        <button onclick="mostrar-formulario('compra-guardianes')" class="btn-comprar">
           Comprar Boletos
         </button>
-
-        <!-- Formulario oculto -->
-        <form id="compraGUARDIANES" class="movie-compra-form movie-hidden">
-
+        
+        <form id="compra-guardianes" class="form-compra modal-oculto">
           <label>Cantidad:</label>
           <input type="number" min="1" max="10" value="1">
-
+          
           <label>Fecha:</label>
           <input type="date">
-
+          
           <label>Horario:</label>
           <select>
             <option>15:00</option>
             <option>18:00</option>
             <option>21:00</option>
           </select>
-
+          
           <label>Nombre:</label>
           <input type="text" placeholder="Tu nombre">
-
+          
           <label>Email:</label>
           <input type="email" placeholder="tu@email.com">
-
-          <button type="submit" class="movie-main-btn">Confirmar compra</button>
+          
+          <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
-
-        <!-- Botón Volver -->
-        <button onclick="volverCartelera()" class="movie-main-btn" style="background:#555; margin-top:10px;">
+        
+        <button onclick="volver-cartelera()" class="btn-volver">
           Volver
         </button>
-
-      </div> <!-- FIN COLUMNA DERECHA -->
-
+      </div>
     </div>
   </div>
 </section>
 
-
-<!-- Ficha de detalle DEADPOOL -->
-<section id="detallesDEADPOOL" class="details-section hidden">
-  <div id="modalDEADPOOL" class="movie-modal movie-hidden">
-    <div class="movie-modal-content">
-
-      <!-- Botón cerrar -->
-      <button class="movie-close-btn" onclick="volverCartelera()">x</button>
-
-      <!-- =================== COLUMNA IZQUIERDA =================== -->
-      <div class="movie-left">
-        <img src="DEADPOOL.jpg" alt="Poster Deadpool">
+<!-- Detalle: DEADPOOL -->
+<section id="detalle-deadpool" class="detalle-pelicula oculto">
+  <div id="modal-deadpool" class="modal-pelicula modal-oculto">
+    <div class="contenido-pelicula">
+      <button class="btn-cerrar" onclick="volver-cartelera()">×</button>
+      
+      <div class="columna-imagen">
+        <img src="DEADPOOL.jpg" alt="Poster DEADPOOL">
       </div>
-
-      <!-- =================== COLUMNA DERECHA =================== -->
-      <div class="movie-right">
-
-        <!-- Encabezado -->
-        <div class="movie-header">
+      
+      <div class="columna-info">
+        <div class="encabezado-pelicula">
           <h2>DEADPOOL</h2>
         </div>
-
-        <!-- Detalles -->
-        <div class="movie-info-row">
+        
+        <div class="info-pelicula">
           <span>🎬 <strong>Acción / Comedia</strong></span>
           <span>⭐ <strong>8.0</strong></span>
           <span>⏱ <strong>108 min</strong></span>
           <span>📅 <strong>2016</strong></span>
         </div>
-
-        <!-- Descripción -->
-        <p class="movie-description">
+        
+        <p class="descripcion-pelicula">
           <strong>Director:</strong> Tim Miller<br>
           <strong>Actores:</strong> Ryan Reynolds, Morena Baccarin, Ed Skrein, T.J. Miller, Gina Carano<br><br>
-
-          <strong>Sinopsis:</strong><br>
-          Wade Wilson, un exmercenario, se somete a un experimento que le otorga poderes de curación 
-          extraordinarios pero lo deja con un aspecto desfigurado. Adoptando la identidad de Deadpool, 
-          con un humor irreverente y un estilo único, emprende una misión para vengarse del hombre que 
-          casi destruyó su vida. Con acción desenfrenada, violencia estilizada y bromas rompedoras de la 
-          cuarta pared, Deadpool redefinió el género de superhéroes con su tono irreverente y fresco.<br><br>
-
-          <strong>Extras:</strong><br>
-          - Humor negro y rompimiento constante de la cuarta pared.<br>
-          - Escenas de acción coreografiadas con estilo cómico.<br>
-          - Banda sonora cargada de referencias pop.<br>
-          - Inicio del fenómeno Deadpool dentro del universo X-Men.<br>
+          <strong>Sinopsis:</strong> Wade Wilson, un exmercenario, se somete a un experimento que le otorga poderes de curación extraordinarios pero lo deja con un aspecto desfigurado.<br><br>
+          <strong>Extras:</strong>  
+          - Humor negro y rompimiento constante de la cuarta pared<br>
+          - Escenas de acción coreografiadas con estilo cómico<br>
+          - Banda sonora cargada de referencias pop
         </p>
-
-        <!-- Trailer -->
-        <div class="movie-trailer">
+        
+        <div class="trailer-pelicula">
           <video controls poster="DEADPOOL.jpg">
             <source src="deadpoolV.mp4" type="video/mp4">
             Tu navegador no soporta el video.
           </video>
         </div>
-
-        <!-- Botón de compra -->
-        <button onclick="mostrarFormularioCompra('compraDEADPOOL')" class="movie-main-btn">
+        
+        <button onclick="mostrar-formulario('compra-deadpool')" class="btn-comprar">
           Comprar Boletos
         </button>
-
-        <!-- Formulario oculto -->
-        <form id="compraDEADPOOL" class="movie-compra-form movie-hidden">
-
+        
+        <form id="compra-deadpool" class="form-compra modal-oculto">
           <label>Cantidad:</label>
           <input type="number" min="1" max="10" value="1">
-
+          
           <label>Fecha:</label>
           <input type="date">
-
+          
           <label>Horario:</label>
           <select>
             <option>15:00</option>
             <option>18:00</option>
             <option>21:00</option>
           </select>
-
+          
           <label>Nombre:</label>
           <input type="text" placeholder="Tu nombre">
-
+          
           <label>Email:</label>
           <input type="email" placeholder="tu@email.com">
-
-          <button type="submit" class="movie-main-btn">Confirmar compra</button>
+          
+          <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
-
-        <!-- Botón Volver -->
-        <button onclick="volverCartelera()" class="movie-main-btn" style="background:#555; margin-top:10px;">
+        
+        <button onclick="volver-cartelera()" class="btn-volver">
           Volver
         </button>
-
-      </div> <!-- FIN COLUMNA DERECHA -->
-
+      </div>
     </div>
   </div>
 </section>
 
-
-<!-- Ficha de detalle FLOW -->
-<section id="detallesFLOW" class="details-section hidden">
-  <div id="modalFLOW" class="movie-modal movie-hidden">
-    <div class="movie-modal-content">
-
-      <!-- Botón cerrar -->
-      <button class="movie-close-btn" onclick="volverCartelera()">x</button>
-
-      <!-- =================== COLUMNA IZQUIERDA =================== -->
-      <div class="movie-left">
-        <img src="FLOW.jpg" alt="Poster Flow">
+<!-- Detalle: FLOW -->
+<section id="detalle-flow" class="detalle-pelicula oculto">
+  <div id="modal-flow" class="modal-pelicula modal-oculto">
+    <div class="contenido-pelicula">
+      <button class="btn-cerrar" onclick="volver-cartelera()">×</button>
+      
+      <div class="columna-imagen">
+        <img src="FLOW.jpg" alt="Poster FLOW">
       </div>
-
-      <!-- =================== COLUMNA DERECHA =================== -->
-      <div class="movie-right">
-
-        <!-- Encabezado -->
-        <div class="movie-header">
+      
+      <div class="columna-info">
+        <div class="encabezado-pelicula">
           <h2>FLOW</h2>
         </div>
-
-        <!-- Detalles -->
-        <div class="movie-info-row">
+        
+        <div class="info-pelicula">
           <span>🎬 <strong>Aventura / Fantástico / Animación</strong></span>
           <span>⭐ <strong>7.9</strong></span>
           <span>⏱ <strong>80 min</strong></span>
           <span>📅 <strong>2024</strong></span>
         </div>
-
-        <!-- Descripción -->
-        <p class="movie-description">
+        
+        <p class="descripcion-pelicula">
           <strong>Director:</strong> Gints Zilbalodis<br>
           <strong>Producción:</strong> Dream Well Studio, Sacrebleu Productions, Take Five<br><br>
-
-          <strong>Sinopsis:</strong><br>
-          En un mundo cubierto por agua, un gato solitario pierde su hogar tras una inundación 
-          y encuentra refugio en un barco junto a otras criaturas. Juntos deberán aprender a 
-          convivir y superar sus diferencias mientras navegan por paisajes enigmáticos y 
-          enfrentan desafíos que pondrán a prueba su amistad y supervivencia.<br><br>
-
-          <strong>Extras:</strong><br>
-          - Animación independiente con estilo visual único.<br>
-          - Fábula sobre la convivencia y la resiliencia.<br>
-          - Selección oficial en Cannes 2024.<br>
-          - Ganadora del Óscar a Mejor Película Animada en 2025.<br>
+          <strong>Sinopsis:</strong> En un mundo cubierto por agua, un gato solitario pierde su hogar tras una inundación y encuentra refugio en un barco junto a otras criaturas.<br><br>
+          <strong>Extras:</strong>  
+          - Animación independiente con estilo visual único<br>
+          - Fábula sobre la convivencia y la resiliencia<br>
+          - Selección oficial en Cannes 2024
         </p>
-
-        <!-- Trailer -->
-        <div class="movie-trailer">
+        
+        <div class="trailer-pelicula">
           <video controls poster="FLOW.jpg">
             <source src="flowV.mp4" type="video/mp4">
             Tu navegador no soporta el video.
           </video>
         </div>
-
-        <!-- Botón de compra -->
-        <button onclick="mostrarFormularioCompra('compraFLOW')" class="movie-main-btn">
+        
+        <button onclick="mostrar-formulario('compra-flow')" class="btn-comprar">
           Comprar Boletos
         </button>
-
-        <!-- Formulario oculto -->
-        <form id="compraFLOW" class="movie-compra-form movie-hidden">
-
+        
+        <form id="compra-flow" class="form-compra modal-oculto">
           <label>Cantidad:</label>
           <input type="number" min="1" max="10" value="1">
-
+          
           <label>Fecha:</label>
           <input type="date">
-
+          
           <label>Horario:</label>
           <select>
             <option>15:00</option>
             <option>18:00</option>
             <option>21:00</option>
           </select>
-
+          
           <label>Nombre:</label>
           <input type="text" placeholder="Tu nombre">
-
+          
           <label>Email:</label>
           <input type="email" placeholder="tu@email.com">
-
-          <button type="submit" class="movie-main-btn">Confirmar compra</button>
+          
+          <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
-
-        <!-- Botón Volver -->
-        <button onclick="volverCartelera()" class="movie-main-btn" style="background:#555; margin-top:10px;">
+        
+        <button onclick="volver-cartelera()" class="btn-volver">
           Volver
         </button>
-
-      </div> <!-- FIN COLUMNA DERECHA -->
-
+      </div>
     </div>
   </div>
 </section>
 
-
-
-<!-- FICHA DE DETALLE ROBOT SALVAJE -->
-<section id="detallesROBOTSALVAJE" class="details-section hidden">
-  <div id="modalROBOTSALVAJE" class="movie-modal movie-hidden">
-    <div class="movie-modal-content">
-
-      <!-- Botón cerrar -->
-      <button class="movie-close-btn" onclick="volverCartelera()">x</button>
-
-      <!-- =================== COLUMNA IZQUIERDA =================== -->
-      <div class="movie-left">
-        <img src="ROBOTSALVAJE.jpg" alt="Poster Robot Salvaje">
+<!-- Detalle: ROBOT SALVAJE -->
+<section id="detalle-robot" class="detalle-pelicula oculto">
+  <div id="modal-robot" class="modal-pelicula modal-oculto">
+    <div class="contenido-pelicula">
+      <button class="btn-cerrar" onclick="volver-cartelera()">×</button>
+      
+      <div class="columna-imagen">
+        <img src="ROBOT.jpg" alt="Poster ROBOT SALVAJE">
       </div>
-
-      <!-- =================== COLUMNA DERECHA =================== -->
-      <div class="movie-right">
-
-        <!-- Encabezado -->
-        <div class="movie-header">
+      
+      <div class="columna-info">
+        <div class="encabezado-pelicula">
           <h2>ROBOT SALVAJE</h2>
         </div>
-
-        <!-- Detalles -->
-        <div class="movie-info-row">
+        
+        <div class="info-pelicula">
           <span>🎬 <strong>Aventura / Animación / Fantástico</strong></span>
           <span>⭐ <strong>8.2</strong></span>
           <span>⏱ <strong>102 min</strong></span>
           <span>📅 <strong>2024</strong></span>
         </div>
-
-        <!-- Descripción -->
-        <p class="movie-description">
+        
+        <p class="descripcion-pelicula">
           <strong>Director:</strong> Chris Sanders<br>
           <strong>Producción:</strong> DreamWorks Animation<br><br>
-
-          <strong>Sinopsis:</strong><br>
-          Tras un naufragio, un robot llamado Roz despierta en una isla salvaje habitada por animales. 
-          Para sobrevivir, deberá aprender a adaptarse al entorno natural y ganarse la confianza de 
-          las criaturas que lo rodean. En el proceso, descubrirá el verdadero significado de la 
-          amistad, la familia y la conexión entre la tecnología y la naturaleza.<br><br>
-
-          <strong>Extras:</strong><br>
-          - Basada en la novela infantil *The Wild Robot* de Peter Brown.<br>
-          - Animación con estilo visual cálido y naturalista.<br>
-          - Mensaje sobre convivencia entre humanos, tecnología y naturaleza.<br>
-          - Producción de DreamWorks con estreno mundial en 2024.<br>
+          <strong>Sinopsis:</strong> Tras un naufragio, un robot llamado Roz despierta en una isla salvaje habitada por animales. Para sobrevivir, deberá aprender a adaptarse al entorno natural.<br><br>
+          <strong>Extras:</strong>  
+          - Basada en la novela infantil The Wild Robot<br>
+          - Animación con estilo visual cálido y naturalista<br>
+          - Mensaje sobre convivencia entre humanos y tecnología
         </p>
-
-        <!-- Trailer -->
-        <div class="movie-trailer">
-          <video controls poster="ROBOTSALVAJE.jpg">
+        
+        <div class="trailer-pelicula">
+          <video controls poster="ROBOT.jpg">
             <source src="robotsalvajeV.mp4" type="video/mp4">
             Tu navegador no soporta el video.
           </video>
         </div>
-
-        <!-- Botón de compra -->
-        <button onclick="mostrarFormularioCompra('compraROBOTSALVAJE')" class="movie-main-btn">
+        
+        <button onclick="mostrar-formulario('compra-robot')" class="btn-comprar">
           Comprar Boletos
         </button>
-
-        <!-- Formulario oculto -->
-        <form id="compraROBOTSALVAJE" class="movie-compra-form movie-hidden">
-
+        
+        <form id="compra-robot" class="form-compra modal-oculto">
           <label>Cantidad:</label>
           <input type="number" min="1" max="10" value="1">
-
+          
           <label>Fecha:</label>
           <input type="date">
-
+          
           <label>Horario:</label>
           <select>
             <option>15:00</option>
             <option>18:00</option>
             <option>21:00</option>
           </select>
-
+          
           <label>Nombre:</label>
           <input type="text" placeholder="Tu nombre">
-
+          
           <label>Email:</label>
           <input type="email" placeholder="tu@email.com">
-
-          <button type="submit" class="movie-main-btn">Confirmar compra</button>
+          
+          <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
-
-        <!-- Botón Volver -->
-        <button onclick="volverCartelera()" class="movie-main-btn" style="background:#555; margin-top:10px;">
+        
+        <button onclick="volver-cartelera()" class="btn-volver">
           Volver
         </button>
-
-      </div> <!-- FIN COLUMNA DERECHA -->
-
+      </div>
     </div>
   </div>
 </section>
 
-
-<!-- FICHA DE DETALLE SIN NOVEDAD -->
-<section id="detallesSINNOVEDAD" class="details-section hidden">
-  <div id="modalSINNOVEDAD" class="movie-modal movie-hidden">
-    <div class="movie-modal-content">
-
-      <!-- Botón cerrar -->
-      <button class="movie-close-btn" onclick="volverCartelera()">x</button>
-
-      <!-- =================== COLUMNA IZQUIERDA =================== -->
-      <div class="movie-left">
-        <img src="SINNOVEDAD.jpg" alt="Poster Sin Novedad">
+<!-- Detalle: SIN NOVEDAD -->
+<section id="detalle-sinnovedad" class="detalle-pelicula oculto">
+  <div id="modal-sinnovedad" class="modal-pelicula modal-oculto">
+    <div class="contenido-pelicula">
+      <button class="btn-cerrar" onclick="volver-cartelera()">×</button>
+      
+      <div class="columna-imagen">
+        <img src="SIN NOVEDAD.jpg" alt="Poster SIN NOVEDAD">
       </div>
-
-      <!-- =================== COLUMNA DERECHA =================== -->
-      <div class="movie-right">
-
-        <!-- Encabezado -->
-        <div class="movie-header">
+      
+      <div class="columna-info">
+        <div class="encabezado-pelicula">
           <h2>SIN NOVEDAD</h2>
         </div>
-
-        <!-- Detalles -->
-        <div class="movie-info-row">
+        
+        <div class="info-pelicula">
           <span>🎬 <strong>Drama / Bélico</strong></span>
           <span>⭐ <strong>7.8</strong></span>
           <span>⏱ <strong>147 min</strong></span>
           <span>📅 <strong>2022</strong></span>
         </div>
-
-        <!-- Descripción -->
-        <p class="movie-description">
+        
+        <p class="descripcion-pelicula">
           <strong>Director:</strong> Edward Berger<br>
           <strong>Actores:</strong> Felix Kammerer, Albrecht Schuch, Daniel Brühl, Aaron Hilmer<br><br>
-
-          <strong>Sinopsis:</strong><br>
-          Ambientada en la Primera Guerra Mundial, la historia sigue a Paul Bäumer, un joven soldado alemán 
-          que se enfrenta a la brutal realidad del frente. Lo que comenzó como un sueño patriótico pronto 
-          se convierte en una pesadilla de supervivencia, donde la esperanza y la humanidad parecen 
-          desvanecerse en medio del horror de la guerra.<br><br>
-
-          <strong>Extras:</strong><br>
-          - Basada en la novela clásica *Sin novedad en el frente* de Erich Maria Remarque.<br>
-          - Producción alemana nominada y ganadora de múltiples premios internacionales.<br>
-          - Fotografía impactante y realismo crudo en las escenas de batalla.<br>
-          - Mensaje antibélico que resuena con fuerza en la actualidad.<br>
+          <strong>Sinopsis:</strong> Ambientada en la Primera Guerra Mundial, la historia sigue a Paul Bäumer, un joven soldado alemán que se enfrenta a la brutal realidad del frente.<br><br>
+          <strong>Extras:</strong>  
+          - Basada en la novela clásica Sin novedad en el frente<br>
+          - Producción alemana ganadora de múltiples premios<br>
+          - Fotografía impactante y realismo crudo
         </p>
-
-        <!-- Trailer -->
-        <div class="movie-trailer">
-          <video controls poster="SINNOVEDAD.jpg">
+        
+        <div class="trailer-pelicula">
+          <video controls poster="SIN NOVEDAD.jpg">
             <source src="sinnovedadV.mp4" type="video/mp4">
             Tu navegador no soporta el video.
           </video>
         </div>
-
-        <!-- Botón de compra -->
-        <button onclick="mostrarFormularioCompra('compraSINNOVEDAD')" class="movie-main-btn">
+        
+        <button onclick="mostrar-formulario('compra-sinnovedad')" class="btn-comprar">
           Comprar Boletos
         </button>
-
-        <!-- Formulario oculto -->
-        <form id="compraSINNOVEDAD" class="movie-compra-form movie-hidden">
-
+        
+        <form id="compra-sinnovedad" class="form-compra modal-oculto">
           <label>Cantidad:</label>
           <input type="number" min="1" max="10" value="1">
-
+          
           <label>Fecha:</label>
           <input type="date">
-
+          
           <label>Horario:</label>
           <select>
             <option>15:00</option>
             <option>18:00</option>
             <option>21:00</option>
           </select>
-
+          
           <label>Nombre:</label>
           <input type="text" placeholder="Tu nombre">
-
+          
           <label>Email:</label>
           <input type="email" placeholder="tu@email.com">
-
-          <button type="submit" class="movie-main-btn">Confirmar compra</button>
+          
+          <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
-
-        <!-- Botón Volver -->
-        <button onclick="volverCartelera()" class="movie-main-btn" style="background:#555; margin-top:10px;">
+        
+        <button onclick="volver-cartelera()" class="btn-volver">
           Volver
         </button>
-
-      </div> <!-- FIN COLUMNA DERECHA -->
-
+      </div>
     </div>
   </div>
 </section>
 
-
-<!-- FICHA DE DETALLE AVENGERS ENDGAME -->
-<section id="detallesENDGAME" class="details-section hidden">
-  <div id="modalENDGAME" class="movie-modal movie-hidden">
-    <div class="movie-modal-content">
-
-      <!-- Botón cerrar -->
-      <button class="movie-close-btn" onclick="volverCartelera()">x</button>
-
-      <!-- =================== COLUMNA IZQUIERDA =================== -->
-      <div class="movie-left">
+<!-- Detalle: AVENGERS ENDGAME -->
+<section id="detalle-endgame" class="detalle-pelicula oculto">
+  <div id="modal-endgame" class="modal-pelicula modal-oculto">
+    <div class="contenido-pelicula">
+      <button class="btn-cerrar" onclick="volver-cartelera()">×</button>
+      
+      <div class="columna-imagen">
         <img src="ENDGAME.jpg" alt="Poster Avengers Endgame">
       </div>
-
-      <!-- =================== COLUMNA DERECHA =================== -->
-      <div class="movie-right">
-
-        <!-- Encabezado -->
-        <div class="movie-header">
+      
+      <div class="columna-info">
+        <div class="encabezado-pelicula">
           <h2>AVENGERS: ENDGAME</h2>
         </div>
-
-        <!-- Detalles -->
-        <div class="movie-info-row">
+        
+        <div class="info-pelicula">
           <span>🎬 <strong>Acción / Ciencia ficción</strong></span>
           <span>⭐ <strong>8.4</strong></span>
           <span>⏱ <strong>181 min</strong></span>
           <span>📅 <strong>2019</strong></span>
         </div>
-
-        <!-- Descripción -->
-        <p class="movie-description">
+        
+        <p class="descripcion-pelicula">
           <strong>Directores:</strong> Anthony Russo, Joe Russo<br>
           <strong>Actores:</strong> Robert Downey Jr., Chris Evans, Scarlett Johansson, Chris Hemsworth, Mark Ruffalo, Jeremy Renner, Paul Rudd, Brie Larson<br><br>
-
-          <strong>Sinopsis:</strong><br>
-          Tras los devastadores eventos de *Infinity War*, el universo está en ruinas. Con la ayuda 
-          de sus aliados restantes, los Vengadores deben reunirse una vez más para deshacer las 
-          acciones de Thanos y restaurar el equilibrio del universo. Una épica conclusión que 
-          combina acción, emoción y sacrificio en la batalla final por el destino de todos.<br><br>
-
-          <strong>Extras:</strong><br>
-          - Conclusión de la Saga del Infinito del Universo Marvel.<br>
-          - Escenas épicas como la batalla final contra Thanos.<br>
-          - Momentos icónicos: “Avengers Assemble” y el sacrificio de Tony Stark.<br>
-          - Una de las películas más taquilleras de la historia del cine.<br>
+          <strong>Sinopsis:</strong> Tras los devastadores eventos de Infinity War, el universo está en ruinas. Los Vengadores deben reunirse una vez más para deshacer las acciones de Thanos.<br><br>
+          <strong>Extras:</strong>  
+          - Conclusión de la Saga del Infinito del Universo Marvel<br>
+          - Escenas épicas como la batalla final contra Thanos<br>
+          - Momentos icónicos y sacrificios memorables
         </p>
-
-        <!-- Trailer -->
-        <div class="movie-trailer">
+        
+        <div class="trailer-pelicula">
           <video controls poster="ENDGAME.jpg">
             <source src="endgameV.mp4" type="video/mp4">
             Tu navegador no soporta el video.
           </video>
         </div>
-
-        <!-- Botón de compra -->
-        <button onclick="mostrarFormularioCompra('compraENDGAME')" class="movie-main-btn">
+        
+        <button onclick="mostrar-formulario('compra-endgame')" class="btn-comprar">
           Comprar Boletos
         </button>
-
-        <!-- Formulario oculto -->
-        <form id="compraENDGAME" class="movie-compra-form movie-hidden">
-
+        
+        <form id="compra-endgame" class="form-compra modal-oculto">
           <label>Cantidad:</label>
           <input type="number" min="1" max="10" value="1">
-
+          
           <label>Fecha:</label>
           <input type="date">
-
+          
           <label>Horario:</label>
           <select>
             <option>15:00</option>
             <option>18:00</option>
             <option>21:00</option>
           </select>
-
+          
           <label>Nombre:</label>
           <input type="text" placeholder="Tu nombre">
-
+          
           <label>Email:</label>
           <input type="email" placeholder="tu@email.com">
-
-          <button type="submit" class="movie-main-btn">Confirmar compra</button>
+          
+          <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
-
-        <!-- Botón Volver -->
-        <button onclick="volverCartelera()" class="movie-main-btn" style="background:#555; margin-top:10px;">
+        
+        <button onclick="volver-cartelera()" class="btn-volver">
           Volver
         </button>
-
-      </div> <!-- FIN COLUMNA DERECHA -->
-
+      </div>
     </div>
   </div>
 </section>
 
-
-<!-- Ficha de detalle OPENHAIMER -->
-<!-- FICHA DE DETALLE OPPENHEIMER -->
-<section id="detallesOPPENHEIMER" class="details-section hidden">
-  <div id="modalOPPENHEIMER" class="movie-modal movie-hidden">
-    <div class="movie-modal-content">
-
-      <!-- Botón cerrar -->
-      <button class="movie-close-btn" onclick="volverCartelera()">x</button>
-
-      <!-- =================== COLUMNA IZQUIERDA =================== -->
-      <div class="movie-left">
+<!-- Detalle: OPPENHEIMER -->
+<section id="detalle-oppenheimer" class="detalle-pelicula oculto">
+  <div id="modal-oppenheimer" class="modal-pelicula modal-oculto">
+    <div class="contenido-pelicula">
+      <button class="btn-cerrar" onclick="volver-cartelera()">×</button>
+      
+      <div class="columna-imagen">
         <img src="OPPENHEIMER.jpg" alt="Poster Oppenheimer">
       </div>
-
-      <!-- =================== COLUMNA DERECHA =================== -->
-      <div class="movie-right">
-
-        <!-- Encabezado -->
-        <div class="movie-header">
+      
+      <div class="columna-info">
+        <div class="encabezado-pelicula">
           <h2>OPPENHEIMER</h2>
         </div>
-
-        <!-- Detalles -->
-        <div class="movie-info-row">
+        
+        <div class="info-pelicula">
           <span>🎬 <strong>Drama / Histórico / Biográfico</strong></span>
           <span>⭐ <strong>8.3</strong></span>
           <span>⏱ <strong>180 min</strong></span>
           <span>📅 <strong>2023</strong></span>
         </div>
-
-        <!-- Descripción -->
-        <p class="movie-description">
+        
+        <p class="descripcion-pelicula">
           <strong>Director:</strong> Christopher Nolan<br>
           <strong>Actores:</strong> Cillian Murphy, Emily Blunt, Matt Damon, Robert Downey Jr., Florence Pugh, Rami Malek<br><br>
-
-          <strong>Sinopsis:</strong><br>
-          La película narra la vida de J. Robert Oppenheimer, el físico teórico que lideró el 
-          Proyecto Manhattan y supervisó la creación de la primera bomba atómica. Con un estilo 
-          épico y visualmente impactante, Nolan explora los dilemas morales, políticos y personales 
-          de Oppenheimer, mostrando cómo su legado cambió el curso de la historia mundial.<br><br>
-
-          <strong>Extras:</strong><br>
-          - Filmada en IMAX con técnicas innovadoras de fotografía.<br>
-          - Banda sonora de Ludwig Göransson.<br>
-          - Retrato complejo de ciencia, poder y responsabilidad.<br>
-          - Ganadora de múltiples premios internacionales, incluyendo el Óscar a Mejor Película en 2024.<br>
+          <strong>Sinopsis:</strong> La película narra la vida de J. Robert Oppenheimer, el físico teórico que lideró el Proyecto Manhattan y supervisó la creación de la primera bomba atómica.<br><br>
+          <strong>Extras:</strong>  
+          - Filmada en IMAX con técnicas innovadoras<br>
+          - Banda sonora de Ludwig Göransson<br>
+          - Retrato complejo de ciencia, poder y responsabilidad
         </p>
-
-        <!-- Trailer -->
-        <div class="movie-trailer">
+        
+        <div class="trailer-pelicula">
           <video controls poster="OPPENHEIMER.jpg">
             <source src="oppenheimerV.mp4" type="video/mp4">
             Tu navegador no soporta el video.
           </video>
         </div>
-
-        <!-- Botón de compra -->
-        <button onclick="mostrarFormularioCompra('compraOPPENHEIMER')" class="movie-main-btn">
+        
+        <button onclick="mostrar-formulario('compra-oppenheimer')" class="btn-comprar">
           Comprar Boletos
         </button>
-
-        <!-- Formulario oculto -->
-        <form id="compraOPPENHEIMER" class="movie-compra-form movie-hidden">
-
+        
+        <form id="compra-oppenheimer" class="form-compra modal-oculto">
           <label>Cantidad:</label>
           <input type="number" min="1" max="10" value="1">
-
+          
           <label>Fecha:</label>
           <input type="date">
-
+          
           <label>Horario:</label>
           <select>
             <option>15:00</option>
             <option>18:00</option>
             <option>21:00</option>
           </select>
-
+          
           <label>Nombre:</label>
           <input type="text" placeholder="Tu nombre">
-
+          
           <label>Email:</label>
           <input type="email" placeholder="tu@email.com">
-
-          <button type="submit" class="movie-main-btn">Confirmar compra</button>
+          
+          <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
-
-        <!-- Botón Volver -->
-        <button onclick="volverCartelera()" class="movie-main-btn" style="background:#555; margin-top:10px;">
+        
+        <button onclick="volver-cartelera()" class="btn-volver">
           Volver
         </button>
-
-      </div> <!-- FIN COLUMNA DERECHA -->
-
+      </div>
     </div>
   </div>
 </section>
 
-
-<!-- FICHA DE DETALLE JURASSIC PARK -->
-<section id="detallesJURASSIC" class="details-section hidden">
-  <div id="modalJURASSIC" class="movie-modal movie-hidden">
-    <div class="movie-modal-content">
-
-      <!-- Botón cerrar -->
-      <button class="movie-close-btn" onclick="volverCartelera()">x</button>
-
-      <!-- =================== COLUMNA IZQUIERDA =================== -->
-      <div class="movie-left">
+<!-- Detalle: JURASSIC PARK -->
+<section id="detalle-jurassic" class="detalle-pelicula oculto">
+  <div id="modal-jurassic" class="modal-pelicula modal-oculto">
+    <div class="contenido-pelicula">
+      <button class="btn-cerrar" onclick="volver-cartelera()">×</button>
+      
+      <div class="columna-imagen">
         <img src="JURASSIC.jpg" alt="Poster Jurassic Park">
       </div>
-
-      <!-- =================== COLUMNA DERECHA =================== -->
-      <div class="movie-right">
-
-        <!-- Encabezado -->
-        <div class="movie-header">
+      
+      <div class="columna-info">
+        <div class="encabezado-pelicula">
           <h2>JURASSIC PARK</h2>
         </div>
-
-        <!-- Detalles -->
-        <div class="movie-info-row">
+        
+        <div class="info-pelicula">
           <span>🎬 <strong>Aventura / Ciencia ficción</strong></span>
           <span>⭐ <strong>8.2</strong></span>
           <span>⏱ <strong>127 min</strong></span>
           <span>📅 <strong>1993</strong></span>
         </div>
-
-        <!-- Descripción -->
-        <p class="movie-description">
+        
+        <p class="descripcion-pelicula">
           <strong>Director:</strong> Steven Spielberg<br>
           <strong>Actores:</strong> Sam Neill, Laura Dern, Jeff Goldblum, Richard Attenborough<br><br>
-
-          <strong>Sinopsis:</strong><br>
-          Un multimillonario crea un parque temático con dinosaurios clonados a partir de ADN prehistórico. 
-          Lo que parecía un sueño científico pronto se convierte en una pesadilla cuando las criaturas 
-          escapan de su control, poniendo en peligro a los visitantes y al futuro del proyecto.<br><br>
-
-          <strong>Extras:</strong><br>
-          - Revolucionarios efectos visuales y animatrónicos.<br>
-          - Banda sonora icónica de John Williams.<br>
-          - Inicio de una de las sagas más exitosas del cine.<br>
-          - Reflexión sobre ciencia, ética y poder de la naturaleza.<br>
+          <strong>Sinopsis:</strong> Un multimillonario crea un parque temático con dinosaurios clonados a partir de ADN prehistórico. Lo que parecía un sueño científico pronto se convierte en una pesadilla.<br><br>
+          <strong>Extras:</strong>  
+          - Revolucionarios efectos visuales y animatrónicos<br>
+          - Banda sonora icónica de John Williams<br>
+          - Reflexión sobre ciencia, ética y poder de la naturaleza
         </p>
-
-        <!-- Trailer -->
-        <div class="movie-trailer">
+        
+        <div class="trailer-pelicula">
           <video controls poster="JURASSIC.jpg">
             <source src="jurassicV.mp4" type="video/mp4">
             Tu navegador no soporta el video.
           </video>
         </div>
-
-        <!-- Botón de compra -->
-        <button onclick="mostrarFormularioCompra('compraJURASSIC')" class="movie-main-btn">
+        
+        <button onclick="mostrar-formulario('compra-jurassic')" class="btn-comprar">
           Comprar Boletos
         </button>
-
-        <!-- Formulario oculto -->
-        <form id="compraJURASSIC" class="movie-compra-form movie-hidden">
-
+        
+        <form id="compra-jurassic" class="form-compra modal-oculto">
           <label>Cantidad:</label>
           <input type="number" min="1" max="10" value="1">
-
+          
           <label>Fecha:</label>
           <input type="date">
-
+          
           <label>Horario:</label>
           <select>
             <option>15:00</option>
             <option>18:00</option>
             <option>21:00</option>
           </select>
-
+          
           <label>Nombre:</label>
           <input type="text" placeholder="Tu nombre">
-
+          
           <label>Email:</label>
           <input type="email" placeholder="tu@email.com">
-
-          <button type="submit" class="movie-main-btn">Confirmar compra</button>
+          
+          <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
-
-        <!-- Botón Volver -->
-        <button onclick="volverCartelera()" class="movie-main-btn" style="background:#555; margin-top:10px;">
+        
+        <button onclick="volver-cartelera()" class="btn-volver">
           Volver
         </button>
-
-      </div> <!-- FIN COLUMNA DERECHA -->
-
+      </div>
     </div>
   </div>
 </section>
 
-
-<!-- Ficha de detalle JOKER -->
-<section id="detallesJOKER" class="details-section hidden">
-  <div id="modalJOKER" class="movie-modal movie-hidden">
-    <div class="movie-modal-content">
-
-      <!-- Botón cerrar -->
-      <button class="movie-close-btn" onclick="volverCartelera()">x</button>
-
-      <!-- =================== COLUMNA IZQUIERDA =================== -->
-      <div class="movie-left">
-        <img src="JOKER.jpg" alt="Poster Joker">
+<!-- Detalle: JOKER -->
+<section id="detalle-joker" class="detalle-pelicula oculto">
+  <div id="modal-joker" class="modal-pelicula modal-oculto">
+    <div class="contenido-pelicula">
+      <button class="btn-cerrar" onclick="volver-cartelera()">×</button>
+      
+      <div class="columna-imagen">
+        <img src="JOKER.jpg" alt="Poster JOKER">
       </div>
-
-      <!-- =================== COLUMNA DERECHA =================== -->
-      <div class="movie-right">
-
-        <!-- Encabezado -->
-        <div class="movie-header">
+      
+      <div class="columna-info">
+        <div class="encabezado-pelicula">
           <h2>JOKER</h2>
         </div>
-
-        <!-- Detalles -->
-        <div class="movie-info-row">
+        
+        <div class="info-pelicula">
           <span>🎬 <strong>Drama / Thriller / Crimen</strong></span>
           <span>⭐ <strong>8.4</strong></span>
           <span>⏱ <strong>122 min</strong></span>
           <span>📅 <strong>2019</strong></span>
         </div>
-
-        <!-- Descripción -->
-        <p class="movie-description">
+        
+        <p class="descripcion-pelicula">
           <strong>Director:</strong> Todd Phillips<br>
           <strong>Actores:</strong> Joaquin Phoenix, Robert De Niro, Zazie Beetz, Frances Conroy<br><br>
-
-          <strong>Sinopsis:</strong><br>
-          Arthur Fleck, un hombre ignorado por la sociedad, lucha con problemas personales y 
-          económicos mientras sueña con ser comediante. Su vida se desmorona poco a poco, 
-          llevándolo a transformarse en el icónico villano conocido como Joker. La película 
-          explora la fragilidad mental, la desigualdad social y el nacimiento de una figura 
-          que marcará la historia de Gotham.<br><br>
-
-          <strong>Extras:</strong><br>
-          - Ganadora del León de Oro en el Festival de Venecia.<br>
-          - Joaquin Phoenix obtuvo el Óscar a Mejor Actor.<br>
-          - Banda sonora intensa y atmosférica de Hildur Guðnadóttir.<br>
-          - Una de las películas más comentadas y polémicas de la década.<br>
+          <strong>Sinopsis:</strong> Arthur Fleck, un hombre ignorado por la sociedad, lucha con problemas personales y económicos mientras sueña con ser comediante.<br><br>
+          <strong>Extras:</strong>  
+          - Ganadora del León de Oro en el Festival de Venecia<br>
+          - Joaquin Phoenix obtuvo el Óscar a Mejor Actor<br>
+          - Banda sonora intensa y atmosférica
         </p>
-
-        <!-- Trailer -->
-        <div class="movie-trailer">
+        
+        <div class="trailer-pelicula">
           <video controls poster="JOKER.jpg">
             <source src="jokerV.mp4" type="video/mp4">
             Tu navegador no soporta el video.
           </video>
         </div>
-
-        <!-- Botón de compra -->
-        <button onclick="mostrarFormularioCompra('compraJOKER')" class="movie-main-btn">
+        
+        <button onclick="mostrar-formulario('compra-joker')" class="btn-comprar">
           Comprar Boletos
         </button>
-
-        <!-- Formulario oculto -->
-        <form id="compraJOKER" class="movie-compra-form movie-hidden">
-
+        
+        <form id="compra-joker" class="form-compra modal-oculto">
           <label>Cantidad:</label>
           <input type="number" min="1" max="10" value="1">
-
+          
           <label>Fecha:</label>
           <input type="date">
-
+          
           <label>Horario:</label>
           <select>
             <option>15:00</option>
             <option>18:00</option>
             <option>21:00</option>
           </select>
-
+          
           <label>Nombre:</label>
           <input type="text" placeholder="Tu nombre">
-
+          
           <label>Email:</label>
           <input type="email" placeholder="tu@email.com">
-
-          <button type="submit" class="movie-main-btn">Confirmar compra</button>
+          
+          <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
-
-        <!-- Botón Volver -->
-        <button onclick="volverCartelera()" class="movie-main-btn" style="background:#555; margin-top:10px;">
+        
+        <button onclick="volver-cartelera()" class="btn-volver">
           Volver
         </button>
-
-      </div> <!-- FIN COLUMNA DERECHA -->
-
+      </div>
     </div>
   </div>
 </section>
 
-
-<!-- Ficha de detalle INTERESTELAR -->
-<section id="detallesINTERSTELLAR" class="details-section hidden">
-  <div id="modalINTERSTELLAR" class="movie-modal movie-hidden">
-    <div class="movie-modal-content">
-
-      <!-- Botón cerrar -->
-      <button class="movie-close-btn" onclick="volverCartelera()">x</button>
-
-      <!-- =================== COLUMNA IZQUIERDA =================== -->
-      <div class="movie-left">
+<!-- Detalle: INTERESTELAR -->
+<section id="detalle-interstellar" class="detalle-pelicula oculto">
+  <div id="modal-interstellar" class="modal-pelicula modal-oculto">
+    <div class="contenido-pelicula">
+      <button class="btn-cerrar" onclick="volver-cartelera()">×</button>
+      
+      <div class="columna-imagen">
         <img src="INTERSTELLAR.jpg" alt="Poster Interstellar">
       </div>
-
-      <!-- =================== COLUMNA DERECHA =================== -->
-      <div class="movie-right">
-
-        <!-- Encabezado -->
-        <div class="movie-header">
+      
+      <div class="columna-info">
+        <div class="encabezado-pelicula">
           <h2>INTERSTELLAR</h2>
         </div>
-
-        <!-- Detalles -->
-        <div class="movie-info-row">
+        
+        <div class="info-pelicula">
           <span>🎬 <strong>Ciencia ficción / Drama</strong></span>
           <span>⭐ <strong>8.6</strong></span>
           <span>⏱ <strong>169 min</strong></span>
           <span>📅 <strong>2014</strong></span>
         </div>
-
-        <!-- Descripción -->
-        <p class="movie-description">
+        
+        <p class="descripcion-pelicula">
           <strong>Director:</strong> Christopher Nolan<br>
           <strong>Actores:</strong> Matthew McConaughey, Anne Hathaway, Jessica Chastain, Michael Caine<br><br>
-
-          <strong>Sinopsis:</strong><br>
-          En un futuro donde la Tierra enfrenta una crisis ambiental, un grupo de astronautas 
-          emprende un viaje a través de un agujero de gusano en busca de un nuevo hogar para la humanidad. 
-          La misión pondrá a prueba los límites del amor, el sacrificio y la ciencia, mientras 
-          exploran mundos desconocidos y enfrentan dilemas que trascienden el tiempo y el espacio.<br><br>
-
-          <strong>Extras:</strong><br>
-          - Banda sonora épica de Hans Zimmer.<br>
-          - Efectos visuales espectaculares y realismo científico.<br>
-          - Exploración de conceptos como agujeros negros, relatividad y dimensiones superiores.<br>
-          - Considerada una de las películas más ambiciosas de Nolan.<br>
+          <strong>Sinopsis:</strong> En un futuro donde la Tierra enfrenta una crisis ambiental, un grupo de astronautas emprende un viaje a través de un agujero de gusano en busca de un nuevo hogar.<br><br>
+          <strong>Extras:</strong>  
+          - Banda sonora épica de Hans Zimmer<br>
+          - Efectos visuales espectaculares y realismo científico<br>
+          - Exploración de conceptos como agujeros negros y relatividad
         </p>
-
-        <!-- Trailer -->
-        <div class="movie-trailer">
+        
+        <div class="trailer-pelicula">
           <video controls poster="INTERSTELLAR.jpg">
             <source src="interstellarV.mp4" type="video/mp4">
             Tu navegador no soporta el video.
           </video>
         </div>
-
-        <!-- Botón de compra -->
-        <button onclick="mostrarFormularioCompra('compraINTERSTELLAR')" class="movie-main-btn">
+        
+        <button onclick="mostrar-formulario('compra-interstellar')" class="btn-comprar">
           Comprar Boletos
         </button>
-
-        <!-- Formulario oculto -->
-        <form id="compraINTERSTELLAR" class="movie-compra-form movie-hidden">
-
+        
+        <form id="compra-interstellar" class="form-compra modal-oculto">
           <label>Cantidad:</label>
           <input type="number" min="1" max="10" value="1">
-
+          
           <label>Fecha:</label>
           <input type="date">
-
+          
           <label>Horario:</label>
           <select>
             <option>15:00</option>
             <option>18:00</option>
             <option>21:00</option>
           </select>
-
+          
           <label>Nombre:</label>
           <input type="text" placeholder="Tu nombre">
-
+          
           <label>Email:</label>
           <input type="email" placeholder="tu@email.com">
-
-          <button type="submit" class="movie-main-btn">Confirmar compra</button>
+          
+          <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
-
-        <!-- Botón Volver -->
-        <button onclick="volverCartelera()" class="movie-main-btn" style="background:#555; margin-top:10px;">
+        
+        <button onclick="volver-cartelera()" class="btn-volver">
           Volver
         </button>
-
-      </div> <!-- FIN COLUMNA DERECHA -->
-
+      </div>
     </div>
   </div>
 </section>
 
-  <!-- ==================== SECCIÓN PRÓXIMAMENTE ==================== -->
-  <section id="proximamenteSection" class="movies hidden">
+  <!--  PROXIMOS ESTRENOS  -->
+  <section id="seccionProximos" class="contenedor-peliculas oculto">
     
-    <!-- Próximo estreno: FIVE NIGHTS AT FREDDY'S -->
-    <div class="card">
-      <div class="tag">Terror - Suspenso</div>
+    <!-- Proximo estreno: FIVE NIGHTS AT FREDDY'S -->
+    <div class="tarjeta-pelicula">
+      <div class="etiqueta-genero">Terror - Suspenso</div>
       <img src="FNAF.jpg" alt="Poster Five Nights at Freddy's">
-      <div class="info">
+      <div class="info-pelicula">
         <h3>Five Nights at Freddy's</h3>
         <p>⏱ 105 min 📅 20 Nov 2025</p>
       </div>
     </div>
 
-    <!-- Próximo estreno: AVENGERS DOOMSDAY -->
-    <div class="card">
-      <div class="tag">Accion - Suspenso</div>
+    <!-- Proximo estreno: AVENGERS DOOMSDAY -->
+    <div class="tarjeta-pelicula">
+      <div class="etiqueta-genero">Accion - Suspenso</div>
       <img src="DOOMSDAY.jpg" alt="Poster Avengers: Doomsday">
-      <div class="info">
+      <div class="info-pelicula">
         <h3>Avengers: Doomsday</h3>
         <p>⏱ 112 min 📅 25 Nov 2025</p>
       </div>
     </div>
 
-    <!-- Próximo estreno: THE MANDALORIAN AND GROGU -->
-    <div class="card">
-      <div class="tag">Acción - Ciencia Ficcion</div>
+    <!-- Proximo estreno: THE MANDALORIAN AND GROGU -->
+    <div class="tarjeta-pelicula">
+      <div class="etiqueta-genero">Acción - Ciencia Ficcion</div>
       <img src="MANDALORIAN.png" alt="Poster The Mandalorian and Grogu">
-      <div class="info">
+      <div class="info-pelicula">
         <h3>The Mandalorian and Grogu</h3>
         <p>⏱ 130 min 📅 28 Nov 2025</p>
       </div>
     </div>
 
-    <!-- Próximo estreno: BOB ESPONJA -->
-    <div class="card">
-      <div class="tag">Infantil</div>
+    <!-- Proximo estreno: BOB ESPONJA -->
+    <div class="tarjeta-pelicula">
+      <div class="etiqueta-genero">Infantil</div>
       <img src="BOB.jpg" alt="Poster Bob Esponja">
-      <div class="info">
+      <div class="info-pelicula">
         <h3>Bob Esponja una Aventura Pirata</h3>
         <p>⏱ 95 min 📅 30 Nov 2025</p>
       </div>
@@ -1446,104 +1157,105 @@
 
   </section>
 
-  <!-- ==================== CANDY BAR ==================== -->
-  <section id="candySection" class="hidden">
+
+  <!--  SECCION SNACKS  -->
+  <section id="seccionSnacks" class="oculto">
     
-    <!-- Producto: PALOMITAS CLÁSICAS -->
-    <div class="candy-item">
+    <!-- Producto: PALOMITAS CLASICAS -->
+    <div class="item-snack">
       <img src="PALOMITAS.png" alt="Palomitas">
       <h3>Palomitas <br>Clásicas</h3>
       <p>Precio: 12 Bs</p>
-      <div class="botones">
-        <button class="btn-agregar" onclick="agregarAlCarrito('Palomitas Clásicas')">Agregar</button>
-        <button class="btn-comprar" onclick="comprar('Palomitas Clásicas')">Comprar</button>
+      <div class="contenedor-botones">
+        <button class="boton-agregar" onclick="agregarCarrito('Palomitas Clásicas')">Agregar</button>
+        <button class="boton-comprar-snack" onclick="comprarSnack('Palomitas Clásicas')">Comprar</button>
       </div>
     </div>
 
     <!-- Producto: REFRESCO GRANDE -->
-    <div class="candy-item">
+    <div class="item-snack">
       <img src="REFRESCO.png" alt="Refresco">
       <h3>Refresco <br> Grande</h3>
       <p>Precio: 10 Bs</p>
-      <div class="botones">
-        <button class="btn-agregar" onclick="agregarAlCarrito('Refresco Grande')">Agregar</button>
-        <button class="btn-comprar" onclick="comprar('Refresco Grande')">Comprar</button>
+      <div class="contenedor-botones">
+        <button class="boton-agregar" onclick="agregarCarrito('Refresco Grande')">Agregar</button>
+        <button class="boton-comprar-snack" onclick="comprarSnack('Refresco Grande')">Comprar</button>
       </div>
     </div>
 
     <!-- Producto: NACHOS CON QUESO -->
-    <div class="candy-item">
+    <div class="item-snack">
       <img src="NACHOS.png" alt="Nachos">
       <h3>Nachos <br>con Queso</h3>
       <p>Precio: 15 Bs</p>
-      <div class="botones">
-        <button class="btn-agregar" onclick="agregarAlCarrito('Nachos con Queso')">Agregar</button>
-        <button class="btn-comprar" onclick="comprar('Nachos con Queso')">Comprar</button>
+      <div class="contenedor-botones">
+        <button class="boton-agregar" onclick="agregarCarrito('Nachos con Queso')">Agregar</button>
+        <button class="boton-comprar-snack" onclick="comprarSnack('Nachos con Queso')">Comprar</button>
       </div>
     </div>
 
-    <!-- Producto: HOT DOG CLÁSICO -->
-    <div class="candy-item">
+    <!-- Producto: HOT DOG CLASICO -->
+    <div class="item-snack">
       <img src="Hot Dog.png" alt="Hot Dog">
       <h3>Hot <br> Dog Clásico</h3>
       <p>Precio: 14 Bs</p>
-      <div class="botones">
-        <button class="btn-agregar" onclick="agregarAlCarrito('Hot Dog Clásico')">Agregar</button>
-        <button class="btn-comprar" onclick="comprar('Hot Dog Clásico')">Comprar</button>
+      <div class="contenedor-botones">
+        <button class="boton-agregar" onclick="agregarCarrito('Hot Dog Clásico')">Agregar</button>
+        <button class="boton-comprar-snack" onclick="comprarSnack('Hot Dog Clásico')">Comprar</button>
       </div>
     </div>
 
     <!-- Producto: BARRA DE CHOCOLATE -->
-    <div class="candy-item">
+    <div class="item-snack">
       <img src="CHOCOLATE.png" alt="Chocolate">
       <h3>Barra de <br>Chocolate</h3>
       <p>Precio: 8 Bs</p>
-      <div class="botones">
-        <button class="btn-agregar" onclick="agregarAlCarrito('Barra de Chocolate')">Agregar</button>
-        <button class="btn-comprar" onclick="comprar('Barra de Chocolate')">Comprar</button>
+      <div class="contenedor-botones">
+        <button class="boton-agregar" onclick="agregarCarrito('Barra de Chocolate')">Agregar</button>
+        <button class="boton-comprar-snack" onclick="comprarSnack('Barra de Chocolate')">Comprar</button>
       </div>
     </div>
 
     <!-- Producto: PALOMITAS COMBO -->
-    <div class="candy-item">
+    <div class="item-snack">
       <img src="COMBO1.png" alt="Combo 1">
       <h3>Palomitas <br>Combo</h3>
       <p>Precio: 25 Bs</p>
-      <div class="botones">
-        <button class="btn-agregar" onclick="agregarAlCarrito('Palomitas Combo')">Agregar</button>
-        <button class="btn-comprar" onclick="comprar('Palomitas Combo')">Comprar</button>
+      <div class="contenedor-botones">
+        <button class="boton-agregar" onclick="agregarCarrito('Palomitas Combo')">Agregar</button>
+        <button class="boton-comprar-snack" onclick="comprarSnack('Palomitas Combo')">Comprar</button>
       </div>
     </div>
 
     <!-- Producto: PALOMITAS FAMILIAR -->
-    <div class="candy-item">
+    <div class="item-snack">
       <img src="COMBO TRIO.png" alt="Combo Trio">
       <h3>Palomitas <br>Familiar</h3>
       <p>Precio: 35 Bs</p>
-      <div class="botones">
-        <button class="btn-agregar" onclick="agregarAlCarrito('Palomitas Familiar')">Agregar</button>
-        <button class="btn-comprar" onclick="comprar('Palomitas Familiar')">Comprar</button>
+      <div class="contenedor-botones">
+        <button class="boton-agregar" onclick="agregarCarrito('Palomitas Familiar')">Agregar</button>
+        <button class="boton-comprar-snack" onclick="comprarSnack('Palomitas Familiar')">Comprar</button>
       </div>
     </div>
 
-    <!-- Producto: REFRESCO EDICIÓN LIMITADA -->
-    <div class="candy-item">
+    <!-- Producto: REFRESCO EDICION LIMITADA -->
+    <div class="item-snack">
       <img src="REFRESCOP.png" alt="Refresco Premium">
       <h3>Refresco <br>Edición Limitada</h3>
       <p>Precio: 18 Bs</p>
-      <div class="botones">
-        <button class="btn-agregar" onclick="agregarAlCarrito('Refresco Edición Limitada')">Agregar</button>
-        <button class="btn-comprar" onclick="comprar('Refresco Edición Limitada')">Comprar</button>
+      <div class="contenedor-botones">
+        <button class="boton-agregar" onclick="agregarCarrito('Refresco Edición Limitada')">Agregar</button>
+        <button class="boton-comprar-snack" onclick="comprarSnack('Refresco Edición Limitada')">Comprar</button>
       </div>
     </div>
 
   </section>
 
-  <!-- ==================== FORMULARIO DE COMPRA ==================== -->
-  <section id="formCompra" class="hidden">
-    <h2>Comprar: <span id="productoSeleccionado"></span></h2>
+  <!--  FORMULARIO DE PAGO  -->
+  <section id="formularioPago" class="oculto">
+    <h2>Comprar: <span id="productoElegido"></span></h2>
 
-    <form id="compraForm">
+    <form id="formPago">
       <label>Nombre completo:</label>
       <input type="text" required>
 
@@ -1559,19 +1271,19 @@
       <label>Código CVV:</label>
       <input type="number" maxlength="3" required>
 
-      <button type="submit" class="btn-comprar-final">Finalizar Compra</button>
+      <button type="submit" class="boton-finalizar">Finalizar Compra</button>
     </form>
 
-    <button onclick="volverAlCandy()" class="btn-volver">Volver</button>
+    <button onclick="volverSnacks()" class="boton-regresar">Volver</button>
   </section>
 
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="footer">
-    <div class="footer-container">
+  <!--  PIE DE PAGINA  -->
+  <footer class="pie-pagina">
+    <div class="contenedor-pie">
 
-      <!-- Bloque: Suscripción al boletín -->
-      <div class="footer-block">
-        <h3>📰 Suscríbete al boletín</h3>
+      <!-- Bloque: Suscripcion -->
+      <div class="bloque-pie">
+        <h3> Suscríbete al boletín</h3>
         <form>
           <input type="text" placeholder="Nombre" required>
           <input type="text" placeholder="Apellido" required>
@@ -1580,22 +1292,22 @@
         </form>
       </div>
 
-      <!-- Bloque: Enlaces útiles -->
-      <div class="footer-block">
-        <h3>🔗 Enlaces útiles</h3>
+      <!-- Bloque: Enlaces -->
+      <div class="bloque-pie">
+        <h3> Enlaces útiles</h3>
         <ul>
-          <li><a href="#carteleraSection">Inicio</a></li>
-          <li><a href="#carteleraSection">Cartelera</a></li>
+          <li><a href="#seccionCartelera">Inicio</a></li>
+          <li><a href="#seccionCartelera">Cartelera</a></li>
           <li><a href="https://wa.me/59171273856">Contacto</a></li>
           <li><a href="TerminosyCondiciones.html">Términos y condiciones</a></li>
           <li><a href="PoliticiayPrivacidad.html">Política de privacidad</a></li>
         </ul>
       </div>
 
-      <!-- Bloque: Redes sociales -->
-      <div class="footer-block">
-        <h3>📱 Síguenos</h3>
-        <div class="social-icons">
+      <!-- Bloque: Redes -->
+      <div class="bloque-pie">
+        <h3> Síguenos</h3>
+        <div class="iconos-redes">
           <a href=""><img src="facebook.png" alt="Facebook"></a>
           <a href=""><img src="intagram.png" alt="Instagram"></a>
           <a href="https://wa.me/59171273856"><img src="wasap.png" alt="WhatsApp"></a>
@@ -1604,8 +1316,8 @@
 
     </div>
 
-    <!-- Créditos del footer -->
-    <div class="footer-bottom">
+    <!-- Créditos -->
+    <div class="creditos-pie">
       <p>© 2025 Multicampero. Todos los derechos reservados.</p>
     </div>
   </footer>
