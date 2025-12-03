@@ -1,0 +1,945 @@
+/* BASE */
+
+/* cuerpo principal de toda la pagina */
+body {
+    margin: 0;                              /* para tener control de todo */
+    font-family: "Poppins", sans-serif;     /* tipo de letra */
+    background: #f5f5f5;                  /* color de fondo */
+    color: #111;                          /* palabras en color negro */
+}
+
+/* Clase para ocultar elementos */
+.oculto, .modal-oculto {
+    display: none !important;              /* lo esta ocultado con display => su comportamiento */
+}                                          /* esto hace que sea mas importante esto */
+
+
+/* NAVEGACION SUPERIOR*/
+.encabezado {
+    width: 100%;                            /* ocupa todo el ancho posible */
+    background: #222;                     /* Fondo gris oscuro */
+    color: #fff;                          /* Texto blanco puro */
+    padding: 4px 40px;                     /* (12px: Espacio vertical arri y abajo) (40px: Espacio horizontal izqui y dere) */
+    display: flex;                          /* ase que sea flexible todos los elementos hijos de aqui */
+    justify-content: space-between;         /* se reparte el espacio de los contenidos */
+    align-items: center;                    /* alinea verticalmente los elementos al centro */
+    min-height: 60px;                       /* hace que la barra nunca sea menor a 60px */
+    box-sizing: border-box;                 /* osea hace que pueda automáticamente adapterse al responsivo */
+}
+
+#logo {
+    display: flex;
+    align-items: center;       /* Centra verticalmente la imagen */
+    justify-content: center;   /* Centra horizontalmente */
+    height: 110px;             /* Altura fija para el contenedor */
+    width: 210px;              /* Ancho fijo para el contenedor (ajusta según necesites) */
+}
+
+#logo img {
+    width: 100%;               /* Ocupa TODO el ancho del contenedor */
+    height: 100%;              /* Ocupa TODO el alto del contenedor */
+}
+
+.opciones {                                 
+    display: flex;                          /* flexible */
+    align-items: center;                    /* Centra verticalmente los elementos dentro de (.opciones) */
+    gap: 12px;                              /* espacio automatico entre elementos hijos */
+}
+
+.opciones select {
+    padding: 6px 10px;                      /* espacio interno (6px=vertical, 10px=horizontal) */
+    border-radius: 6px;                     /* esquina redondito */
+    border: none;                           /* elimna borde por defecto del navegador */
+}
+
+.boton-principal {
+    padding: 9px 20px;                      /* espacio interno del boton */
+    border: none;                           /* sin borde visible */
+    border-radius: 6px;                     /* esquinas redondeadas */
+    background: #000;                       /* fondo negro puro */
+    color: white;                           /* texto en color blanco */
+    cursor: pointer;                       /* cambia cursor a manitas */
+    white-space: nowrap;                   /* el texto siempre va ocupar todo aunque sea pequeño la pantalla osea nose divide */
+}
+
+
+/* ENCABEZADO PRINCIPAL */
+.portada {
+    text-align: center;                   /* alinea horizontalmente TODO el texto dentro al centro*/
+    padding: 50px 20px;                    /* espacio interno (50px vertical, 20px horizontal) */
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5)),
+                url("/Imagenes/fondo\ uno.png");
+    background-size: cover;              /* LLENA todo el espacio (puede recortar bordes) */
+    background-position: center;         /* Centra la imagen dentro del contenedor. */
+}
+
+.portada h1 {
+    font-size: 32px;                     /* tamaño del titulo */
+    margin-bottom: 6px;                  /* Espacio debajo del título */
+}
+
+.portada p {
+    opacity: 0.8;                        /* 80% de opacidad */
+    font-size: 15px;                     /* tamaño del texto */
+}
+
+
+/* BARRA DE BUSQUEDA */
+.buscador {
+    margin-top: 20px;                     /* espacio arriba de la barra */
+    width: 60%;                           /* ocupa el 60% del ancho disponible */
+    max-width: 550px;                     /* pero nunca mas de 550px */
+    padding: 12px 18px;                   /* espacio interno (12px vertical, 18px horizontal) */
+    border-radius: 25px;                  /* forma de píldora completamente redondeada */
+    border: 1px solid #ddd;             /* borde gris claro */
+    font-size: 14px;                      /* tamaño del texto */
+    text-align: center;                   /* texto centrado dentro del campo */
+}
+
+/* NAVEGA POR PESTAÑA */
+
+.navegacion-pestanas {
+    margin-top: 25px;                     /* espacio arriba de las pestañas */
+    display: flex;                        /* elementos en fila horizontal */
+    justify-content: center;              /* centra los botones horizontalmente */
+    flex-wrap: wrap;                      /* permite que salten a siguiente linea si no caben */
+    gap: 10px;                            /* espacio entre botones */
+}
+
+.navegacion-pestanas button {
+    padding: 8px 22px;                    /* espacio interno del boton */
+    border: none;                         /* sin borde visible */
+    background: #efefef;                /* fondo gris claro */
+    border-radius: 20px;                  /* esquinas redondeadas */
+    cursor: pointer;                      /* cursor de manitas al pasar */
+    margin: 0 5px;                        /* margen a los lados de cada boton */
+    transition: 0.2s ease;                /* animacion suave de 0.2 segundos */
+    flex: 1;                              /* los botones crecen para ocupar espacio disponible */
+    min-width: 120px;                     /* ancho minimo de cada boton */
+    max-width: 200px;                     /* ancho maximo de cada boton */
+}
+
+.navegacion-pestanas button:hover {
+    background: #ddd;                     /* cambia a gris medio al pasar el mouse */
+}
+
+.navegacion-pestanas .activa {
+    background: #000;                     /* fondo negro para pestaña activa */
+    color: #649ddf;                          /* texto blanco para pestaña activa */
+}
+
+/* GRID DE PELICULAS */
+
+.contenedor-peliculas {
+    display: grid;                        /* sistema de grid para organizar */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* columnas que se ajustan automaticamente */
+    gap: 25px;                            /* espacio entre tarjetas */
+    padding: 40px;                        /* espacio interno del contenedor */
+}
+
+/* tarjeta individual de pelicula */
+.tarjeta-pelicula {
+    background: #fff;                           /* fondo blanco */
+    border-radius: 12px;                        /* esquinas redondeadas */
+    overflow: hidden;                        /* lo que se salga se oculta */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* sombra suave alrededor */
+    position: relative;                   /* posicion relativa para elementos hijos */
+    transition: 0.2s;                     /* animacion suave de 0.2 segundos */
+}
+
+.tarjeta-pelicula:hover {
+    transform: translateY(-5px);         /* se eleva 5px al pasar el mouse levantacion */
+}
+
+.tarjeta-pelicula img {
+    aspect-ratio: 2 / 3;                 /* relacion de aspecto para que sea iguale slas imagenes 2/3 */
+    width: 100%;                          /* ocupa todo el ancho disponible */
+    object-fit: cover;                    /* cubre todo el espacio sin deformarse */
+}
+
+/* etiqueta de genero */
+.etiqueta-genero {
+    position: absolute;                   /* posicion absoluta dentro de la tarjeta */
+    top: 10px;                            /* 10px desde arriba */
+    left: 10px;                           /* 10px desde la izquierda */
+    background: rgba(0,0,0,0.7);          /* fondo negro semitransparente */
+    color: #fff;                          /* texto blanco */
+    padding: 4px 10px;                    /* espacio interno */
+    border-radius: 8px;                   /* esquinas redondeadas */
+    font-size: 12px;                      /* texto pequeño */
+}
+
+/* informacion de la pelicula */
+.info-pelicula {
+    padding: 15px;                        /* espacio interno */
+}
+
+.info-pelicula h3 {
+    margin: 0;                            /* sin margen */
+    font-size: 17px;                      /* tamaño del titulo */
+}
+
+.info-pelicula p {
+    font-size: 13px;                      /* texto mas pequeño */
+    opacity: 0.7;                         /* 70% opaco */
+}
+
+/* boton de informacion */
+.boton-info {
+    width: 100%;                          /* ocupa todo el ancho disponible */
+    margin-top: 10px;                     /* espacio arriba del boton */
+    padding: 10px;                        /* espacio interno */
+    border: none;                         /* sin borde */
+    border-radius: 8px;                   /* esquinas redondeadas */
+    background: #0b0b1a;                  /* fondo azul oscuro */
+    color: #fff;                          /* texto blanco */
+    cursor: pointer;                      /* cursor de manitas */
+    transition: 0.2s ease;                /* animacion suave */
+}
+
+.boton-info:hover {
+    background: #000;                     /* cambia a negro al pasar mouse */
+}
+
+
+/* DETALLES DE PELICULAS */
+.detalle-pelicula {
+    background: #fff;                     /* fondo blanco */
+    padding: 20px;                        /* espacio interno */
+    max-width: 600px;                     /* ancho maximo */
+    margin: 20px auto;                    /* centrado automatico con margen */
+}
+
+/* modal de pelicula */
+.modal-pelicula {
+    position: fixed;                      /* posicion fija en la pantalla */
+    top: 0;                               /* desde arriba */
+    left: 0;                              /* desde izquierda */
+    width: 100%;                          /* ancho completo */
+    height: 100%;                         /* alto completo */
+    background: rgba(0,0,0,0.5);          /* fondo negro semitransparente */
+    display: flex;                        /* flex para centrar contenido */
+    justify-content: center;              /* centra horizontalmente */
+    align-items: center;                  /* centra verticalmente */
+    z-index: 9999;                        /* por encima de todo */
+    overflow-y: auto;                     /* permite desplazamiento vertical */
+    padding: 20px 0;                      /* espacio arriba y abajo */
+}
+
+.contenido-pelicula {
+    background: #fff;                     /* fondo blanco */
+    width: 90%;                           /* ocupa 90% del ancho */
+    max-width: 900px;                     /* maximo 900px */
+    display: flex;                        /* elementos en fila */
+    gap: 20px;                            /* espacio entre columnas */
+    border-radius: 12px;                  /* esquinas redondeadas */
+    overflow: hidden;                     /* oculta lo que se salga */
+    box-shadow: 0 0 25px rgba(0,0,0,0.3); /* sombra mas pronunciada y mas vistas */
+    padding: 20px;                        /* espacio interno */
+    position: relative;                   /* posicion relativa para boton cerrar */
+    max-height: 90vh;                     /* maximo 90% de la altura visible */
+    overflow-y: auto;                     /* desplazamiento vertical si es necesario */
+}
+
+.btn-cerrar {
+    position: absolute;                   /* posicion absoluta dentro del modal */
+    top: 15px;                            /* 15px desde arriba */
+    right: 15px;                          /* 15px desde derecha */
+    font-size: 25px;                      /* tamaño grande de la X */
+    background: none;                     /* sin fondo */
+    border: none;                         /* sin borde */
+    cursor: pointer;                      /* cursor de manitas */
+}
+
+/* columnas del modal */
+.columna-imagen {
+    flex: 1;                              /* ocupa 1 parte del espacio disponible */
+    display: flex;                        /* flex para centrar imagen */
+    justify-content: center;              /* centra horizontalmente */
+    align-items: flex-start;              /* alinea arriba */
+}
+
+.columna-imagen img {
+    width: 100%;                          /* ocupa todo el ancho disponible */
+    max-width: 250px;                     /* pero maximo 250px */
+    border-radius: 8px;                   /* esquinas redondeadas */
+}
+
+.columna-info {
+    flex: 2;                              /* ocupa 2 partes del espacio (el doble que imagen) */
+    display: flex;                        /* elementos en columna */
+    flex-direction: column;               /* uno debajo del otro */
+    gap: 15px;                            /* espacio entre elementos */
+}
+
+/* encabezado de pelicula */
+.encabezado-pelicula h2 {
+    margin: 0;                            /* sin margen */
+    font-size: 32px;                      /* tamaño grande */
+    color: #ff4c4c;                       /* color rojo */
+    border-bottom: 2px solid #ff4c4c;     /* linea roja debajo */
+    padding-bottom: 8px;                  /* espacio entre texto y linea */
+    letter-spacing: 1px;                  /* separacion entre letras */
+    font-family: 'Arial Black', sans-serif; /* fuente mas gruesa */
+}
+
+/* informacion de la pelicula */
+.info-pelicula {
+    display: flex;                        /* elementos en fila */
+    flex-wrap: wrap;                      /* permite saltar a siguiente linea */
+    gap: 15px;                            /* espacio entre elementos */
+    font-size: 15px;                      /* tamaño del texto */
+    color: #333;                          /* color gris oscuro */
+    margin-top: 8px;                      /* espacio arriba */
+}
+
+.info-pelicula span {
+    background-color: #e77a65fa;          /* fondo naranja */
+    padding: 5px 12px;                    /* espacio interno */
+    border-radius: 20px;                  /* forma de píldora */
+    font-weight: bold;                    /* texto en negrita */
+    display: flex;                        /* para alinear icono y texto */
+    align-items: center;                  /* centra verticalmente */
+    gap: 6px;                             /* espacio entre icono y texto */
+}
+
+/* descripcion */
+.descripcion-pelicula {
+    line-height: 1.6;                     /* espacio entre lineas de texto */
+    color: #555;                          /* color gris */
+}
+
+/* trailer */
+.trailer-pelicula video {
+    width: 100%;                          /* ocupa todo el ancho disponible */
+    max-width: 400px;                     /* pero maximo 400px */
+    height: auto;                         /* altura automatica manteniendo proporcion */
+    border-radius: 8px;                   /* esquinas redondeadas */
+}
+
+/* botones de pelicula */
+.btn-comprar {
+    background-color: #ff4c4c;            /* fondo rojo */
+    color: #fff;                          /* texto blanco */
+    border: none;                         /* sin borde */
+    padding: 10px 18px;                   /* espacio interno */
+    border-radius: 6px;                   /* esquinas redondeadas */
+    cursor: pointer;                      /* cursor de manitas */
+    font-size: 16px;                      /* tamaño del texto */
+    margin-top: 10px;                     /* espacio arriba */
+}
+
+.btn-comprar:hover {
+    background-color: #e03e3e;            /* rojo mas oscuro al pasar mouse */
+}
+
+.btn-volver {
+    background-color: #555;               /* fondo gris oscuro */
+    color: #fff;                          /* texto blanco */
+    border: none;                         /* sin borde */
+    padding: 10px 18px;                   /* espacio interno */
+    border-radius: 6px;                   /* esquinas redondeadas */
+    cursor: pointer;                      /* cursor de manitas */
+    font-size: 16px;                      /* tamaño del texto */
+    margin-top: 10px;                     /* espacio arriba */
+}
+
+/* formulario de compra */
+.form-compra {
+    margin-top: 15px;                     /* espacio arriba */
+    display: flex;                        /* elementos en columna */
+    flex-direction: column;               /* uno debajo del otro */
+    gap: 10px;                            /* espacio entre elementos */
+}
+
+.form-compra label {
+    font-weight: bold;                    /* texto en negrita */
+}
+
+.form-compra input,
+.form-compra select {
+    padding: 8px;                         /* espacio interno */
+    border-radius: 5px;                   /* esquinas redondeadas */
+    border: 1px solid #ccc;               /* borde gris claro */
+    width: 100%;                          /* ocupa todo el ancho disponible */
+}
+
+/* CANDY BAR */
+
+#seccionSnacks {
+    display: grid;                        /* sistema de grid */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* columnas ajustables */
+    gap: 25px;                            /* espacio entre items */
+    padding: 30px;                        /* espacio interno */
+    width: 100%;                          /* ancho completo */
+    margin: 0;                            /* sin margen */
+    background: linear-gradient(135deg, #fafafa, #f1f1f1); /* fondo con gradiente */
+    box-sizing: border-box;               /* incluye padding en width */
+}
+
+/* item individual de snack */
+.item-snack {
+    background: #ffffff;                  /* fondo blanco */
+    border-radius: 16px;                  /* esquinas redondeadas */
+    padding: 18px;                        /* espacio interno */
+    text-align: center;                   /* texto centrado */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* sombra suave */
+    border: 1px solid #ececec;            /* borde gris muy claro */
+}
+
+.item-snack:hover {
+    transform: translateY(-4px);         /* se eleva 4px al pasar mouse */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* sombra mas pronunciada */
+}
+
+.item-snack img {
+    width: 100%;                          /* ocupa todo el ancho */
+    border-radius: 12px;                  /* esquinas redondeadas */
+    margin-bottom: 10px;                  /* espacio abajo de la imagen */
+}
+
+.item-snack h3 {
+    font-size: 1.25em;                    /* tamaño 1.25 veces el normal */
+    margin: 10px 0 6px;                   /* espacio arriba y abajo */
+    color: #2c2c2c;                       /* color gris muy oscuro */
+    font-weight: 700;                     /* texto en negrita gruesa */
+}
+
+.item-snack p {
+    font-weight: 600;                     /* texto seminegrita */
+    color: #777;                          /* color gris */
+    margin-bottom: 12px;                  /* espacio abajo */
+}
+
+/* Botones de snacks */
+.contenedor-botones {
+    display: flex;                        /* elementos en fila */
+    justify-content: space-between;       /* uno a cada extremo */
+    gap: 5px;                             /* espacio entre botones */
+}
+
+.boton-agregar {
+    flex: 1;                              /* ocupa espacio disponible */
+    padding: 10px;                        /* espacio interno */
+    border: none;                         /* sin borde */
+    border-radius: 10px;                  /* esquinas redondeadas */
+    font-weight: bold;                    /* texto en negrita */
+    cursor: pointer;                      /* cursor de manitas */
+    transition: opacity 0.2s ease;        /* animacion de opacidad */
+    font-size: 0.9em;                     /* texto un poco mas pequeño */
+    background-color: #4caf50;            /* fondo verde */
+    color: white;                         /* texto blanco */
+}
+
+.boton-comprar-snack {
+    flex: 1;                              /* ocupa espacio disponible */
+    padding: 10px;                        /* espacio interno */
+    border: none;                         /* sin borde */
+    border-radius: 10px;                  /* esquinas redondeadas */
+    font-weight: bold;                    /* texto en negrita */
+    cursor: pointer;                      /* cursor de manitas */
+    transition: opacity 0.2s ease;        /* animacion de opacidad */
+    font-size: 0.9em;                     /* texto un poco mas pequeño */
+    background-color: #1e88e5;            /* fondo azul */
+    color: white;                         /* texto blanco */
+}
+
+.boton-agregar:hover,
+.boton-comprar-snack:hover {
+    opacity: 0.9;                         /* se hace un poco transparente al pasar mouse */
+}
+
+/* FORMA DE PAGO */
+
+#formularioPago {
+    display: flex;                        /* elementos en columna */
+    flex-direction: column;               /* uno debajo del otro */
+    max-width: 400px;                     /* ancho maximo */
+    margin: 20px auto;                    /* centrado automatico */
+    padding: 15px;                        /* espacio interno */
+    border: 1px solid #ccc;               /* borde gris claro */
+    border-radius: 8px;                   /* esquinas redondeadas */
+}
+
+#formularioPago.oculto {
+    display: none;                        /* se oculta cuando tiene clase oculto */
+}
+
+#formularioPago label {
+    margin-top: 8px;                      /* espacio arriba de cada label */
+    font-weight: bold;                    /* texto en negrita */
+}
+
+#formularioPago input {
+    width: 100%;                          /* ocupa todo el ancho */
+    padding: 5px;                         /* espacio interno */
+    margin-top: 3px;                      /* espacio arriba */
+    border-radius: 5px;                   /* esquinas redondeadas */
+    border: 1px solid #ccc;               /* borde gris claro */
+}
+
+/* botones del formulario */
+.boton-finalizar {
+    background: #2196F3;                  /* fondo azul */
+    color: white;                         /* texto blanco */
+    border: none;                         /* sin borde */
+    border-radius: 5px;                   /* esquinas redondeadas */
+    margin-top: 10px;                     /* espacio arriba */
+    padding: 12px 20px;                   /* espacio interno */
+    font-size: 16px;                      /* tamaño del texto */
+    width: 100%;                          /* ancho completo */
+    box-sizing: border-box;               /* incluye padding en width */
+    cursor: pointer;                      /* cursor de manitas */
+}
+
+.boton-regresar {
+    background: #f44336;                  /* fondo rojo */
+    color: white;                         /* texto blanco */
+    border: none;                         /* sin borde */
+    border-radius: 5px;                   /* esquinas redondeadas */
+    margin-top: 5px;                      /* espacio arriba */
+    padding: 8px;                         /* espacio interno */
+    cursor: pointer;                      /* cursor de manitas */
+    width: 100%;                          /* ancho completo */
+}
+
+/* MODALES DEL SISTEMA */
+
+.fondo-modal {
+    position: fixed;                      /* posicion fija en pantalla */
+    top: 0;                               /* desde arriba */
+    left: 0;                              /* desde izquierda */
+    width: 100%;                          /* ancho completo */
+    height: 100%;                         /* alto completo */
+    background: rgba(0, 0, 0, 0.45);      /* fondo negro semitransparente */
+    display: flex;                        /* flex para centrar */
+    justify-content: center;              /* centra horizontalmente */
+    align-items: center;                  /* centra verticalmente */
+    z-index: 9999;                        /* por encima de todo */
+}
+
+/* modal de autenticacion */
+.cuadro-modal {
+    background: #fff;                     /* fondo blanco */
+    width: 360px;                         /* ancho fijo */
+    padding: 25px 30px;                   /* espacio interno */
+    border-radius: 12px;                  /* esquinas redondeadas */
+    position: relative;                   /* para boton cerrar */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* sombra alrededor */
+    display: flex;                        /* elementos en columna */
+    flex-direction: column;               /* uno debajo del otro */
+    gap: 15px;                            /* espacio entre elementos */
+}
+
+.boton-cerrar {
+    position: absolute;                   /* posicion absoluta dentro del modal */
+    top: 12px;                            /* 12px desde arriba */
+    right: 12px;                          /* 12px desde derecha */
+    background: none;                     /* sin fondo */
+    border: none;                         /* sin borde */
+    font-size: 18px;                      /* tamaño de la X */
+    cursor: pointer;                      /* cursor de manitas */
+}
+
+.texto-secundario {
+    font-size: 13px;                      /* texto pequeño */
+    color: #555;                          /* color gris */
+    margin-top: -8px;                     /* espacio negativo arriba (se pega al elemento anterior) */
+}
+
+/* selector de pestañas login y registro */
+.selector-pestanas {
+    background: #eee;                     /* fondo gris claro */
+    padding: 5px;                         /* espacio interno */
+    border-radius: 20px;                  /* forma de redondeas */
+    display: flex;                        /* elementos en fila */
+    justify-content: space-between;       /* uno a cada extremo */
+    margin-bottom: 10px;                  /* espacio abajo */
+}
+
+.pestana {
+    flex: 1;                              /* ocupa espacio disponible */
+    padding: 8px;                         /* espacio interno */
+    border: none;                         /* sin borde */
+    background: transparent;              /* fondo transparente */
+    border-radius: 20px;                  /* forma de redondeas */
+    cursor: pointer;                      /* cursor de manitas */
+    font-size: 14px;                      /* tamaño del texto */
+}
+
+.pestana.activa {
+    background: #fff;                     /* fondo blanco cuando esta activa */
+    box-shadow: 0 0 5px rgba(0,0,0,0.15); /* sombra suave alrededor */
+}
+
+/* formularios de autenticacion */
+.formulario-seccion {
+    display: flex;                        /* elementos en columna */
+    flex-direction: column;               /* uno debajo del otro */
+    gap: 10px;                            /* espacio entre elementos */
+}
+
+.formulario-seccion input {
+    padding: 12px;                        /* espacio interno */
+    border-radius: 8px;                   /* esquinas redondeadas */
+    border: 1px solid #ddd;               /* borde gris claro */
+    background: #fff;                     /* fondo blanco */
+}
+
+/* botones principales del sistema */
+.boton-accion {
+    padding: 12px;                        /* espacio interno */
+    background: #050515;                  /* fondo azul muy oscuro */
+    color: #fff;                          /* texto blanco */
+    border: none;                         /* sin borde */
+    border-radius: 8px;                   /* esquinas redondeadas */
+    font-size: 15px;                      /* tamaño del texto */
+    cursor: pointer;                      /* cursor de manitas */
+}
+
+.boton-secundario {
+    padding: 10px;                        /* espacio interno */
+    background: #ddd;                     /* fondo gris claro */
+    border: none;                         /* sin borde */
+    border-radius: 8px;                   /* esquinas redondeadas */
+    cursor: pointer;                      /* cursor de manitas */
+}
+
+/* PIE DE PAGINA */
+
+.pie-pagina {
+    background-color: #111;               /* fondo negro oscuro */
+    color: #eee;                          /* texto gris claro */
+    padding: 40px 20px;                   /* espacio interno */
+    font-family: 'Segoe UI', sans-serif;  /* tipo de letra diferente */
+    text-align: center;                   /* texto centrado */
+}
+
+.contenedor-pie {
+    display: flex;                        /* elementos en fila */
+    flex-wrap: wrap;                      /* permite saltar a siguiente linea */
+    justify-content: center;              /* centra horizontalmente */
+    gap: 40px;                            /* espacio entre bloques */
+    max-width: 1000px;                    /* ancho maximo */
+    margin: 0 auto;                       /* centrado automatico */
+}
+
+.bloque-pie {
+    flex: 1 1 250px;                      /* crece, se encoge, base 250px */
+    min-width: 250px;                     /* ancho minimo */
+}
+
+.bloque-pie h3 {
+    color: #f5c518;                       /* color amarillo dorado */
+    margin-bottom: 15px;                  /* espacio abajo */
+}
+
+.bloque-pie form input {
+    display: block;                       /* cada input en su propia linea */
+    margin: 8px auto;                     /* margen vertical y centrado horizontal */
+    padding: 8px;                         /* espacio interno */
+    width: 90%;                           /* ocupa 90% del ancho disponible */
+    border: none;                         /* sin borde */
+    border-radius: 4px;                   /* esquinas redondeadas */
+}
+
+.bloque-pie form button {
+    background-color: #f5c518;            /* fondo amarillo dorado */
+    color: #111;                          /* texto negro */
+    padding: 10px 20px;                   /* espacio interno */
+    border: none;                         /* sin borde */
+    border-radius: 4px;                   /* esquinas redondeadas */
+    cursor: pointer;                      /* cursor de manitas */
+}
+
+.bloque-pie ul {
+    list-style: none;                     /* sin viñetas/puntos */
+    padding: 0;                           /* sin espacio interno */
+}
+
+.bloque-pie li {
+    margin-bottom: 8px;                   /* espacio abajo de cada elemento */
+}
+
+.bloque-pie a {
+    color: #eee;                          /* texto gris claro */
+    text-decoration: none;                /* sin subrayado */
+}
+
+.bloque-pie a:hover {
+    text-decoration: underline;           /* subrayado al pasar mouse */
+}
+
+.iconos-redes a img {
+    width: 99px;                          /* ancho fijo de los iconos */
+}
+
+.creditos-pie {
+    margin-top: 30px;                     /* espacio arriba */
+    font-size: 14px;                      /* texto pequeño */
+    border-top: 1px solid #333;           /* linea gris arriba */
+    padding-top: 15px;                    /* espacio entre linea y texto */
+}
+
+/* MEDIA QUERIES - DISEÑO RESPONSIVE */
+
+/* COMPUTADORAS */
+@media (min-width: 1025px) {
+    #seccionProximos.contenedor-peliculas {
+        grid-template-columns: repeat(4, minmax(250px, 1fr)) !important;
+        max-width: 1400px;
+        margin: 0 auto;
+        justify-items: center;
+    }
+    
+    #seccionSnacks {
+        grid-template-columns: repeat(4, minmax(250px, 1fr)) !important;
+        max-width: 1400px;
+        margin: 0 auto;
+        justify-items: center;
+    }
+}
+
+/* TABLETS GRANDES (1024px o menos) */
+@media (max-width: 1024px) {
+    /* Cambia a 3 columnas en tablets */
+    .contenedor-peliculas {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas */
+    }
+
+    #seccionProximos.contenedor-peliculas,
+    #seccionSnacks {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas */
+    }
+    
+    /* Ajustes generales para tablets */
+    .portada h1 {
+        font-size: 28px;                  /* titulo mas pequeño */
+    }
+    
+    .buscador {
+        width: 80%;                       /* barra mas ancha */
+    }
+    
+    .navegacion-pestanas {
+        flex-wrap: wrap;                  /* permite que botones salten de linea */
+        gap: 10px;                        /* espacio entre botones */
+    }
+    
+    .navegacion-pestanas button {
+        min-width: 120px;                 /* ancho minimo */
+        padding: 8px 15px;                /* espacio interno */
+        font-size: 14px;                  /* texto mas pequeño */
+    }
+    
+    /* Modal se vuelve columna en tablets */
+    .contenido-pelicula {
+        flex-direction: column;           /* elementos en columna */
+        gap: 20px;                        /* espacio entre elementos */
+    }
+    
+    .columna-imagen img {
+        max-width: 300px;                 /* imagen mas grande */
+    }
+}
+
+/* TABLETS (768px o menos) */
+@media (max-width: 768px) {
+    /* Cambia a 2 columnas en tablets pequeñas */
+    .contenedor-peliculas {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas fijas */
+        padding: 20px;                    /* menos espacio interno */
+    }
+    
+    #seccionProximos.contenedor-peliculas,
+    #seccionSnacks {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas fijas */
+        padding: 20px;                    /* menos espacio interno */
+    }
+    
+    /* Encabezado se vuelve columna */
+    .encabezado {
+        flex-direction: column;           /* elementos en columna */
+        padding: 15px;                    /* menos espacio interno */
+        gap: 15px;                        /* espacio entre elementos */
+    }
+    
+    .opciones {
+        width: 100%;                      /* ocupa todo el ancho */
+        justify-content: center;          /* centra los elementos */
+    }
+    
+    .portada {
+        padding: 30px 15px;               /* menos espacio interno */
+    }
+    
+    .portada h1 {
+        font-size: 24px;                  /* titulo aun mas pequeño */
+    }
+    
+    .portada p {
+        font-size: 14px;                  /* texto mas pequeño */
+    }
+    
+    .buscador {
+        width: 90%;                       /* barra casi todo el ancho */
+        padding: 10px 15px;               /* menos espacio interno */
+    }
+    
+    /* Pestañas ocupan toda la anchura */
+    .navegacion-pestanas {
+        width: 100%;                      /* ocupa todo el ancho */
+    }
+    
+    .navegacion-pestanas button {
+        flex: 1;                          /* ocupa espacio disponible */
+        min-width: 0;                     /* sin ancho minimo */
+        padding: 10px 5px;                /* espacio interno ajustado */
+        font-size: 13px;                  /* texto mas pequeño */
+    }
+    
+    /* Ajustes para modales */
+    .contenido-pelicula {
+        padding: 15px;                    /* menos espacio interno */
+        margin: 10px;                     /* menos margen */
+        max-height: 85vh;                 /* maximo 85% de altura visible */
+    }
+    
+    .encabezado-pelicula h2 {
+        font-size: 24px;                  /* titulo mas pequeño */
+    }
+    
+    /* Footer se vuelve columna */
+    .contenedor-pie {
+        flex-direction: column;           /* elementos en columna */
+        align-items: center;              /* centra horizontalmente */
+        gap: 30px;                        /* espacio entre bloques */
+    }
+    
+    .bloque-pie {
+        width: 100%;                      /* ocupa todo el ancho */
+        max-width: 400px;                 /* pero maximo 400px */
+    }
+}
+
+/* MÓVILES (480px o menos) */
+@media (max-width: 480px) {
+    /* Cambia a 1 columna en móviles */
+    .contenedor-peliculas {
+        grid-template-columns: 1fr;       /* 1 sola columna */
+        padding: 15px;                    /* menos espacio interno */
+        gap: 20px;                        /* espacio entre elementos */
+    }
+    
+    #seccionProximos.contenedor-peliculas,
+    #seccionSnacks {
+        grid-template-columns: 1fr;       /* 1 sola columna */
+        padding: 15px;                    /* menos espacio interno */
+        gap: 20px;                        /* espacio entre elementos */
+    }
+    
+    /* Encabezado más compacto */
+    .encabezado {
+        padding: 12px 10px;               /* menos espacio interno */
+    }
+    
+    .logo {
+        font-size: 16px;                  /* texto mas pequeño */
+    }
+    
+    .boton-principal {
+        padding: 8px 15px;                /* menos espacio interno */
+        font-size: 14px;                  /* texto mas pequeño */
+    }
+    
+    .portada {
+        padding: 20px 10px;               /* menos espacio interno */
+    }
+    
+    .portada h1 {
+        font-size: 22px;                  /* titulo aun mas pequeño */
+    }
+    
+    .buscador {
+        width: 95%;                       /* casi todo el ancho */
+        padding: 8px 12px;                /* menos espacio interno */
+        font-size: 13px;                  /* texto mas pequeño */
+    }
+    
+
+    /* Modales más compactos */
+    .contenido-pelicula {
+        padding: 10px;                    /* menos espacio interno */
+        margin: 5px;                      /* menos margen */
+        max-height: 90vh;                 /* maximo 90% de altura visible */
+    }
+    
+    .encabezado-pelicula h2 {
+        font-size: 20px;                  /* titulo mas pequeño */
+    }
+    
+    .info-pelicula span {
+        font-size: 12px;                  /* texto mas pequeño */
+        padding: 4px 8px;                 /* menos espacio interno */
+    }
+    
+    .descripcion-pelicula {
+        font-size: 14px;                  /* texto mas pequeño */
+    }
+    
+    .btn-comprar, .btn-volver {
+        padding: 12px;                    /* espacio interno */
+        font-size: 15px;                  /* tamaño del texto */
+        width: 100%;                      /* ancho completo */
+        margin-top: 8px;                  /* espacio arriba */
+    }
+    
+    /* Botones de snacks apilados */
+    .contenedor-botones {
+        flex-direction: column;           /* elementos en columna */
+        gap: 8px;                         /* espacio entre botones */
+    }
+    
+    .boton-agregar, .boton-comprar-snack {
+        width: 100%;                      /* ancho completo */
+    }
+    
+    /* Footer ajustado */
+    .pie-pagina {
+        padding: 30px 15px;               /* menos espacio interno */
+    }
+    
+    .iconos-redes a img {
+        width: 70px;                      /* iconos mas pequeños */
+    }
+}
+
+/* MÓVILES MUY PEQUEÑOS (360px o menos) */
+@media (max-width: 360px) {
+    .portada h1 {
+        font-size: 20px;                  /* titulo aun mas pequeño */
+    }
+    
+    .navegacion-pestanas button {
+        padding: 10px;                    /* espacio interno */
+        font-size: 12px;                  /* texto mas pequeño */
+    }
+    
+    .encabezado-pelicula h2 {
+        font-size: 18px;                  /* titulo aun mas pequeño */
+    }
+    
+    .info-pelicula span {
+        font-size: 11px;                  /* texto aun mas pequeño */
+    }
+}
+
+/* PANTALLAS MUY GRANDES (1920px o más) */
+@media (min-width: 1920px) {
+    .contenedor-peliculas,
+    #seccionProximos.contenedor-peliculas,
+    #seccionSnacks {
+        max-width: 1800px;                /* ancho maximo */
+        margin: 0 auto;                   /* centrado automatico */
+    }
+}
