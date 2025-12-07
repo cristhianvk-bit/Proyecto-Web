@@ -12,11 +12,11 @@
   <header class="encabezado">
     <div id="logo"><img src="/Imagenes/logo.png" alt=""></div>
     <div class="opciones">
-      <select>
-        <option>La Paz</option>
-        <option>El alto</option>
-        <option>Santa Cruz</option>
-      </select>
+        <select id="selectorCiudad" onchange="cambiarCiudad()">
+          <option value="cine.html">La Paz</option>
+          <option value="cineCochabamba.html">Cochabamba</option>
+          <option value="cineSantaCruz.html">Santa Cruz</option>
+        </select>
       <button class="boton-principal">Iniciar Sesión</button>
     </div>
   </header>
@@ -68,19 +68,21 @@
   </div>
 
   <!--  SECCION PRINCIPAL  -->
-  <section class="portada">
-    
+  <section class="portada"> 
     <h1>MultiCampero</h1>
     <p>Descubre las mejores películas en cartelera y próximos estrenos</p>
     
     <!-- Barra de bsqueda -->
     <input type="text" class="buscador" placeholder="Buscar peliculas por titulo o genero...">
 
+    <!-- Boton de men hamburguesa  -->
+    <button class="hamburguesa" id="hamburguesa">☰</button>
+    
     <!-- Navegacion por pestañas -->
-    <div class="navegacion-pestanas">
-      <button id="btnCartelera" class="activa">En Cartelera</button>
-      <button id="btnProximos">Proximamente</button>
-      <button id="btnSnacks">Candy Bar</button>
+    <div class="navegacion-pestanas" id="navegacion-pestanas">
+        <button id="btnCartelera" class="activa">En Cartelera</button>
+        <button id="btnProximos">Próximamente</button>
+        <button id="btnSnacks">Candy Bar</button>
     </div>
   </section>
 

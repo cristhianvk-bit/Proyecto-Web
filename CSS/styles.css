@@ -16,15 +16,18 @@ body {
 
 /* NAVEGACION SUPERIOR*/
 .encabezado {
+    position: sticky;
+    top: 0;          /* distancia desde arriba */
     width: 100%;                            /* ocupa todo el ancho posible */
     background: #222;                     /* Fondo gris oscuro */
-    color: #fff;                          /* Texto blanco puro */
+    color: #537ae6;                          /* Texto blanco puro */
     padding: 4px 40px;                     /* (12px: Espacio vertical arri y abajo) (40px: Espacio horizontal izqui y dere) */
     display: flex;                          /* ase que sea flexible todos los elementos hijos de aqui */
     justify-content: space-between;         /* se reparte el espacio de los contenidos */
     align-items: center;                    /* alinea verticalmente los elementos al centro */
     min-height: 60px;                       /* hace que la barra nunca sea menor a 60px */
     box-sizing: border-box;                 /* osea hace que pueda automáticamente adapterse al responsivo */
+    z-index: 1000; 
 }
 
 #logo {
@@ -68,7 +71,7 @@ body {
     text-align: center;                   /* alinea horizontalmente TODO el texto dentro al centro*/
     padding: 50px 20px;                    /* espacio interno (50px vertical, 20px horizontal) */
     background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5)),
-                url("/Imagenes/fondo\ uno.png");
+                url("/Imagenes/FONDO.jpg");
     background-size: cover;              /* LLENA todo el espacio (puede recortar bordes) */
     background-position: center;         /* Centra la imagen dentro del contenedor. */
 }
@@ -94,6 +97,28 @@ body {
     border: 1px solid #ddd;             /* borde gris claro */
     font-size: 14px;                      /* tamaño del texto */
     text-align: center;                   /* texto centrado dentro del campo */
+}
+
+/* ========== BOTON HAMBURGUESA ========== */
+.hamburguesa {
+    display: none; /* Oculto por defecto en escritorio */
+    font-size: 28px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    transition: all 0.3s ease;
+}
+
+.hamburguesa:hover {
+    background: #333;
+    transform: scale(1.05);
 }
 
 /* NAVEGA POR PESTAÑA */
@@ -125,7 +150,7 @@ body {
 
 .navegacion-pestanas .activa {
     background: #000;                     /* fondo negro para pestaña activa */
-    color: #649ddf;                          /* texto blanco para pestaña activa */
+    color: #ffffff;                          /* texto blanco para pestaña activa */
 }
 
 /* GRID DE PELICULAS */
@@ -685,6 +710,13 @@ body {
 
 /* COMPUTADORAS */
 @media (min-width: 1025px) {
+    .navegacion-pestanas {
+        display: flex !important; /* Forzar visibilidad en escritorio */
+    }
+    
+    .hamburguesa {
+        display: none !important; /* Ocultar completamente en escritorio */
+    }
     #seccionProximos.contenedor-peliculas {
         grid-template-columns: repeat(4, minmax(250px, 1fr)) !important;
         max-width: 1400px;
@@ -702,6 +734,7 @@ body {
 
 /* TABLETS GRANDES (1024px o menos) */
 @media (max-width: 1024px) {
+    
     /* Cambia a 3 columnas en tablets */
     .contenedor-peliculas {
         grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas */
@@ -745,6 +778,72 @@ body {
 
 /* TABLETS (768px o menos) */
 @media (max-width: 768px) {
+
+    /* BOTON FLOTANTE EN ESQUINA */
+    .hamburguesa {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        font-size: 20px;
+        background: #000;
+        color: white;
+        border-radius: 50%;
+        border: 2px solid white;
+        box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+        z-index: 1001;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .hamburguesa:hover {
+        background: #ff4444;
+    }
+    
+    /*  MENU FLOTANTE  */
+    .navegacion-pestanas {
+        display: none;
+        position: fixed;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        flex-direction: column;
+        padding: 10px 0;
+        z-index: 1000;
+    } 
+    .navegacion-pestanas.mostrar {
+        display: flex;
+    }  
+    .navegacion-pestanas button {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 0;
+        border: none;
+        background: transparent;
+        text-align: left;
+        font-size: 14px;
+        color: #333;
+        transition: all 0.2s;
+    }      
+    .navegacion-pestanas .activa {
+        background: #000;
+        color: white;
+    }  
+
+    /* Menu movil */
+    .navegacion-pestanas button {
+        width: 90%;
+        padding: 12px 25px;
+        font-size: 15px;
+    }
     /* Cambia a 2 columnas en tablets pequeñas */
     .contenedor-peliculas {
         grid-template-columns: repeat(2, 1fr); /* 2 columnas fijas */
@@ -785,19 +884,7 @@ body {
         width: 90%;                       /* barra casi todo el ancho */
         padding: 10px 15px;               /* menos espacio interno */
     }
-    
-    /* Pestañas ocupan toda la anchura */
-    .navegacion-pestanas {
-        width: 100%;                      /* ocupa todo el ancho */
-    }
-    
-    .navegacion-pestanas button {
-        flex: 1;                          /* ocupa espacio disponible */
-        min-width: 0;                     /* sin ancho minimo */
-        padding: 10px 5px;                /* espacio interno ajustado */
-        font-size: 13px;                  /* texto mas pequeño */
-    }
-    
+
     /* Ajustes para modales */
     .contenido-pelicula {
         padding: 15px;                    /* menos espacio interno */
@@ -824,6 +911,13 @@ body {
 
 /* MÓVILES (480px o menos) */
 @media (max-width: 480px) {
+    /* Botón hamburguesa más pequeño */
+    .hamburguesa {
+        font-size: 22px;
+        padding: 6px 10px;
+        top: 8px;
+        right: 8px;
+    }
     /* Cambia a 1 columna en móviles */
     .contenedor-peliculas {
         grid-template-columns: 1fr;       /* 1 sola columna */
@@ -865,9 +959,8 @@ body {
         padding: 8px 12px;                /* menos espacio interno */
         font-size: 13px;                  /* texto mas pequeño */
     }
-    
 
-    /* Modales más compactos */
+    /* Modales mas compactos */
     .contenido-pelicula {
         padding: 10px;                    /* menos espacio interno */
         margin: 5px;                      /* menos margen */
@@ -894,7 +987,7 @@ body {
         margin-top: 8px;                  /* espacio arriba */
     }
     
-    /* Botones de snacks apilados */
+    /* Botones de snacks */
     .contenedor-botones {
         flex-direction: column;           /* elementos en columna */
         gap: 8px;                         /* espacio entre botones */
@@ -914,8 +1007,13 @@ body {
     }
 }
 
-/* MÓVILES MUY PEQUEÑOS (360px o menos) */
+/* MOVILES MUY PEQUEÑOS (360px o menos) */
 @media (max-width: 360px) {
+    .hamburguesa {
+        font-size: 20px;
+        padding: 5px 8px;
+    }
+    
     .portada h1 {
         font-size: 20px;                  /* titulo aun mas pequeño */
     }
@@ -931,6 +1029,10 @@ body {
     
     .info-pelicula span {
         font-size: 11px;                  /* texto aun mas pequeño */
+    }
+    
+    .portada {
+        padding: 25px 8px;
     }
 }
 
