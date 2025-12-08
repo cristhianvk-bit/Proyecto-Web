@@ -1,4 +1,4 @@
-/*  Tabs Cartelera / Próximamente / Candy Bar  */
+/*  Tabs Cartelera Proximamente  Candy Bar  */
 
 /* Obtiene los botones de las pestañas por su ID */
 const tabCartelera = document.getElementById("btnCartelera");
@@ -43,7 +43,7 @@ tabCandy.addEventListener("click", function() {
   proximamenteSection.classList.add("oculto");
 });
 
-/*  Modal Login / Registro  */
+/*  Modal Login y Registro  */
 /* Obtiene el modal de login y los botones de abrir y cerrar */
 const authModal = document.getElementById("ventanaLogin");
 const openBtn = document.querySelector(".boton-principal");
@@ -98,6 +98,8 @@ tabRegister.addEventListener("click", function() {
   registerForm.style.display = "flex";
 });
 
+
+
 /*  Funciones para detalles de peliculas */
 
 /* Funcion para mostrar el detalle de una pelicula especifica */
@@ -116,7 +118,7 @@ function mostrarDetallePelicula(pelicula) {
   document.getElementById(modalId).classList.remove("modal-oculto");
 }
 
-/* === Volver a cartelera === */
+/*  Volver a cartelera  */
 /* Funcion para volver a la vista de cartelera desde el detalle de pelicula */
 function volverCartelera() {
   
@@ -144,7 +146,11 @@ function mostrarFormulario(idFormulario) {
   document.getElementById(idFormulario).classList.remove("modal-oculto");
 }
 
-/* ================== CANDY BAR ================== */
+
+
+
+
+/*  CANDY BAR  */
 /* Array para almacenar los productos del carrito */
 let carrito = [];
 
@@ -191,7 +197,7 @@ document.getElementById('formPago').addEventListener('submit', function(e) {
     volverSnacks();
 });
 
-/* === BUSQUEDA DE PELICULAS === */
+/*  BUSQUEDA DE PELICULAS  */
 const searchInput = document.querySelector('.buscador');
 
 /* Filtra las peliculas cuando se escribe en el campo de busqueda */
@@ -210,9 +216,6 @@ searchInput.addEventListener('input', function(e) {
         }
     });
 });
-
-
-
 
 
 
@@ -242,14 +245,6 @@ function marcarCiudadActual() {
 
 // al cargar la pagina marca la ciudad actual
 document.addEventListener('DOMContentLoaded', marcarCiudadActual);
-
-
-
-
-
-
-
-
 
 
 

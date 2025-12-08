@@ -24,7 +24,7 @@
   <!--  VENTANA LOGIN  -->
   <div id="ventanaLogin" class="fondo-modal" style="display:none;">
     <div class="cuadro-modal">
-      <button class="boton-cerrar" id="cerrarModal">✖</button>
+      <button class="boton-cerrar" id="cerrarModal">X</button>
 
       <h2>Bienvenido a CineMagic</h2>
       <p class="texto-secundario">Inicia sesión o crea una cuenta para disfrutar de todas las ventajas</p>
@@ -36,9 +36,9 @@
       </div>
 
       <!-- Formulario de Login -->
-      <form id="formIngresar" class="formulario-seccion">
+      <form id="formIngresar" class="formulario-seccion" required>
         <label>Email</label>
-        <input type="email" placeholder="tu@email.com" />
+        <input type="email" placeholder="tu@email.com" required/>
 
         <label>Contraseña</label>
         <input type="password" placeholder="••••••••" />
@@ -50,16 +50,16 @@
       <!-- Formulario de Registro -->
       <form id="formRegistrar" class="formulario-seccion" style="display:none;">
         <label>Nombre</label>
-        <input type="text" placeholder="Tu nombre" />
+        <input type="text" placeholder="Tu nombre" required/>
 
         <label>Email</label>
-        <input type="email" placeholder="tu@email.com" />
+        <input type="email" placeholder="tu@email.com" required/>
 
         <label>Contraseña</label>
-        <input type="password" placeholder="••••••••" />
+        <input type="password" placeholder="••••••••" required/>
 
         <label>Confirmar contraseña</label>
-        <input type="password" placeholder="••••••••" />
+        <input type="password" placeholder="••••••••" required/>
 
         <button type="submit" class="boton-accion">Crear cuenta</button>
         <button type="button" class="boton-secundario" id="cerrarRegistrar">Cerrar</button>
@@ -245,10 +245,10 @@
         </div>
         
         <div class="info-pelicula">
-          <span>🎬 <strong>Acción</strong></span>
-          <span>⭐ <strong>7.0</strong></span>
-          <span>⏱ <strong>142 min</strong></span>
-          <span>📅 <strong>2007</strong></span>
+          <strong>🎬 Accion</strong>
+          <strong>⭐ 7.0</strong>
+          <strong>⏱ 142 min</strong>
+          <strong>📅 2007</strong>
         </div>
         
         <p class="descripcion-pelicula">
@@ -287,10 +287,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -319,10 +319,10 @@
         </div>
         
         <div class="info-pelicula">
-          <span>🎬 <strong>Acción / Comedia</strong></span>
-          <span>⭐ <strong>7.2</strong></span>
-          <span>⏱ <strong>119 min</strong></span>
-          <span>📅 <strong>1995</strong></span>
+          <strong>🎬 Accion / Comedia</strong>
+          <strong>⭐ 7.2</strong>
+          <strong>⏱ 119 min</strong>
+          <strong>📅 1995</strong>
         </div>
         
         <p class="descripcion-pelicula">
@@ -361,10 +361,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -393,10 +393,10 @@
         </div>
         
         <div class="info-pelicula">
-          <span>🎬 <strong>Ciencia ficción / Aventura</strong></span>
-          <span>⭐ <strong>7.9</strong></span>
-          <span>⏱ <strong>136 min</strong></span>
-          <span>📅 <strong>2015</strong></span>
+          <strong>🎬 Ciencia ficcion / Aventura</strong>
+          <strong>⭐ 7.9</strong>
+          <strong>⏱ 136 min</strong>
+          <strong>📅 2015</strong>
         </div>
         
         <p class="descripcion-pelicula">
@@ -435,10 +435,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -467,10 +467,10 @@
         </div>
         
         <div class="info-pelicula">
-          <span>🎬 <strong>Acción / Comedia</strong></span>
-          <span>⭐ <strong>8.0</strong></span>
-          <span>⏱ <strong>108 min</strong></span>
-          <span>📅 <strong>2016</strong></span>
+          <strong>🎬 Accion / Comedia</strong>
+          <strong>⭐ 8.0</strong>
+          <strong>⏱ 108 min</strong>
+          <strong>📅 2016</strong>
         </div>
         
         <p class="descripcion-pelicula">
@@ -509,10 +509,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -541,10 +541,10 @@
         </div>
         
         <div class="info-pelicula">
-          <span>🎬 <strong>Animacion / Aventura</strong></span>
-          <span>⭐ <strong>8.1</strong></span>
-          <span>⏱ <strong>98 min</strong></span>
-          <span>📅 <strong>2010</strong></span>
+          <strong>🎬 Animacion / Aventura</strong>
+          <strong>⭐ 8.1</strong>
+          <strong>⏱ 98 min</strong>
+          <strong>📅 2010</strong>
         </div>
         
         <p class="descripcion-pelicula">
@@ -583,10 +583,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -615,10 +615,10 @@
         </div>
         
         <div class="info-pelicula">
-          <span>🎬 <strong>Animación / Aventura / Comedia</strong></span>
-          <span>⭐ <strong>7.0</strong></span>
-          <span>⏱ <strong>92 min</strong></span>
-          <span>📅 <strong>2023</strong></span>
+          <strong>🎬 Animacion / Aventura / Comedia</strong>
+          <strong>⭐ 7.0</strong>
+          <strong>⏱ 92 min</strong>
+          <strong>📅 2023</strong>
         </div>
         
         <p class="descripcion-pelicula">
@@ -667,10 +667,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -699,10 +699,10 @@
         </div>
         
         <div class="info-pelicula">
-          <span>🎬 <strong>Drama / Bélico</strong></span>
-          <span>⭐ <strong>7.8</strong></span>
-          <span>⏱ <strong>147 min</strong></span>
-          <span>📅 <strong>2022</strong></span>
+          <strong>🎬 Drama / Belico</strong>
+          <strong>⭐ 7.8</strong>
+          <strong>⏱ 147 min</strong>
+          <strong>📅 2022</strong>
         </div>
         
         <p class="descripcion-pelicula">
@@ -741,10 +741,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -773,10 +773,10 @@
         </div>
         
         <div class="info-pelicula">
-          <span>🎬 <strong>Acción / Ciencia ficción</strong></span>
-          <span>⭐ <strong>8.4</strong></span>
-          <span>⏱ <strong>181 min</strong></span>
-          <span>📅 <strong>2019</strong></span>
+          <strong>🎬 Accion / Ciencia ficcion</strong>
+          <strong>⭐ 8.4</strong>
+          <strong>⏱ 181 min</strong>
+          <strong>📅 2019</strong>
         </div>
         
         <p class="descripcion-pelicula">
@@ -815,10 +815,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -847,10 +847,10 @@
         </div>
         
         <div class="info-pelicula">
-          <span>🎬 <strong>Bélico / Drama / Histórico</strong></span>
-          <span>⭐ <strong>8.0</strong></span>
-          <span>⏱ <strong>139 min</strong></span>
-          <span>📅 <strong>2016</strong></span>
+          <strong>🎬 Belico / Drama / Historico</strong>
+          <strong>⭐ 8.0</strong>
+          <strong>⏱ 139 min</strong>
+          <strong>📅 2016</strong>
         </div>
         
         <p class="descripcion-pelicula">
@@ -897,10 +897,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -929,10 +929,10 @@
         </div>
         
         <div class="info-pelicula">
-          <span>🎬 <strong>Terror / Slasher</strong></span>
-          <span>⭐ <strong>6.8</strong></span>
-          <span>⏱ <strong>120 min</strong></span>
-          <span>📅 <strong>2024</strong></span>
+          <strong>🎬 Terror / Slasher</strong>
+          <strong>⭐ 6.8</strong>
+          <strong>⏱ 120 min</strong>
+          <strong>📅 2024</strong>
         </div>
         
         <p class="descripcion-pelicula">
@@ -970,10 +970,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -1002,10 +1002,10 @@
         </div>
         
         <div class="info-pelicula">
-          <span>🎬 <strong>Drama / Thriller / Crimen</strong></span>
-          <span>⭐ <strong>8.4</strong></span>
-          <span>⏱ <strong>122 min</strong></span>
-          <span>📅 <strong>2019</strong></span>
+          <strong>🎬 Drama / Thriller / Crimen</strong>
+          <strong>⭐ 8.4</strong>
+          <strong>⏱ 122 min</strong>
+          <strong>📅 2019</strong>
         </div>
         
         <p class="descripcion-pelicula">
@@ -1044,10 +1044,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -1076,10 +1076,10 @@
         </div>
         
         <div class="info-pelicula">
-          <span>🎬 <strong>Ciencia ficción / Drama</strong></span>
-          <span>⭐ <strong>8.6</strong></span>
-          <span>⏱ <strong>169 min</strong></span>
-          <span>📅 <strong>2014</strong></span>
+          <strong>🎬 Ciencia ficcion / Drama</strong>
+          <strong>⭐ 8.6</strong>
+          <strong>⏱ 169 min</strong>
+          <strong>📅 2014</strong>
         </div>
         
         <p class="descripcion-pelicula">
@@ -1118,10 +1118,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>

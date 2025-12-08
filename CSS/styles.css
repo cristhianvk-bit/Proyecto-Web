@@ -17,7 +17,7 @@ body {
 /* NAVEGACION SUPERIOR*/
 .encabezado {
     position: sticky;
-    top: 0;          /* distancia desde arriba */
+    top: 0;                             /* distancia desde arriba */
     width: 100%;                            /* ocupa todo el ancho posible */
     background: #222;                     /* Fondo gris oscuro */
     color: #537ae6;                          /* Texto blanco puro */
@@ -99,9 +99,9 @@ body {
     text-align: center;                   /* texto centrado dentro del campo */
 }
 
-/* ========== BOTON HAMBURGUESA ========== */
+/*  BOTON HAMBURGUESA  */
 .hamburguesa {
-    display: none; /* Oculto por defecto en escritorio */
+    display: none; /* oculto por defecto en escritorio */
     font-size: 28px;
     background: #000;
     color: white;
@@ -299,12 +299,12 @@ body {
 
 /* encabezado de pelicula */
 .encabezado-pelicula h2 {
-    margin: 0;                            /* sin margen */
-    font-size: 32px;                      /* tamaño grande */
+    margin: 0;                              /* sin margen */
+    font-size: 32px;                        /* tamaño grande */
     color: #ff4c4c;                       /* color rojo */
     border-bottom: 2px solid #ff4c4c;     /* linea roja debajo */
-    padding-bottom: 8px;                  /* espacio entre texto y linea */
-    letter-spacing: 1px;                  /* separacion entre letras */
+    padding-bottom: 8px;                    /* espacio entre texto y linea */
+    letter-spacing: 1px;                    /* separacion entre letras */
     font-family: 'Arial Black', sans-serif; /* fuente mas gruesa */
 }
 
@@ -706,7 +706,7 @@ body {
     padding-top: 15px;                    /* espacio entre linea y texto */
 }
 
-/* MEDIA QUERIES - DISEÑO RESPONSIVE */
+/* DISEÑO RESPONSIVE */
 
 /* COMPUTADORAS */
 @media (min-width: 1025px) {
@@ -732,51 +732,8 @@ body {
     }
 }
 
-/* TABLETS GRANDES (1024px o menos) */
-@media (max-width: 1024px) {
-    
-    /* Cambia a 3 columnas en tablets */
-    .contenedor-peliculas {
-        grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas */
-    }
 
-    #seccionProximos.contenedor-peliculas,
-    #seccionSnacks {
-        grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas */
-    }
-    
-    /* Ajustes generales para tablets */
-    .portada h1 {
-        font-size: 28px;                  /* titulo mas pequeño */
-    }
-    
-    .buscador {
-        width: 80%;                       /* barra mas ancha */
-    }
-    
-    .navegacion-pestanas {
-        flex-wrap: wrap;                  /* permite que botones salten de linea */
-        gap: 10px;                        /* espacio entre botones */
-    }
-    
-    .navegacion-pestanas button {
-        min-width: 120px;                 /* ancho minimo */
-        padding: 8px 15px;                /* espacio interno */
-        font-size: 14px;                  /* texto mas pequeño */
-    }
-    
-    /* Modal se vuelve columna en tablets */
-    .contenido-pelicula {
-        flex-direction: column;           /* elementos en columna */
-        gap: 20px;                        /* espacio entre elementos */
-    }
-    
-    .columna-imagen img {
-        max-width: 300px;                 /* imagen mas grande */
-    }
-}
-
-/* TABLETS (768px o menos) */
+/* TABLETS  */
 @media (max-width: 768px) {
 
     /* BOTON FLOTANTE EN ESQUINA */
@@ -909,7 +866,7 @@ body {
     }
 }
 
-/* MÓVILES (480px o menos) */
+/* MOVILES  */
 @media (max-width: 480px) {
     /* Botón hamburguesa más pequeño */
     .hamburguesa {
@@ -1007,7 +964,7 @@ body {
     }
 }
 
-/* MOVILES MUY PEQUEÑOS (360px o menos) */
+/* MOVILES MUY PEQUEÑOS  */
 @media (max-width: 360px) {
     .hamburguesa {
         font-size: 20px;
@@ -1033,15 +990,5 @@ body {
     
     .portada {
         padding: 25px 8px;
-    }
-}
-
-/* PANTALLAS MUY GRANDES (1920px o más) */
-@media (min-width: 1920px) {
-    .contenedor-peliculas,
-    #seccionProximos.contenedor-peliculas,
-    #seccionSnacks {
-        max-width: 1800px;                /* ancho maximo */
-        margin: 0 auto;                   /* centrado automatico */
     }
 }
