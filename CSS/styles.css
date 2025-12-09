@@ -2,15 +2,15 @@
 
 /* cuerpo principal de toda la pagina */
 body {
-    margin: 0;                              /* para tener control de todo */
-    font-family: "Poppins", sans-serif;     /* tipo de letra */
+    margin: 0;                        /* para tener control de todo */
+    font-family: "Poppins", sans-serif;    /* tipo de letra */
     background: #f5f5f5;                  /* color de fondo */
-    color: #111;                          /* palabras en color negro */
+    color: #111;                        /* palabras en color negro */
 }
 
 /* Clase para ocultar elementos */
 .oculto, .modal-oculto {
-    display: none !important;              /* lo esta ocultado con display => su comportamiento */
+    display: none !important;           /* lo esta ocultado con display su comportamiento */
 }                                          /* esto hace que sea mas importante esto */
 
 
@@ -21,82 +21,81 @@ body {
     width: 100%;                            /* ocupa todo el ancho posible */
     background: #222;                     /* Fondo gris oscuro */
     color: #537ae6;                          /* Texto blanco puro */
-    padding: 4px 40px;                     /* (12px: Espacio vertical arri y abajo) (40px: Espacio horizontal izqui y dere) */
-    display: flex;                          /* ase que sea flexible todos los elementos hijos de aqui */
-    justify-content: space-between;         /* se reparte el espacio de los contenidos */
-    align-items: center;                    /* alinea verticalmente los elementos al centro */
-    min-height: 60px;                       /* hace que la barra nunca sea menor a 60px */
+    padding: 4px 40px;                     /* margen interior */
+    display: flex;                           /* ase que sea flexible todos los elementos hijos de aqui */
+    justify-content: space-between;      /* se reparte el espacio de los contenidos */
+    align-items: center;                      /* alinea verticalmente los elementos al centro */
+    min-height: 60px;            /* hace que la barra nunca sea menor a 60 */
     box-sizing: border-box;                 /* osea hace que pueda automáticamente adapterse al responsivo */
-    z-index: 1000; 
+    z-index: 1000;  /* para que este encima siempre */
 }
 
 #logo {
     display: flex;
     align-items: center;       /* Centra verticalmente la imagen */
-    justify-content: center;   /* Centra horizontalmente */
-    height: 110px;             /* Altura fija para el contenedor */
-    width: 210px;              /* Ancho fijo para el contenedor (ajusta según necesites) */
+    justify-content: center;      /* Centra horizontalmente */
+    height: 110px;           /* Altura fija para el contenedor */
+    width: 210px;              /* Ancho fijo para el contenedor */
 }
 
 #logo img {
-    width: 100%;               /* Ocupa TODO el ancho del contenedor */
-    height: 100%;              /* Ocupa TODO el alto del contenedor */
+    width: 100%;          /* Ocupa TODO */
+    height: 100%;              /* Ocupa TODO */
 }
 
 .opciones {                                 
-    display: flex;                          /* flexible */
-    align-items: center;                    /* Centra verticalmente los elementos dentro de (.opciones) */
-    gap: 12px;                              /* espacio automatico entre elementos hijos */
+    display: flex;                          
+    align-items: center;        /* Centra verticalmente los elementos dentro de */
+    gap: 12px;                       /* espacio automatico entre elementos hijos */
 }
 
 .opciones select {
-    padding: 6px 10px;                      /* espacio interno (6px=vertical, 10px=horizontal) */
-    border-radius: 6px;                     /* esquina redondito */
-    border: none;                           /* elimna borde por defecto del navegador */
+    padding: 6px 10px;                
+    border-radius: 6px;           /* esquina redondito */
+    border: none;                       /* elimna borde */
 }
 
 .boton-principal {
-    padding: 9px 20px;                      /* espacio interno del boton */
-    border: none;                           /* sin borde visible */
-    border-radius: 6px;                     /* esquinas redondeadas */
-    background: #000;                       /* fondo negro puro */
-    color: white;                           /* texto en color blanco */
-    cursor: pointer;                       /* cambia cursor a manitas */
-    white-space: nowrap;                   /* el texto siempre va ocupar todo aunque sea pequeño la pantalla osea nose divide */
+    padding: 9px 20px;          
+    border: none;                  /* sin borde visible */
+    border-radius: 6px;           
+    background: #000;                      
+    color: white;          
+    cursor: pointer;        /* cambia cursor a manitas */
+    white-space: nowrap;           /* el texto siempre va ocupar todo aunque sea pequeño la pantalla osea nose divide letras */
 }
 
 
 /* ENCABEZADO PRINCIPAL */
 .portada {
-    text-align: center;                   /* alinea horizontalmente TODO el texto dentro al centro*/
-    padding: 50px 20px;                    /* espacio interno (50px vertical, 20px horizontal) */
-    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5)),
-                url("/Imagenes/FONDO.jpg");
+    text-align: center;               /* alinea horizontalmente TODO el texto dentro al centro*/
+    padding: 50px 20px;                    
+    background: url("/Imagenes/fondo\ separado.png");
     background-size: cover;              /* LLENA todo el espacio (puede recortar bordes) */
-    background-position: center;         /* Centra la imagen dentro del contenedor. */
+    background-position: center;       /* Centra la imagen dentro del contenedor. */
+    color: black;
 }
 
 .portada h1 {
-    font-size: 32px;                     /* tamaño del titulo */
-    margin-bottom: 6px;                  /* Espacio debajo del título */
+    font-size: 30px;                   
+    margin-bottom: 6px;     /* Espacio debajo del título */
 }
 
 .portada p {
-    opacity: 0.8;                        /* 80% de opacidad */
-    font-size: 15px;                     /* tamaño del texto */
+    opacity: 0.8;         /* 80% de opacidad */
+    font-size: 17px;           /* tamaño del texto */
 }
-
 
 /* BARRA DE BUSQUEDA */
 .buscador {
-    margin-top: 20px;                     /* espacio arriba de la barra */
-    width: 60%;                           /* ocupa el 60% del ancho disponible */
-    max-width: 550px;                     /* pero nunca mas de 550px */
-    padding: 12px 18px;                   /* espacio interno (12px vertical, 18px horizontal) */
-    border-radius: 25px;                  /* forma de píldora completamente redondeada */
-    border: 1px solid #ddd;             /* borde gris claro */
-    font-size: 14px;                      /* tamaño del texto */
-    text-align: center;                   /* texto centrado dentro del campo */
+    margin-top: 20px;             /* espacio arriba de la barra */
+    width: 60%;              /* ocupa el 60 porciento del ancho disponible */
+    max-width: 550px;             /* pero nunca mas de 550px */
+    padding: 12px 18px;                  
+    border-radius: 25px;             
+    border: 1px solid #ddd;             
+    font-size: 14px;                      
+    text-align: center;     /* texto centrado dentro del campo */
 }
 
 /*  BOTON HAMBURGUESA  */
@@ -105,253 +104,253 @@ body {
     font-size: 28px;
     background: #000;
     color: white;
-    border: none;
-    border-radius: 5px;
+    border: none;   /* sin borde */
+    border-radius: 5px;     /* redondear */
     padding: 10px 15px;
-    cursor: pointer;
-    position: absolute;
+    cursor: pointer;    /* manitas */
+    position: absolute;     /* se pone fijo  de acuerdo alas cordenadas*/
     top: 20px;
     right: 20px;
-    z-index: 1001;
-    transition: all 0.3s ease;
+    z-index: 1001;          /* que sobre ssale adelante */
+    transition: all 0.3s ease; /* all es todo, ease como se anima suave */
 }
 
 .hamburguesa:hover {
     background: #333;
-    transform: scale(1.05);
+    transform: scale(1.05); /* aumenta el tamaño */
 }
 
 /* NAVEGA POR PESTAÑA */
 
 .navegacion-pestanas {
-    margin-top: 25px;                     /* espacio arriba de las pestañas */
-    display: flex;                        /* elementos en fila horizontal */
-    justify-content: center;              /* centra los botones horizontalmente */
+    margin-top: 25px;                /* espacio arriba de las pestañas */
+    display: flex;          /* elementos en fila horizontal */
+    justify-content: center;           /* centra los botones horizontalmente */
     flex-wrap: wrap;                      /* permite que salten a siguiente linea si no caben */
-    gap: 10px;                            /* espacio entre botones */
+    gap: 10px;                     /* espacio entre botones */
 }
 
 .navegacion-pestanas button {
-    padding: 8px 22px;                    /* espacio interno del boton */
-    border: none;                         /* sin borde visible */
-    background: #efefef;                /* fondo gris claro */
-    border-radius: 20px;                  /* esquinas redondeadas */
-    cursor: pointer;                      /* cursor de manitas al pasar */
+    padding: 8px 22px;                    
+    border: none;          /* sin borde visible */
+    background: #efefef;               
+    border-radius: 20px;                  
+    cursor: pointer;         /* cursor de manitas al pasar */
     margin: 0 5px;                        /* margen a los lados de cada boton */
-    transition: 0.2s ease;                /* animacion suave de 0.2 segundos */
-    flex: 1;                              /* los botones crecen para ocupar espacio disponible */
-    min-width: 120px;                     /* ancho minimo de cada boton */
-    max-width: 200px;                     /* ancho maximo de cada boton */
+    transition: 0.2s ease;         /* animacion suave de 0.2 segundos */
+    flex: 1;                /* los botones crecen para ocupar espacio disponible */
+    min-width: 120px;           /* ancho minimo de cada boton */
+    max-width: 200px;      /* ancho maximo de cada boton */
 }
 
 .navegacion-pestanas button:hover {
-    background: #ddd;                     /* cambia a gris medio al pasar el mouse */
+    background: #ddd;               /* cambia a gris medio al pasar el mouse */
 }
 
 .navegacion-pestanas .activa {
-    background: #000;                     /* fondo negro para pestaña activa */
-    color: #ffffff;                          /* texto blanco para pestaña activa */
+    background: #000;           /* fondo negro para pestaña activa */
+    color: #ffffff;                        /* texto blanco para pestaña activa */
 }
 
 /* GRID DE PELICULAS */
 
 .contenedor-peliculas {
-    display: grid;                        /* sistema de grid para organizar */
+    display: grid;               /* sistema de grid para organizar */
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* columnas que se ajustan automaticamente */
-    gap: 25px;                            /* espacio entre tarjetas */
-    padding: 40px;                        /* espacio interno del contenedor */
+    gap: 25px;                   /* espacio entre pelis */
+    padding: 40px;                       
 }
 
 /* tarjeta individual de pelicula */
 .tarjeta-pelicula {
-    background: #fff;                           /* fondo blanco */
-    border-radius: 12px;                        /* esquinas redondeadas */
-    overflow: hidden;                        /* lo que se salga se oculta */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* sombra suave alrededor */
-    position: relative;                   /* posicion relativa para elementos hijos */
-    transition: 0.2s;                     /* animacion suave de 0.2 segundos */
+    background: #fff;                           
+    border-radius: 12px;                      
+    overflow: hidden;            /* lo que se salga se oculta */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);  /* sombra suave alrededor */
+    position: relative;            /* posicion relativa para elementos hijos */
+    transition: 0.2s;                    
 }
 
 .tarjeta-pelicula:hover {
-    transform: translateY(-5px);         /* se eleva 5px al pasar el mouse levantacion */
+    transform: translateY(-5px);       /* se eleva 5px al pasar el mouse levantacion */
 }
 
 .tarjeta-pelicula img {
-    aspect-ratio: 2 / 3;                 /* relacion de aspecto para que sea iguale slas imagenes 2/3 */
-    width: 100%;                          /* ocupa todo el ancho disponible */
-    object-fit: cover;                    /* cubre todo el espacio sin deformarse */
+    aspect-ratio: 2 / 3;                 /* Esto quiere decir que el ancho será el doble de la altura */
+    width: 100%;                          
+    object-fit: cover;        /* cubre todo el espacio sin deformarse */
 }
 
 /* etiqueta de genero */
 .etiqueta-genero {
-    position: absolute;                   /* posicion absoluta dentro de la tarjeta */
-    top: 10px;                            /* 10px desde arriba */
-    left: 10px;                           /* 10px desde la izquierda */
-    background: rgba(0,0,0,0.7);          /* fondo negro semitransparente */
-    color: #fff;                          /* texto blanco */
-    padding: 4px 10px;                    /* espacio interno */
-    border-radius: 8px;                   /* esquinas redondeadas */
-    font-size: 12px;                      /* texto pequeño */
+    position: absolute;         /* posicion absoluta dentro de la tarjeta */
+    top: 10px;                        /* 10px desde arriba */
+    left: 10px;            /* 10px desde la izquierda */
+    background: rgba(0,0,0,0.7);          
+    color: #fff;                         
+    padding: 4px 10px;                   
+    border-radius: 8px;                   
+    font-size: 12px;                      
 }
 
 /* informacion de la pelicula */
 .info-pelicula {
-    padding: 15px;                        /* espacio interno */
+    padding: 15px;                        
 }
 
 .info-pelicula h3 {
-    margin: 0;                            /* sin margen */
-    font-size: 17px;                      /* tamaño del titulo */
+    margin: 0;                           
+    font-size: 17px;                     
 }
 
 .info-pelicula p {
-    font-size: 13px;                      /* texto mas pequeño */
-    opacity: 0.7;                         /* 70% opaco */
+    font-size: 13px;                     
+    opacity: 0.7;        /* 70% opaco */
 }
 
 /* boton de informacion */
 .boton-info {
-    width: 100%;                          /* ocupa todo el ancho disponible */
-    margin-top: 10px;                     /* espacio arriba del boton */
-    padding: 10px;                        /* espacio interno */
-    border: none;                         /* sin borde */
-    border-radius: 8px;                   /* esquinas redondeadas */
-    background: #0b0b1a;                  /* fondo azul oscuro */
-    color: #fff;                          /* texto blanco */
-    cursor: pointer;                      /* cursor de manitas */
-    transition: 0.2s ease;                /* animacion suave */
+    width: 100%;                         
+    margin-top: 10px;           /* espacio arriba del boton */
+    padding: 10px;                        
+    border: none;                        
+    border-radius: 8px;                   
+    background: #0b0b1a;                  
+    color: #fff;                          
+    cursor: pointer;      /* cursor de manitas */
+    transition: 0.2s ease;        /* animacion suave */
 }
 
 .boton-info:hover {
-    background: #000;                     /* cambia a negro al pasar mouse */
+    background: #000;           /* cambia a negro al pasar mouse */
 }
 
 
 /* DETALLES DE PELICULAS */
 .detalle-pelicula {
-    background: #fff;                     /* fondo blanco */
-    padding: 20px;                        /* espacio interno */
-    max-width: 600px;                     /* ancho maximo */
-    margin: 20px auto;                    /* centrado automatico con margen */
+    background: #fff;                     
+    padding: 20px;                       
+    max-width: 600px;       /* ancho maximo */
+    margin: 20px auto;          /* centrado automatico con margen */
 }
 
 /* modal de pelicula */
 .modal-pelicula {
-    position: fixed;                      /* posicion fija en la pantalla */
-    top: 0;                               /* desde arriba */
-    left: 0;                              /* desde izquierda */
-    width: 100%;                          /* ancho completo */
-    height: 100%;                         /* alto completo */
-    background: rgba(0,0,0,0.5);          /* fondo negro semitransparente */
-    display: flex;                        /* flex para centrar contenido */
-    justify-content: center;              /* centra horizontalmente */
-    align-items: center;                  /* centra verticalmente */
-    z-index: 9999;                        /* por encima de todo */
-    overflow-y: auto;                     /* permite desplazamiento vertical */
-    padding: 20px 0;                      /* espacio arriba y abajo */
+    position: fixed;        /* posicion fija en la pantalla */
+    top: 0;              /* desde arriba */
+    left: 0;                  /* desde izquierda */
+    width: 100%;                          
+    height: 100%;                         
+    background: rgba(0,0,0,0.5);         /* fondo negro semitransparente */
+    display: flex;                       
+    justify-content: center;              
+    align-items: center;                  
+    z-index: 9999;         /* por encima de todo */
+    overflow-y: auto;              /* permite barrita para desplazar */
+    padding: 20px 0;       
 }
 
 .contenido-pelicula {
-    background: #fff;                     /* fondo blanco */
-    width: 90%;                           /* ocupa 90% del ancho */
-    max-width: 900px;                     /* maximo 900px */
-    display: flex;                        /* elementos en fila */
+    background: #fff;                     
+    width: 90%;                          
+    max-width: 900px;                     
+    display: flex;                        
     gap: 20px;                            /* espacio entre columnas */
-    border-radius: 12px;                  /* esquinas redondeadas */
+    border-radius: 12px;                
     overflow: hidden;                     /* oculta lo que se salga */
-    box-shadow: 0 0 25px rgba(0,0,0,0.3); /* sombra mas pronunciada y mas vistas */
-    padding: 20px;                        /* espacio interno */
-    position: relative;                   /* posicion relativa para boton cerrar */
-    max-height: 90vh;                     /* maximo 90% de la altura visible */
-    overflow-y: auto;                     /* desplazamiento vertical si es necesario */
+    box-shadow: 0 0 25px rgba(0,0,0,0.3); /* sombra mas vista  */
+    padding: 20px;                        
+    position: relative;            /* posicion relativa para boton cerrar */
+    max-height: 90vh;                     /* maximo 90% de la de la pantalla vh */
+    overflow-y: auto;            /* barrita desplazar vertical si es necesario */
 }
 
 .btn-cerrar {
-    position: absolute;                   /* posicion absoluta dentro del modal */
-    top: 15px;                            /* 15px desde arriba */
-    right: 15px;                          /* 15px desde derecha */
-    font-size: 25px;                      /* tamaño grande de la X */
-    background: none;                     /* sin fondo */
-    border: none;                         /* sin borde */
+    position: absolute;           /* posicion absoluta dentro del modal */
+    top: 15px;                            
+    right: 15px;                         
+    font-size: 25px;             /* tamaño grande de la X */
+    background: none;      /* sin fondo */
+    border: none;                        
     cursor: pointer;                      /* cursor de manitas */
 }
 
 /* columnas del modal */
 .columna-imagen {
-    flex: 1;                              /* ocupa 1 parte del espacio disponible */
+    flex: 1;                 /* ocupa 1 parte del espacio disponible */
     display: flex;                        /* flex para centrar imagen */
-    justify-content: center;              /* centra horizontalmente */
-    align-items: flex-start;              /* alinea arriba */
+    justify-content: center;             
+    align-items: flex-start;        /* alinea arriba */
 }
 
 .columna-imagen img {
-    width: 100%;                          /* ocupa todo el ancho disponible */
-    max-width: 250px;                     /* pero maximo 250px */
-    border-radius: 8px;                   /* esquinas redondeadas */
+    width: 100%;                         
+    max-width: 250px;          /* pero maximo 250px */
+    border-radius: 8px;                   
 }
 
 .columna-info {
-    flex: 2;                              /* ocupa 2 partes del espacio (el doble que imagen) */
-    display: flex;                        /* elementos en columna */
-    flex-direction: column;               /* uno debajo del otro */
+    flex: 2;              /* ocupa el doble que imagen */
+    display: flex;                    /* elementos en columna */
+    flex-direction: column;      /* uno debajo del otro */
     gap: 15px;                            /* espacio entre elementos */
 }
 
 /* encabezado de pelicula */
 .encabezado-pelicula h2 {
-    margin: 0;                              /* sin margen */
-    font-size: 32px;                        /* tamaño grande */
-    color: #ff4c4c;                       /* color rojo */
+    margin: 0;                              
+    font-size: 32px;                       
+    color: #ff4c4c;                       
     border-bottom: 2px solid #ff4c4c;     /* linea roja debajo */
-    padding-bottom: 8px;                    /* espacio entre texto y linea */
+    padding-bottom: 8px;            /* espacio entre texto y linea */
     letter-spacing: 1px;                    /* separacion entre letras */
-    font-family: 'Arial Black', sans-serif; /* fuente mas gruesa */
+    font-family: 'Arial Black', sans-serif; 
 }
 
 /* informacion de la pelicula */
 .info-pelicula {
-    display: flex;                        /* elementos en fila */
-    flex-wrap: wrap;                      /* permite saltar a siguiente linea */
-    gap: 15px;                            /* espacio entre elementos */
-    font-size: 15px;                      /* tamaño del texto */
-    color: #333;                          /* color gris oscuro */
-    margin-top: 8px;                      /* espacio arriba */
+    display: flex;                  /* elementos en fila */
+    flex-wrap: wrap;                    /* permite saltar a siguiente linea */
+    gap: 15px;                 /* espacio entre elementos */
+    font-size: 15px;                    
+    color: #333;                          
+    margin-top: 8px;            /* espacio arriba */
 }
 
 .info-pelicula span {
-    background-color: #e77a65fa;          /* fondo naranja */
-    padding: 5px 12px;                    /* espacio interno */
-    border-radius: 20px;                  /* forma de píldora */
-    font-weight: bold;                    /* texto en negrita */
-    display: flex;                        /* para alinear icono y texto */
-    align-items: center;                  /* centra verticalmente */
-    gap: 6px;                             /* espacio entre icono y texto */
+    background-color: #e77a65fa;          
+    padding: 5px 12px;                    
+    border-radius: 20px;                  
+    font-weight: bold;                   
+    display: flex;                        
+    align-items: center;                 
+    gap: 6px;                         
 }
 
 /* descripcion */
 .descripcion-pelicula {
-    line-height: 1.6;                     /* espacio entre lineas de texto */
-    color: #555;                          /* color gris */
+    line-height: 1.6;           /* espacio entre lineas de texto */
+    color: #555;                         
 }
 
 /* trailer */
 .trailer-pelicula video {
-    width: 100%;                          /* ocupa todo el ancho disponible */
-    max-width: 400px;                     /* pero maximo 400px */
-    height: auto;                         /* altura automatica manteniendo proporcion */
-    border-radius: 8px;                   /* esquinas redondeadas */
+    width: 100%;                         
+    max-width: 400px;                    
+    height: auto;              /* altura automatica manteniendo proporcion */
+    border-radius: 8px;                   
 }
 
 /* botones de pelicula */
 .btn-comprar {
-    background-color: #ff4c4c;            /* fondo rojo */
-    color: #fff;                          /* texto blanco */
-    border: none;                         /* sin borde */
-    padding: 10px 18px;                   /* espacio interno */
-    border-radius: 6px;                   /* esquinas redondeadas */
-    cursor: pointer;                      /* cursor de manitas */
-    font-size: 16px;                      /* tamaño del texto */
-    margin-top: 10px;                     /* espacio arriba */
+    background-color: #ff4c4c;           
+    color: #fff;                         
+    border: none;                      
+    padding: 10px 18px;                   
+    border-radius: 6px;                 
+    cursor: pointer;          /* cursor de manitas */
+    font-size: 16px;                    
+    margin-top: 10px;           /* espacio arriba */
 }
 
 .btn-comprar:hover {
@@ -359,47 +358,47 @@ body {
 }
 
 .btn-volver {
-    background-color: #555;               /* fondo gris oscuro */
-    color: #fff;                          /* texto blanco */
-    border: none;                         /* sin borde */
-    padding: 10px 18px;                   /* espacio interno */
-    border-radius: 6px;                   /* esquinas redondeadas */
-    cursor: pointer;                      /* cursor de manitas */
-    font-size: 16px;                      /* tamaño del texto */
-    margin-top: 10px;                     /* espacio arriba */
+    background-color: #555;               
+    color: #fff;                         
+    border: none;                       
+    padding: 10px 18px;              
+    border-radius: 6px;                 
+    cursor: pointer;                   
+    font-size: 16px;                    
+    margin-top: 10px;       /* espacio arriba */
 }
 
 /* formulario de compra */
 .form-compra {
-    margin-top: 15px;                     /* espacio arriba */
-    display: flex;                        /* elementos en columna */
-    flex-direction: column;               /* uno debajo del otro */
-    gap: 10px;                            /* espacio entre elementos */
+    margin-top: 15px;               /* espacio arriba */
+    display: flex;                       /* elementos en columna */
+    flex-direction: column;          /* uno debajo del otro */
+    gap: 10px;                  /* espacio entre elementos */
 }
 
 .form-compra label {
-    font-weight: bold;                    /* texto en negrita */
+    font-weight: bold;                   
 }
 
 .form-compra input,
 .form-compra select {
-    padding: 8px;                         /* espacio interno */
-    border-radius: 5px;                   /* esquinas redondeadas */
-    border: 1px solid #ccc;               /* borde gris claro */
-    width: 100%;                          /* ocupa todo el ancho disponible */
+    padding: 8px;                         
+    border-radius: 5px;                  
+    border: 1px solid #ccc;               
+    width: 100%;                        
 }
 
 /* CANDY BAR */
 
 #seccionSnacks {
-    display: grid;                        /* sistema de grid */
+    display: grid;                     /* sistema de grid */
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* columnas ajustables */
-    gap: 25px;                            /* espacio entre items */
-    padding: 30px;                        /* espacio interno */
-    width: 100%;                          /* ancho completo */
-    margin: 0;                            /* sin margen */
+    gap: 25px;                            
+    padding: 30px;                     
+    width: 100%;                        
+    margin: 0;                      /* sin margen */
     background: linear-gradient(135deg, #fafafa, #f1f1f1); /* fondo con gradiente */
-    box-sizing: border-box;               /* incluye padding en width */
+    box-sizing: border-box;               /* incluye todo como padding*/
 }
 
 /* item individual de snack */
@@ -418,53 +417,53 @@ body {
 }
 
 .item-snack img {
-    width: 100%;                          /* ocupa todo el ancho */
-    border-radius: 12px;                  /* esquinas redondeadas */
-    margin-bottom: 10px;                  /* espacio abajo de la imagen */
+    width: 100%;                /* ocupa todo el ancho */
+    border-radius: 12px;      /* esquinas redondeadas */
+    margin-bottom: 10px;             /* espacio abajo de la imagen */
 }
 
 .item-snack h3 {
-    font-size: 1.25em;                    /* tamaño 1.25 veces el normal */
-    margin: 10px 0 6px;                   /* espacio arriba y abajo */
-    color: #2c2c2c;                       /* color gris muy oscuro */
-    font-weight: 700;                     /* texto en negrita gruesa */
+    font-size: 1.25em;        /* depende del tamaño de la fuente del elemento contenedor*/
+    margin: 10px 0 6px;                  
+    color: #2c2c2c;                   
+    font-weight: 700;              
 }
 
 .item-snack p {
-    font-weight: 600;                     /* texto seminegrita */
-    color: #777;                          /* color gris */
-    margin-bottom: 12px;                  /* espacio abajo */
+    font-weight: 600;                     
+    color: #777;                       
+    margin-bottom: 12px;                  
 }
 
 /* Botones de snacks */
 .contenedor-botones {
-    display: flex;                        /* elementos en fila */
+    display: flex;                    /* elementos en fila */
     justify-content: space-between;       /* uno a cada extremo */
-    gap: 5px;                             /* espacio entre botones */
+    gap: 5px;                          /* espacio entre botones */
 }
 
 .boton-agregar {
     flex: 1;                              /* ocupa espacio disponible */
-    padding: 10px;                        /* espacio interno */
-    border: none;                         /* sin borde */
-    border-radius: 10px;                  /* esquinas redondeadas */
-    font-weight: bold;                    /* texto en negrita */
-    cursor: pointer;                      /* cursor de manitas */
-    transition: opacity 0.2s ease;        /* animacion de opacidad */
-    font-size: 0.9em;                     /* texto un poco mas pequeño */
-    background-color: #4caf50;            /* fondo verde */
-    color: white;                         /* texto blanco */
+    padding: 10px;                        
+    border: none;                         
+    border-radius: 10px;                
+    font-weight: bold;                  
+    cursor: pointer;                     
+    transition: opacity 0.2s ease;     /* animacion de opacidad */
+    font-size: 0.9em;                  /* se basa en el tamaño de la fuente del elemento actual*/
+    background-color: #4caf50;          
+    color: white;                      
 }
 
 .boton-comprar-snack {
-    flex: 1;                              /* ocupa espacio disponible */
-    padding: 10px;                        /* espacio interno */
-    border: none;                         /* sin borde */
-    border-radius: 10px;                  /* esquinas redondeadas */
-    font-weight: bold;                    /* texto en negrita */
-    cursor: pointer;                      /* cursor de manitas */
-    transition: opacity 0.2s ease;        /* animacion de opacidad */
-    font-size: 0.9em;                     /* texto un poco mas pequeño */
+    flex: 1;                 /* ocupa espacio disponible */
+    padding: 10px;                       
+    border: none;                         
+    border-radius: 10px;                 
+    font-weight: bold;                   
+    cursor: pointer;                     
+    transition: opacity 0.2s ease;     /* animacion de opacidad */
+    font-size: 0.9em;                     /* se basa en el tamaño de la fuente del elemento actual*/
     background-color: #1e88e5;            /* fondo azul */
     color: white;                         /* texto blanco */
 }
@@ -477,209 +476,209 @@ body {
 /* FORMA DE PAGO */
 
 #formularioPago {
-    display: flex;                        /* elementos en columna */
-    flex-direction: column;               /* uno debajo del otro */
-    max-width: 400px;                     /* ancho maximo */
-    margin: 20px auto;                    /* centrado automatico */
-    padding: 15px;                        /* espacio interno */
-    border: 1px solid #ccc;               /* borde gris claro */
-    border-radius: 8px;                   /* esquinas redondeadas */
+    display: flex;          /* elementos en columna */
+    flex-direction: column;         /* uno debajo del otro */
+    max-width: 400px;                    
+    margin: 20px auto;          /* centrado automatico */
+    padding: 15px;                        
+    border: 1px solid #ccc;               
+    border-radius: 8px;                 
 }
 
 #formularioPago.oculto {
-    display: none;                        /* se oculta cuando tiene clase oculto */
+    display: none;           /* se oculta cuando tiene clase oculto */
 }
 
 #formularioPago label {
-    margin-top: 8px;                      /* espacio arriba de cada label */
-    font-weight: bold;                    /* texto en negrita */
+    margin-top: 8px;                    
+    font-weight: bold;           
 }
 
 #formularioPago input {
-    width: 100%;                          /* ocupa todo el ancho */
-    padding: 5px;                         /* espacio interno */
-    margin-top: 3px;                      /* espacio arriba */
-    border-radius: 5px;                   /* esquinas redondeadas */
-    border: 1px solid #ccc;               /* borde gris claro */
+    width: 100%;                    
+    padding: 5px;                      
+    margin-top: 3px;            
+    border-radius: 5px;         
+    border: 1px solid #ccc;          /* borde gris claro */
 }
 
 /* botones del formulario */
 .boton-finalizar {
-    background: #2196F3;                  /* fondo azul */
-    color: white;                         /* texto blanco */
-    border: none;                         /* sin borde */
-    border-radius: 5px;                   /* esquinas redondeadas */
-    margin-top: 10px;                     /* espacio arriba */
-    padding: 12px 20px;                   /* espacio interno */
-    font-size: 16px;                      /* tamaño del texto */
-    width: 100%;                          /* ancho completo */
-    box-sizing: border-box;               /* incluye padding en width */
-    cursor: pointer;                      /* cursor de manitas */
+    background: #2196F3;                 
+    color: white;                        
+    border: none;                        
+    border-radius: 5px;                   
+    margin-top: 10px;                    
+    padding: 12px 20px;                
+    font-size: 16px;                    
+    width: 100%;                        
+    box-sizing: border-box;            /* osea hace que se incluya en el ancho y alto*/
+    cursor: pointer;                     
 }
 
 .boton-regresar {
-    background: #f44336;                  /* fondo rojo */
-    color: white;                         /* texto blanco */
-    border: none;                         /* sin borde */
-    border-radius: 5px;                   /* esquinas redondeadas */
-    margin-top: 5px;                      /* espacio arriba */
-    padding: 8px;                         /* espacio interno */
-    cursor: pointer;                      /* cursor de manitas */
-    width: 100%;                          /* ancho completo */
+    background: #f44336;                 
+    color: white;                    
+    border: none;                   
+    border-radius: 5px;              
+    margin-top: 5px;            
+    padding: 8px;                 
+    cursor: pointer;       /* cursor de manitas */
+    width: 100%;              /* ancho completo */
 }
 
 /* MODALES DEL SISTEMA */
 
 .fondo-modal {
-    position: fixed;                      /* posicion fija en pantalla */
-    top: 0;                               /* desde arriba */
-    left: 0;                              /* desde izquierda */
-    width: 100%;                          /* ancho completo */
-    height: 100%;                         /* alto completo */
-    background: rgba(0, 0, 0, 0.45);      /* fondo negro semitransparente */
-    display: flex;                        /* flex para centrar */
-    justify-content: center;              /* centra horizontalmente */
-    align-items: center;                  /* centra verticalmente */
-    z-index: 9999;                        /* por encima de todo */
+    position: fixed;           /* posicion fija en pantalla */
+    top: 0;                               
+    left: 0;                             
+    width: 100%;                         
+    height: 100%;                         
+    background: rgba(0, 0, 0, 0.45);    /* fondo negro semitransparente */
+    display: flex;                        
+    justify-content: center;              
+    align-items: center;                  
+    z-index: 9999;             /* por encima de todo */
 }
 
 /* modal de autenticacion */
 .cuadro-modal {
-    background: #fff;                     /* fondo blanco */
-    width: 360px;                         /* ancho fijo */
-    padding: 25px 30px;                   /* espacio interno */
-    border-radius: 12px;                  /* esquinas redondeadas */
-    position: relative;                   /* para boton cerrar */
+    background: #fff;                    
+    width: 360px;                        
+    padding: 25px 30px;                  
+    border-radius: 12px;                
+    position: relative;          /* para boton cerrar */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* sombra alrededor */
-    display: flex;                        /* elementos en columna */
-    flex-direction: column;               /* uno debajo del otro */
-    gap: 15px;                            /* espacio entre elementos */
+    display: flex;               /* elementos en columna */
+    flex-direction: column;            /* uno debajo del otro */
+    gap: 15px;         /* espacio entre elementos */
 }
 
 .boton-cerrar {
-    position: absolute;                   /* posicion absoluta dentro del modal */
-    top: 12px;                            /* 12px desde arriba */
-    right: 12px;                          /* 12px desde derecha */
-    background: none;                     /* sin fondo */
-    border: none;                         /* sin borde */
-    font-size: 18px;                      /* tamaño de la X */
-    cursor: pointer;                      /* cursor de manitas */
+    position: absolute;     /* posicion fija dentro del modal */
+    top: 12px;                           
+    right: 12px;                          
+    background: none;                    
+    border: none;                       
+    font-size: 18px;         /* tamaño de la X */
+    cursor: pointer;      /* cursor de manitas */
 }
 
 .texto-secundario {
-    font-size: 13px;                      /* texto pequeño */
-    color: #555;                          /* color gris */
-    margin-top: -8px;                     /* espacio negativo arriba (se pega al elemento anterior) */
+    font-size: 13px;                      
+    color: #555;                          
+    margin-top: -8px;    /* se pega al elemento anterior */
 }
 
 /* selector de pestañas login y registro */
 .selector-pestanas {
-    background: #eee;                     /* fondo gris claro */
-    padding: 5px;                         /* espacio interno */
-    border-radius: 20px;                  /* forma de redondeas */
-    display: flex;                        /* elementos en fila */
-    justify-content: space-between;       /* uno a cada extremo */
-    margin-bottom: 10px;                  /* espacio abajo */
+    background: #eee;                    
+    padding: 5px;                         
+    border-radius: 20px;                  
+    display: flex;                        
+    justify-content: space-between;    /* uno a cada extremo */
+    margin-bottom: 10px;        /* espacio abajo */
 }
 
 .pestana {
-    flex: 1;                              /* ocupa espacio disponible */
-    padding: 8px;                         /* espacio interno */
-    border: none;                         /* sin borde */
-    background: transparent;              /* fondo transparente */
-    border-radius: 20px;                  /* forma de redondeas */
-    cursor: pointer;                      /* cursor de manitas */
-    font-size: 14px;                      /* tamaño del texto */
+    flex: 1;             /* ocupa espacio disponible */
+    padding: 8px;                        
+    border: none;                       
+    background: transparent;    /* fondo transparente */
+    border-radius: 20px;           
+    cursor: pointer;         /* cursor de manitas */
+    font-size: 14px;       /* tamaño del texto */
 }
 
 .pestana.activa {
-    background: #fff;                     /* fondo blanco cuando esta activa */
-    box-shadow: 0 0 5px rgba(0,0,0,0.15); /* sombra suave alrededor */
+    background: #fff;                   
+    box-shadow: 0 0 5px rgba(0,0,0,0.15); /* sombra suave  */
 }
 
-/* formularios de autenticacion */
+/* formularios  */
 .formulario-seccion {
-    display: flex;                        /* elementos en columna */
-    flex-direction: column;               /* uno debajo del otro */
-    gap: 10px;                            /* espacio entre elementos */
+    display: flex;                 /* elementos en columna */
+    flex-direction: column;    /* uno debajo del otro */
+    gap: 10px;                       /* espacio entre elementos */
 }
 
 .formulario-seccion input {
-    padding: 12px;                        /* espacio interno */
-    border-radius: 8px;                   /* esquinas redondeadas */
-    border: 1px solid #ddd;               /* borde gris claro */
-    background: #fff;                     /* fondo blanco */
+    padding: 12px;                       
+    border-radius: 8px;              
+    border: 1px solid #ddd;               
+    background: #fff;                    
 }
 
 /* botones principales del sistema */
 .boton-accion {
-    padding: 12px;                        /* espacio interno */
-    background: #050515;                  /* fondo azul muy oscuro */
-    color: #fff;                          /* texto blanco */
-    border: none;                         /* sin borde */
-    border-radius: 8px;                   /* esquinas redondeadas */
-    font-size: 15px;                      /* tamaño del texto */
-    cursor: pointer;                      /* cursor de manitas */
+    padding: 12px;                        
+    background: #050515;                  
+    color: #fff;                       
+    border: none;                       
+    border-radius: 8px;                  
+    font-size: 15px;                
+    cursor: pointer;       /* cursor de manitas */
 }
 
 .boton-secundario {
-    padding: 10px;                        /* espacio interno */
-    background: #ddd;                     /* fondo gris claro */
-    border: none;                         /* sin borde */
-    border-radius: 8px;                   /* esquinas redondeadas */
-    cursor: pointer;                      /* cursor de manitas */
+    padding: 10px;                      
+    background: #ddd;                   
+    border: none;                       
+    border-radius: 8px;                   
+    cursor: pointer;    /* cursor de manitas */
 }
 
 /* PIE DE PAGINA */
 
 .pie-pagina {
-    background-color: #111;               /* fondo negro oscuro */
-    color: #eee;                          /* texto gris claro */
-    padding: 40px 20px;                   /* espacio interno */
-    font-family: 'Segoe UI', sans-serif;  /* tipo de letra diferente */
-    text-align: center;                   /* texto centrado */
+    background-color: #111;               
+    color: #eee;                         
+    padding: 40px 20px;                
+    font-family: 'Segoe UI', sans-serif;  
+    text-align: center;                
 }
 
 .contenedor-pie {
-    display: flex;                        /* elementos en fila */
-    flex-wrap: wrap;                      /* permite saltar a siguiente linea */
-    justify-content: center;              /* centra horizontalmente */
-    gap: 40px;                            /* espacio entre bloques */
-    max-width: 1000px;                    /* ancho maximo */
-    margin: 0 auto;                       /* centrado automatico */
+    display: flex;                      
+    flex-wrap: wrap;         /* permite saltar a siguiente linea */
+    justify-content: center;             
+    gap: 40px;                          
+    max-width: 1000px;                    
+    margin: 0 auto;                      
 }
 
 .bloque-pie {
-    flex: 1 1 250px;                      /* crece, se encoge, base 250px */
-    min-width: 250px;                     /* ancho minimo */
+    flex: 1 1 250px;         /* crece se pone pqueño base 250px */
+    min-width: 250px;             /* ancho minimo */
 }
 
 .bloque-pie h3 {
-    color: #f5c518;                       /* color amarillo dorado */
-    margin-bottom: 15px;                  /* espacio abajo */
+    color: #f5c518;                      
+    margin-bottom: 15px;       /* espacio abajo */
 }
 
 .bloque-pie form input {
-    display: block;                       /* cada input en su propia linea */
-    margin: 8px auto;                     /* margen vertical y centrado horizontal */
-    padding: 8px;                         /* espacio interno */
-    width: 90%;                           /* ocupa 90% del ancho disponible */
-    border: none;                         /* sin borde */
-    border-radius: 4px;                   /* esquinas redondeadas */
+    display: block;           /* ocupa todo y propia linea */
+    margin: 8px auto;                     
+    padding: 8px;                     
+    width: 90%;                        
+    border: none;                        
+    border-radius: 4px;          
 }
 
 .bloque-pie form button {
-    background-color: #f5c518;            /* fondo amarillo dorado */
-    color: #111;                          /* texto negro */
-    padding: 10px 20px;                   /* espacio interno */
-    border: none;                         /* sin borde */
-    border-radius: 4px;                   /* esquinas redondeadas */
-    cursor: pointer;                      /* cursor de manitas */
+    background-color: #f5c518;            
+    color: #111;                          
+    padding: 10px 20px;                 
+    border: none;                         
+    border-radius: 4px;                   
+    cursor: pointer;         /* cursor de manitas */
 }
 
 .bloque-pie ul {
-    list-style: none;                     /* sin viñetas/puntos */
-    padding: 0;                           /* sin espacio interno */
+    list-style: none;           /* elimina las lista y  sin  puntos */
+    padding: 0;                           
 }
 
 .bloque-pie li {
@@ -692,7 +691,7 @@ body {
 }
 
 .bloque-pie a:hover {
-    text-decoration: underline;           /* subrayado al pasar mouse */
+    text-decoration: underline;           /* linea al pasar mouse */
 }
 
 .iconos-redes a img {
@@ -700,18 +699,18 @@ body {
 }
 
 .creditos-pie {
-    margin-top: 30px;                     /* espacio arriba */
-    font-size: 14px;                      /* texto pequeño */
-    border-top: 1px solid #333;           /* linea gris arriba */
-    padding-top: 15px;                    /* espacio entre linea y texto */
+    margin-top: 30px;               /* espacio arriba */
+    font-size: 14px;                     
+    border-top: 1px solid #333;          
+    padding-top: 15px;            /* espacio entre linea y texto */
 }
 
 /* DISEÑO RESPONSIVE */
 
-/* COMPUTADORAS */
+/* COMPU */
 @media (min-width: 1025px) {
     .navegacion-pestanas {
-        display: flex !important; /* Forzar visibilidad en escritorio */
+        display: flex !important; /*  visibilidad en escritorio */
     }
     
     .hamburguesa {
@@ -733,7 +732,7 @@ body {
 }
 
 
-/* TABLETS  */
+/* TABLET */
 @media (max-width: 768px) {
 
     /* BOTON FLOTANTE EN ESQUINA */

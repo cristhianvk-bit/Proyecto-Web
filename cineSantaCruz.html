@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MultiCampero - Tu cine de confianza</title>
-  <link rel="stylesheet" href="/CSS/styles.css">
+  <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
 
   <!--  ENCABEZADO  -->
   <header class="encabezado">
-    <div id="logo"><img src="/Imagenes/logo.png" alt=""></div>
+    <div id="logo"><img src="Imagenes/logo.png" alt=""></div>
     <div class="opciones">
         <select id="selectorCiudad" onchange="cambiarCiudad()">
-          <option value="cine.html">La Paz</option>
+          <option value="index.html">La Paz</option>
           <option value="cineCochabamba.html">Cochabamba</option>
           <option value="cineSantaCruz.html">Santa Cruz</option>
         </select>
@@ -24,42 +24,42 @@
   <!--  VENTANA LOGIN  -->
   <div id="ventanaLogin" class="fondo-modal" style="display:none;">
     <div class="cuadro-modal">
-      <button class="boton-cerrar" id="cerrarModal">✖</button>
+      <button class="boton-cerrar" id="cerrarModal">X</button>
 
-      <h2>Bienvenido a MultiCampero</h2>
-      <p class="texto-secundario">Inicia sesion o crea una cuenta para disfrutar de todas las ventajas</p>
+      <h2>Bienvenido a CineMagic</h2>
+      <p class="texto-secundario">Inicia sesión o crea una cuenta para disfrutar de todas las ventajas</p>
 
       <!-- Selector de pestañas -->
       <div class="selector-pestanas">
-        <button id="pestanaIngresar" class="pestana activa">Iniciar Sesion</button>
+        <button id="pestanaIngresar" class="pestana activa">Iniciar Sesión</button>
         <button id="pestanaRegistrar" class="pestana">Registrarse</button>
       </div>
 
       <!-- Formulario de Login -->
-      <form id="formIngresar" class="formulario-seccion">
+      <form id="formIngresar" class="formulario-seccion" required>
         <label>Email</label>
-        <input type="email" placeholder="tu@email.com" />
+        <input type="email" placeholder="tu@email.com" required/>
 
         <label>Contraseña</label>
         <input type="password" placeholder="••••••••" />
 
-        <button type="submit" class="boton-accion">Iniciar Sesion</button>
+        <button type="submit" class="boton-accion">Iniciar Sesión</button>
         <button type="button" class="boton-secundario" id="cerrarIngresar">Cerrar</button>
       </form>
 
       <!-- Formulario de Registro -->
       <form id="formRegistrar" class="formulario-seccion" style="display:none;">
         <label>Nombre</label>
-        <input type="text" placeholder="Tu nombre" />
+        <input type="text" placeholder="Tu nombre" required/>
 
         <label>Email</label>
-        <input type="email" placeholder="tu@email.com" />
+        <input type="email" placeholder="tu@email.com" required/>
 
         <label>Contraseña</label>
-        <input type="password" placeholder="••••••••" />
+        <input type="password" placeholder="••••••••" required/>
 
         <label>Confirmar contraseña</label>
-        <input type="password" placeholder="••••••••" />
+        <input type="password" placeholder="••••••••" required/>
 
         <button type="submit" class="boton-accion">Crear cuenta</button>
         <button type="button" class="boton-secundario" id="cerrarRegistrar">Cerrar</button>
@@ -68,7 +68,8 @@
   </div>
 
   <!--  SECCION PRINCIPAL  -->
-  <section class="portada"> 
+  <section class="portada">
+    
     <h1>MultiCampero</h1>
     <p>Descubre las mejores películas en cartelera y próximos estrenos</p>
     
@@ -86,138 +87,139 @@
     </div>
   </section>
 
+
   <!--  PELICULAS EN CARTELERA  -->
   <section id="seccionCartelera" class="contenedor-peliculas">
     
-    <!-- Película: TRANSFORMERS -->
+    <!-- pelicula TRANSFORMERS -->
     <div class="tarjeta-pelicula">
       <div class="etiqueta-genero">Accion</div>
-      <img src="/Imagenes/TRANSFORMERS.jpg" alt="">
+      <img src="Imagenes/TRANSFORMERS.jpg" alt="">
       <div class="info-pelicula">
         <h3>TRANSFORMERS</h3>
         <p>⏱ 142 min 📅 15 Nov 2025 ⭐ 7.0</p>
-        <button onclick="mostrarDetallePelicula('TRANSFORMERS')" class="boton-info">Informacion</button>
+        <button onclick="mostrarDetallePelicula('TRANSFORMERS')" class="boton-info">Información</button>
       </div>
     </div>
 
-    <!-- Pelicula: BAD BOYS -->
+    <!-- pelicula BAD BOYS-->
     <div class="tarjeta-pelicula">
       <div class="etiqueta-genero">Accion - Comedia</div>
-      <img src="/Imagenes/BAD BOYS.jpg" alt="">
+      <img src="Imagenes/BAD BOYS.jpg" alt="">
       <div class="info-pelicula">
         <h3>BAD BOYS</h3>
         <p>⏱ 128 min 📅 10 Nov 2025 ⭐ 8.5</p>
-        <button onclick="mostrarDetallePelicula('badboys')" class="boton-info">Informacion</button>
+        <button onclick="mostrarDetallePelicula('badboys')" class="boton-info">Información</button>
       </div>
     </div>
 
-    <!-- Pelicula: GUARDIANES DE LA GALAXIA -->
+    <!-- pelicula WARS -->
     <div class="tarjeta-pelicula">
-      <div class="etiqueta-genero">Accion - Comedia</div>
-      <img src="/Imagenes/GUARDIANES.jpg" alt="">
+      <div class="etiqueta-genero">Accion - Aventura</div>
+      <img src="CINE 2 IMG/wars.png" alt="">
       <div class="info-pelicula">
-        <h3>Guardianes de la Galaxia</h3>
-        <p>⏱ 156 min 📅 8 Nov 2025 ⭐ 8.0</p>
-        <button onclick="mostrarDetallePelicula('GUARDIANES')" class="boton-info">Informacion</button>
+        <h3>El Despertar de la Fuerza</h3>
+        <p>⏱ 136 min 📅 8 Nov 2025 ⭐ 8.0</p>
+        <button onclick="mostrarDetallePelicula('WARS')" class="boton-info">Información</button>
       </div>
     </div>
 
-    <!-- Pelicula: DEADPOOL -->
+    <!-- pelicula DEADPOOL -->
     <div class="tarjeta-pelicula">
       <div class="etiqueta-genero">Accion - Comedia</div>
-      <img src="/Imagenes/DEADPOOL.jpg" alt="">
+      <img src="Imagenes/DEADPOOL.jpg" alt="">
       <div class="info-pelicula">
         <h3>DEADPOOL</h3>
         <p>⏱ 98 min 📅 12 Nov 2025 ⭐ 8.1</p>
-        <button onclick="mostrarDetallePelicula('DEADPOOL')" class="boton-info">Informacion</button>
+        <button onclick="mostrarDetallePelicula('DEADPOOL')" class="boton-info">Información</button>
       </div>
     </div>
 
-    <!-- Pelicula: FLOW -->
+    <!-- pelicula DRAGON-->
     <div class="tarjeta-pelicula">
-      <div class="etiqueta-genero">Aventuras</div>
-      <img src="/Imagenes/FLOW.jpg" alt="">
+      <div class="etiqueta-genero">Aventuras - Accion</div>
+      <img src="CINE 2 IMG/dragon.jpg" alt="">
       <div class="info-pelicula">
-        <h3>FLOW</h3>
-        <p>⏱ 128 min 📅 20 Nov 2025 ⭐ 8.0</p>
-        <button onclick="mostrarDetallePelicula('FLOW')" class="boton-info">Informacion</button>
+        <h3>ENTRENA A TU DRAGON </h3>
+        <p>⏱ 142 min 📅 20 Nov 2025 ⭐ 8.0</p>
+        <button onclick="mostrarDetallePelicula('dragon')" class="boton-info">Información</button>
       </div>
     </div>
 
-    <!-- Pelicula: ROBOT SALVAJE -->
+    <!-- pelicula MARIO -->
     <div class="tarjeta-pelicula">
-      <div class="etiqueta-genero">Aventura</div>
-      <img src="/Imagenes/ROBOT.jpg" alt="">
+      <div class="etiqueta-genero">Infantil - Comedia</div>
+      <img src="CINE 2 IMG/mario.jpg" alt="">
       <div class="info-pelicula">
-        <h3>ROBOT SALVAJE</h3>
-        <p>⏱ 145 min 📅 25 Nov 2025 ⭐ 7.0</p>
-        <button onclick="mostrarDetallePelicula('robot')" class="boton-info">Informacion</button>
+        <h3>Super Mario Bros</h3>
+        <p>⏱ 92 min 📅 25 Nov 2025 ⭐ 7.0</p>
+        <button onclick="mostrarDetallePelicula('mario')" class="boton-info">Información</button>
       </div>
     </div>
 
-    <!-- Pelicula: SIN NOVEDAD -->
+    <!-- pelicula SIN NOVEDAD -->
     <div class="tarjeta-pelicula">
       <div class="etiqueta-genero">Accion</div>
-      <img src="/Imagenes/SIN NOVEDAD.jpg" alt="">
+      <img src="Imagenes/SIN NOVEDAD.jpg" alt="">
       <div class="info-pelicula">
         <h3>Sin Novedad al Frente</h3>
         <p>⏱ 110 min 📅 28 Nov 2025 ⭐ 6.8</p>
-        <button onclick="mostrarDetallePelicula('SINNOVEDAD')" class="boton-info">Informacion</button>
+        <button onclick="mostrarDetallePelicula('SINNOVEDAD')" class="boton-info">Información</button>
       </div>
     </div>
 
-    <!-- Pelicula: AVENGERS ENDGAME -->
+    <!-- pelicula AVENGERS ENDGAME -->
     <div class="tarjeta-pelicula">
       <div class="etiqueta-genero">Acción</div>
-      <img src="/Imagenes/AVERGERS.jpg" alt="">
+      <img src="Imagenes/AVERGERS.jpg" alt="">
       <div class="info-pelicula">
         <h3>Avengers Endgame</h3>
         <p>⏱ 135 min 📅 30 Nov 2025 ⭐ 9.0</p>
-        <button onclick="mostrarDetallePelicula('ENDGAME')" class="boton-info">Informacion</button>
+        <button onclick="mostrarDetallePelicula('ENDGAME')" class="boton-info">Información</button>
       </div>
     </div>
 
-    <!-- Pelicula: OPPENHEIMER -->
+    <!-- pelicula ULTIMO -->
     <div class="tarjeta-pelicula">
-      <div class="etiqueta-genero">Accion</div>
-      <img src="/Imagenes/OPENHAIMER.jpg" alt="">
+      <div class="etiqueta-genero">Belico/Drama</div>
+      <img src="CINE 2 IMG/ulltimo.jpg" alt="">
       <div class="info-pelicula">
-        <h3>Oppenheimer</h3>
-        <p>⏱ 135 min 📅 30 Nov 2025 ⭐ 8.3</p>
-        <button onclick="mostrarDetallePelicula('OPPENHEIMER')" class="boton-info">Informacion</button>
+        <h3>Hasta el último hombre</h3>
+        <p>⏱ 139 min 📅 30 Nov 2025 ⭐ 8.0</p>
+        <button onclick="mostrarDetallePelicula('ultimo')" class="boton-info">Información</button>
       </div>
     </div>
 
-    <!-- Pelicula: JURASSIC WORLD -->
+    <!-- pelicula TERRIFER -->
     <div class="tarjeta-pelicula">
-      <div class="etiqueta-genero">Accion</div>
-      <img src="/Imagenes/JURRSIC.jpg" alt="">
+      <div class="etiqueta-genero">Terror</div>
+      <img src="CINE 2 IMG/terrifer.jpg" alt="">
       <div class="info-pelicula">
-        <h3>Jurassic World</h3>
-        <p>⏱ 135 min 📅 30 Nov 2025 ⭐ 7.9</p>
-        <button onclick="mostrarDetallePelicula('JURASSIC')" class="boton-info">Informacion</button>
+        <h3>Terrifier 3</h3>
+        <p>⏱ 120 min 📅 30 Nov 2025 ⭐ 8.0</p>
+        <button onclick="mostrarDetallePelicula('terrifer')" class="boton-info">Información</button>
       </div>
     </div>
 
-    <!-- Pelicula: JOKER -->
+    <!-- pelicula JOKER -->
     <div class="tarjeta-pelicula">
       <div class="etiqueta-genero">Drama - Suspenso</div>
-      <img src="/Imagenes/JOKER.jpg" alt="">
+      <img src="Imagenes/JOKER.jpg" alt="">
       <div class="info-pelicula">
         <h3>JOKER</h3>
         <p>⏱ 135 min 📅 30 Nov 2025 ⭐ 8.5</p>
-        <button onclick="mostrarDetallePelicula('JOKER')" class="boton-info">Informacion</button>
+        <button onclick="mostrarDetallePelicula('JOKER')" class="boton-info">Información</button>
       </div>
     </div>
 
-    <!-- Pelicula: INTERESTELAR -->
+    <!-- pelicula INTERESTELAR -->
     <div class="tarjeta-pelicula">
       <div class="etiqueta-genero">Ciencia Ficcion</div>
-      <img src="/Imagenes/INTERESTELAR.jpg" alt="">
+      <img src="Imagenes/INTERESTELAR.jpg" alt="">
       <div class="info-pelicula">
         <h3>INTERESTELAR</h3>
         <p>⏱ 135 min 📅 30 Nov 2025 ⭐ 9.5</p>
-        <button onclick="mostrarDetallePelicula('INTERSTELLAR')" class="boton-info">Informacion</button>
+        <button onclick="mostrarDetallePelicula('INTERSTELLAR')" class="boton-info">Información</button>
       </div>
     </div>
 
@@ -227,14 +229,14 @@
 
   <!-- DETALLES DE PELICULAS -->
 
-<!-- Detalle: TRANSFORMERS -->
+<!-- Detalle TRANSFORMERS -->
 <section id="detalle-transformers" class="detalle-pelicula oculto">
   <div id="modal-transformers" class="modal-pelicula modal-oculto">
     <div class="contenido-pelicula">
       <button class="btn-cerrar" onclick="volverCartelera()">×</button>
       
       <div class="columna-imagen">
-        <img src="/Imagenes/TRANSFORMERS.jpg" alt="">
+        <img src="Imagenes/TRANSFORMERS.jpg" alt="">
       </div>
       
       <div class="columna-info">
@@ -243,10 +245,10 @@
         </div>
         
         <div class="info-pelicula">
-           <strong>🎬 Acción</strong>
-           <strong>⭐ 7.0</strong>
-           <strong>⏱ 142 min</strong>
-           <strong>📅 2007</strong>
+          <strong>🎬 Accion</strong>
+          <strong>⭐ 7.0</strong>
+          <strong>⏱ 142 min</strong>
+          <strong>📅 2007</strong>
         </div>
         
         <p class="descripcion-pelicula">
@@ -260,8 +262,8 @@
         </p>
         
         <div class="trailer-pelicula">
-          <video controls poster="/Imagenes/TRANSFORMERS.jpg">
-            <source src="/Videos/transformerV.mp4" type="">
+          <video controls poster="Imagenes/TRANSFORMERS.jpg">
+            <source src="Videos/transformerV.mp4" type="">
             Tu navegador no soporta el video.
           </video>
         </div>
@@ -285,10 +287,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -301,14 +303,14 @@
   </div>
 </section>
 
-<!-- Detalle: BAD BOYS -->
+<!-- Detalle BAD BOYS -->
 <section id="detalle-badboys" class="detalle-pelicula oculto">
   <div id="modal-badboys" class="modal-pelicula modal-oculto">
     <div class="contenido-pelicula">
       <button class="btn-cerrar" onclick="volverCartelera()">×</button>
       
       <div class="columna-imagen">
-        <img src="/Imagenes/BAD BOYS.jpg" alt="">
+        <img src="Imagenes/BAD BOYS.jpg" alt="">
       </div>
       
       <div class="columna-info">
@@ -317,7 +319,7 @@
         </div>
         
         <div class="info-pelicula">
-          <strong>🎬 Acción / Comedia</strong>
+          <strong>🎬 Accion / Comedia</strong>
           <strong>⭐ 7.2</strong>
           <strong>⏱ 119 min</strong>
           <strong>📅 1995</strong>
@@ -334,8 +336,8 @@
         </p>
         
         <div class="trailer-pelicula">
-          <video controls poster="/Imagenes/BAD BOYS.jpg">
-            <source src="/Videos/badboysV.mp4" type="">
+          <video controls poster="Imagenes/BAD BOYS.jpg">
+            <source src="Videos/badboysV.mp4" type="">
             Tu navegador no soporta el video.
           </video>
         </div>
@@ -359,10 +361,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -375,50 +377,50 @@
   </div>
 </section>
 
-<!-- Detalle: GUARDIANES DE LA GALAXIA -->
-<section id="detalle-guardianes" class="detalle-pelicula oculto">
-  <div id="modal-guardianes" class="modal-pelicula modal-oculto">
+<!-- DETALLE WARS -->
+<section id="detalle-wars" class="detalle-pelicula oculto">
+  <div id="modal-wars" class="modal-pelicula modal-oculto">
     <div class="contenido-pelicula">
       <button class="btn-cerrar" onclick="volverCartelera()">×</button>
       
       <div class="columna-imagen">
-        <img src="/Imagenes/GUARDIANES.jpg" alt="Poster Guardianes de la Galaxia">
+        <img src="CINE 2 IMG/wars.png" alt="">
       </div>
       
       <div class="columna-info">
         <div class="encabezado-pelicula">
-          <h2>GUARDIANES DE LA GALAXIA</h2>
+          <h2>STAR WARS: EL DESPERTAR DE LA FUERZA</h2>
         </div>
         
         <div class="info-pelicula">
-          <strong>🎬 Acción / Ciencia ficción</strong>
-          <strong>⭐ 8.0</strong>
-          <strong>⏱ 121 min</strong>
-          <strong>📅 2014</strong>
+          <strong>🎬 Ciencia ficcion / Aventura</strong>
+          <strong>⭐ 7.9</strong>
+          <strong>⏱ 136 min</strong>
+          <strong>📅 2015</strong>
         </div>
         
         <p class="descripcion-pelicula">
-          <strong>Director:</strong> James Gunn<br>
-          <strong>Actores:</strong> Chris Pratt, Zoe Saldaña, Dave Bautista, Vin Diesel, Bradley Cooper<br><br>
-          <strong>Sinopsis:</strong> Peter Quill, un aventurero espacial, roba un misterioso orbe buscado por el cruel Ronan. Para sobrevivir, deberá formar equipo con un grupo de inadaptados galácticos.<br><br>
+          <strong>Director:</strong> J.J. Abrams<br>
+          <strong>Actores:</strong> Daisy Ridley, John Boyega, Adam Driver, Harrison Ford, Carrie Fisher<br><br>
+          <strong>Sinopsis:</strong> Treinta años después de la caída del Imperio, una nueva amenaza surge de las cenizas de la Primera Orden, mientras que Rey, una chatarrera, y Finn, un soldado desertor, se unen a la Resistencia y descubren que la Fuerza aún está viva en la galaxia.<br><br>
           <strong>Extras:</strong>  
-          - Una de las bandas sonoras más icónicas del cine moderno<br>
-          - Efectos visuales espectaculares y combates espaciales<br>
-          - Humor característico y química entre personajes
+          - Regreso a la galaxia muy, muy lejana después de 10 años<br>
+          - Combinación de personajes clásicos y nuevos héroes<br>
+          - Efectos visuales innovadores y secuencias de acción épicas
         </p>
         
         <div class="trailer-pelicula">
-          <video controls poster="/Imagenes/GUARDIANES.jpg">
-            <source src="/Videos/guardianesV.mp4" type="">
+          <video controls poster="CINE 2 IMG/wars.png">
+            <source src="CINE 2 VID/warsV.mp4" type="">
             Tu navegador no soporta el video.
           </video>
         </div>
-        
-        <button onclick="mostrarFormulario('compra-guardianes')" class="btn-comprar">
+                
+        <button onclick="mostrarFormulario('compra-wars')" class="btn-comprar">
           Comprar Boletos
         </button>
         
-        <form id="compra-guardianes" class="form-compra modal-oculto">
+        <form id="compra-wars" class="form-compra modal-oculto">
           <label>Cantidad:</label>
           <input type="number" min="1" max="10" value="1">
           
@@ -433,10 +435,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -456,7 +458,7 @@
       <button class="btn-cerrar" onclick="volverCartelera()">×</button>
       
       <div class="columna-imagen">
-        <img src="/Imagenes/DEADPOOL.jpg" alt="Poster DEADPOOL">
+        <img src="Imagenes/DEADPOOL.jpg" alt="Poster DEADPOOL">
       </div>
       
       <div class="columna-info">
@@ -465,7 +467,7 @@
         </div>
         
         <div class="info-pelicula">
-          <strong>🎬 Acción / Comedia</strong>
+          <strong>🎬 Accion / Comedia</strong>
           <strong>⭐ 8.0</strong>
           <strong>⏱ 108 min</strong>
           <strong>📅 2016</strong>
@@ -482,8 +484,8 @@
         </p>
         
         <div class="trailer-pelicula">
-          <video controls poster="/Imagenes/DEADPOOL.jpg">
-            <source src="/Videos/deadpoolV.mp4" type="">
+          <video controls poster="Imagenes/DEADPOOL.jpg">
+            <source src="Videos/deadpoolV.mp4" type="">
             Tu navegador no soporta el video.
           </video>
         </div>
@@ -507,10 +509,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -523,50 +525,50 @@
   </div>
 </section>
 
-<!-- Detalle: FLOW -->
-<section id="detalle-flow" class="detalle-pelicula oculto">
-  <div id="modal-flow" class="modal-pelicula modal-oculto">
+<!-- detalle DRAGON  -->
+<section id="detalle-dragon" class="detalle-pelicula oculto">
+  <div id="modal-dragon" class="modal-pelicula modal-oculto">
     <div class="contenido-pelicula">
       <button class="btn-cerrar" onclick="volverCartelera()">×</button>
       
       <div class="columna-imagen">
-        <img src="/Imagenes/FLOW.jpg" alt="Poster FLOW">
+        <img src="CINE 2 IMG/dragon.jpg" alt="">
       </div>
       
       <div class="columna-info">
         <div class="encabezado-pelicula">
-          <h2>FLOW</h2>
+          <h2>COMO ENTRENAR A TU DRAGON</h2>
         </div>
         
         <div class="info-pelicula">
-          <strong>🎬 Aventura / Fantástico / Animación</strong>
-          <strong>⭐ 7.9</strong>
-          <strong>⏱ 80 min</strong>
-          <strong>📅 2024</strong>
+          <strong>🎬 Animacion / Aventura</strong>
+          <strong>⭐ 8.1</strong>
+          <strong>⏱ 98 min</strong>
+          <strong>📅 2010</strong>
         </div>
         
         <p class="descripcion-pelicula">
-          <strong>Director:</strong> Gints Zilbalodis<br>
-          <strong>Producción:</strong> Dream Well Studio, Sacrebleu Productions, Take Five<br><br>
-          <strong>Sinopsis:</strong> En un mundo cubierto por agua, un gato solitario pierde su hogar tras una inundación y encuentra refugio en un barco junto a otras criaturas.<br><br>
+          <strong>Director:</strong> Chris Sanders, Dean DeBlois<br>
+          <strong>Actores de voz:</strong> Jay Baruchel, Gerard Butler, America Ferrera<br><br>
+          <strong>Sinopsis:</strong> Hipo, un joven vikingo que no encaja con la tradición de su pueblo de cazar dragones, entabla amistad con un dragón herido llamado Chimuelo y descubre un mundo completamente nuevo que cambiará su vida y la de su pueblo para siempre.<br><br>
           <strong>Extras:</strong>  
-          - Animación independiente con estilo visual único<br>
-          - Fábula sobre la convivencia y la resiliencia<br>
-          - Selección oficial en Cannes 2024
+          - Ganadora del premio Annie a Mejor Película Animada<br>
+          - Banda sonora épica de John Powell<br>
+          - Mensaje sobre amistad y aceptación de las diferencias
         </p>
         
         <div class="trailer-pelicula">
-          <video controls poster="/Imagenes/FLOW.jpg">
-            <source src="/Videos/flowV.mp4" type="">
+          <video controls poster="CINE 2 IMG/dragon.jpg">
+            <source src="CINE 2 VID/dragonV.mp4" type="">
             Tu navegador no soporta el video.
           </video>
         </div>
         
-        <button onclick="mostrarFormulario('compra-flow')" class="btn-comprar">
+        <button onclick="mostrarFormulario('compra-dragon')" class="btn-comprar">
           Comprar Boletos
         </button>
         
-        <form id="compra-flow" class="form-compra modal-oculto">
+        <form id="compra-dragon" class="form-compra modal-oculto">
           <label>Cantidad:</label>
           <input type="number" min="1" max="10" value="1">
           
@@ -581,10 +583,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -597,50 +599,51 @@
   </div>
 </section>
 
-<!-- Detalle: ROBOT SALVAJE -->
-<section id="detalle-robot" class="detalle-pelicula oculto">
-  <div id="modal-robot" class="modal-pelicula modal-oculto">
+<!-- DETALLES MARIO -->
+<section id="detalle-mario" class="detalle-pelicula oculto">
+  <div id="modal-mario" class="modal-pelicula modal-oculto">
     <div class="contenido-pelicula">
       <button class="btn-cerrar" onclick="volverCartelera()">×</button>
       
       <div class="columna-imagen">
-        <img src="/Imagenes/ROBOT.jpg" alt="">
+        <img src="CINE 2 IMG/mario.jpg" alt="">
       </div>
       
       <div class="columna-info">
         <div class="encabezado-pelicula">
-          <h2>ROBOT SALVAJE</h2>
+          <h2>SUPER MARIO BROS: LA PELÍCULA</h2>
         </div>
         
         <div class="info-pelicula">
-          <strong>🎬 Aventura / Animacion / Fantastico</strong>
-          <strong>⭐ 8.2</strong>
-          <strong>⏱ 102 min</strong>
-          <strong>📅 2024</strong>
+          <strong>🎬 Animacion / Aventura / Comedia</strong>
+          <strong>⭐ 7.0</strong>
+          <strong>⏱ 92 min</strong>
+          <strong>📅 2023</strong>
         </div>
         
         <p class="descripcion-pelicula">
-          <strong>Director:</strong> Chris Sanders<br>
-          <strong>Producción:</strong> DreamWorks Animation<br><br>
-          <strong>Sinopsis:</strong> Tras un naufragio, un robot llamado Roz despierta en una isla salvaje habitada por animales. Para sobrevivir, deberá aprender a adaptarse al entorno natural.<br><br>
+          <strong>Directores:</strong> Aaron Horvath, Michael Jelenic<br>
+          <strong>Actores de voz:</strong> Chris Pratt, Anya Taylor-Joy, Charlie Day, Jack Black, Keegan-Michael Key<br><br>
+          <strong>Sinopsis:</strong> Mario y Luigi, dos fontaneros de Brooklyn, son transportados a un mundo mágico donde se separan y Mario emprende una aventura épica para encontrar a su hermano. Con la ayuda de la Princesa Peach y Toad, Mario deberá enfrentarse al malvado Rey Bowser para salvar el Reino Champiñón.<br><br>
           <strong>Extras:</strong>  
-          - Basada en la novela infantil The Wild Robot<br>
-          - Animación con estilo visual cálido y naturalista<br>
-          - Mensaje sobre convivencia entre humanos y tecnología
+          - Adaptación animada del icónico videojuego de Nintendo<br>
+          - Animación colorida y vibrante de Illumination Studios<br>
+          - Cameos y referencias a los videojuegos clásicos de Mario<br>
+          - Banda sonora con canciones de Jack Black como Bowser
         </p>
         
         <div class="trailer-pelicula">
-          <video controls poster="/Imagenes/ROBOT.jpg">
-            <source src="/Videos/robotV.mp4" type="">
+          <video controls poster="CINE 2 IMG/mario.jpg">
+            <source src="CINE 2 VID/marioV.mp4" type="">
             Tu navegador no soporta el video.
           </video>
         </div>
         
-        <button onclick="mostrarFormulario('compra-robot')" class="btn-comprar">
+        <button onclick="mostrarFormulario('compra-mario')" class="btn-comprar">
           Comprar Boletos
         </button>
         
-        <form id="compra-robot" class="form-compra modal-oculto">
+        <form id="compra-mario" class="form-compra modal-oculto">
           <label>Cantidad:</label>
           <input type="number" min="1" max="10" value="1">
           
@@ -649,22 +652,31 @@
           
           <label>Horario:</label>
           <select>
-            <option>15:00</option>
-            <option>18:00</option>
-            <option>21:00</option>
+            <option>14:30</option>
+            <option>16:45</option>
+            <option>19:00</option>
+            <option>21:15</option>
+          </select>
+          
+          <label>Tipo de función:</label>
+          <select>
+            <option>2D Normal</option>
+            <option>2D Doble</option>
+            <option>3D</option>
+            <option>3D Doble</option>
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
         
         <button onclick="volverCartelera()" class="btn-volver">
-          Volver
+          Volver a Cartelera
         </button>
       </div>
     </div>
@@ -678,7 +690,7 @@
       <button class="btn-cerrar" onclick="volverCartelera()">×</button>
       
       <div class="columna-imagen">
-        <img src="/Imagenes/SIN NOVEDAD.jpg" alt="">
+        <img src="Imagenes/SIN NOVEDAD.jpg" alt="">
       </div>
       
       <div class="columna-info">
@@ -704,8 +716,8 @@
         </p>
         
         <div class="trailer-pelicula">
-          <video controls poster="/Imagenes/SIN NOVEDAD.jpg">
-            <source src="/Videos/sinV.mp4" type="">
+          <video controls poster="Imagenes/SIN NOVEDAD.jpg">
+            <source src="Videos/sinV.mp4" type="">
             Tu navegador no soporta el video.
           </video>
         </div>
@@ -729,10 +741,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -745,14 +757,14 @@
   </div>
 </section>
 
-<!-- Detalle: AVENGERS ENDGAME -->
+<!-- Detalle AVENGERS ENDGAME -->
 <section id="detalle-endgame" class="detalle-pelicula oculto">
   <div id="modal-endgame" class="modal-pelicula modal-oculto">
     <div class="contenido-pelicula">
       <button class="btn-cerrar" onclick="volverCartelera()">×</button>
       
       <div class="columna-imagen">
-        <img src="/Imagenes/AVERGERS.jpg" alt="">
+        <img src="Imagenes/AVERGERS.jpg" alt="">
       </div>
       
       <div class="columna-info">
@@ -778,8 +790,8 @@
         </p>
         
         <div class="trailer-pelicula">
-          <video controls poster="/Imagenes/AVERGERS.jpg">
-            <source src="/Videos/avengerV.mp4" type="">
+          <video controls poster="Imagenes/AVERGERS.jpg">
+            <source src="Videos/avengerV.mp4" type="">
             Tu navegador no soporta el video.
           </video>
         </div>
@@ -803,10 +815,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -819,50 +831,51 @@
   </div>
 </section>
 
-<!-- Detalle: OPPENHEIMER -->
-<section id="detalle-oppenheimer" class="detalle-pelicula oculto">
-  <div id="modal-oppenheimer" class="modal-pelicula modal-oculto">
+<!--  DETALLE  ULTIMO   -->
+<section id="detalle-ultimo" class="detalle-pelicula oculto">
+  <div id="modal-ultimo" class="modal-pelicula modal-oculto">
     <div class="contenido-pelicula">
       <button class="btn-cerrar" onclick="volverCartelera()">×</button>
       
       <div class="columna-imagen">
-        <img src="/Imagenes/OPENHAIMER.jpg" alt="">
+        <img src="CINE 2 IMG/ulltimo.jpg" alt="">
       </div>
       
       <div class="columna-info">
         <div class="encabezado-pelicula">
-          <h2>OPPENHEIMER</h2>
+          <h2>HASTA EL ÚLTIMO HOMBRE</h2>
         </div>
         
         <div class="info-pelicula">
-          <strong>🎬 Drama / Historico / Biografico</strong>
-          <strong>⭐ 8.3</strong>
-          <strong>⏱ 180 min</strong>
-          <strong>📅 2023</strong>
+          <strong>🎬 Belico / Drama / Historico</strong>
+          <strong>⭐ 8.0</strong>
+          <strong>⏱ 139 min</strong>
+          <strong>📅 2016</strong>
         </div>
         
         <p class="descripcion-pelicula">
-          <strong>Director:</strong> Christopher Nolan<br>
-          <strong>Actores:</strong> Cillian Murphy, Emily Blunt, Matt Damon, Robert Downey Jr., Florence Pugh, Rami Malek<br><br>
-          <strong>Sinopsis:</strong> La película narra la vida de J. Robert Oppenheimer, el físico teórico que lideró el Proyecto Manhattan y supervisó la creación de la primera bomba atómica.<br><br>
+          <strong>Director:</strong> Mel Gibson<br>
+          <strong>Actores:</strong> Andrew Garfield, Sam Worthington, Luke Bracey, Teresa Palmer, Hugo Weaving<br><br>
+          <strong>Sinopsis:</strong> Basada en hechos reales, cuenta la historia de Desmond Doss, un médico del ejército estadounidense durante la Segunda Guerra Mundial que se negó a portar armas por sus creencias religiosas. A pesar del escepticismo de sus compañeros y superiores, Doss demostró su valentía en la Batalla de Okinawa, donde rescató a 75 hombres sin disparar un solo tiro.<br><br>
           <strong>Extras:</strong>  
-          - Filmada en IMAX con técnicas innovadoras<br>
-          - Banda sonora de Ludwig Göransson<br>
-          - Retrato complejo de ciencia, poder y responsabilidad
+          - Ganadora de 2 Premios Óscar (Mejor Montaje y Mejor Sonido)<br>
+          - Basada en la vida real del cabo Desmond T. Doss<br>
+          - Escenas de batalla intensas y realistas<br>
+          - Historia inspiradora sobre convicciones personales y heroísmo<br>
+          - Protagonizada por Andrew Garfield en una de sus mejores actuaciones
         </p>
         
         <div class="trailer-pelicula">
-          <video controls poster="/Imagenes/OPENHAIMER.jpg">
-            <source src="/Videos/openV.mp4" type="">
-            Tu navegador no soporta el video.
+          <video controls poster="CINE 2 IMG/ulltimo.jpg">
+            <source src="CINE 2 VID/ultimoV.mp4" type="">
           </video>
         </div>
         
-        <button onclick="mostrarFormulario('compra-oppenheimer')" class="btn-comprar">
+        <button onclick="mostrarFormulario('compra-ultimo')" class="btn-comprar">
           Comprar Boletos
         </button>
         
-        <form id="compra-oppenheimer" class="form-compra modal-oculto">
+        <form id="compra-ultimo" class="form-compra modal-oculto">
           <label>Cantidad:</label>
           <input type="number" min="1" max="10" value="1">
           
@@ -871,72 +884,79 @@
           
           <label>Horario:</label>
           <select>
-            <option>15:00</option>
-            <option>18:00</option>
-            <option>21:00</option>
+            <option>16:00</option>
+            <option>19:30</option>
+            <option>22:00</option>
+          </select>
+          
+          <label>Sala:</label>
+          <select>
+            <option>Sala Regular</option>
+            <option>Sala Premium</option>
+            <option>Sala VIP</option>
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
         
         <button onclick="volverCartelera()" class="btn-volver">
-          Volver
+          Volver a Cartelera
         </button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Detalle: JURASSIC PARK -->
-<section id="detalle-jurassic" class="detalle-pelicula oculto">
-  <div id="modal-jurassic" class="modal-pelicula modal-oculto">
+<!-- detalle TERRIFER -->
+<section id="detalle-terrifer" class="detalle-pelicula oculto">
+  <div id="modal-terrifer" class="modal-pelicula modal-oculto">
     <div class="contenido-pelicula">
       <button class="btn-cerrar" onclick="volverCartelera()">×</button>
       
       <div class="columna-imagen">
-        <img src="/Imagenes/JURRSIC.jpg" alt="">
+        <img src="CINE 2 IMG/terrifer.jpg" alt="">
       </div>
       
       <div class="columna-info">
         <div class="encabezado-pelicula">
-          <h2>JURASSIC PARK</h2>
+          <h2>TERRIFIER 3</h2>
         </div>
         
         <div class="info-pelicula">
-          <strong>🎬 Aventura / Ciencia ficcion</strong>
-          <strong>⭐ 8.2</strong>
-          <strong>⏱ 127 min</strong>
-          <strong>📅 1993</strong>
+          <strong>🎬 Terror / Slasher</strong>
+          <strong>⭐ 6.8</strong>
+          <strong>⏱ 120 min</strong>
+          <strong>📅 2024</strong>
         </div>
         
         <p class="descripcion-pelicula">
-          <strong>Director:</strong> Steven Spielberg<br>
-          <strong>Actores:</strong> Sam Neill, Laura Dern, Jeff Goldblum, Richard Attenborough<br><br>
-          <strong>Sinopsis:</strong> Un multimillonario crea un parque temático con dinosaurios clonados a partir de ADN prehistórico. Lo que parecía un sueño científico pronto se convierte en una pesadilla.<br><br>
+          <strong>Director:</strong> Damien Leone<br>
+          <strong>Actores:</strong> David Howard Thornton, Lauren LaVera, Samantha Scaffidi<br><br>
+          <strong>Sinopsis:</strong> Art the Clown regresa para aterrorizar a los residentes de Miles County durante la temporada navideña, desatando una nueva ola de caos y violencia mientras una detective intenta detenerlo antes de que sea demasiado tarde.<br><br>
           <strong>Extras:</strong>  
-          - Revolucionarios efectos visuales y animatrónicos<br>
-          - Banda sonora icónica de John Williams<br>
-          - Reflexión sobre ciencia, ética y poder de la naturaleza
+          - Secuela de la aclamada Terrifier 2<br>
+          - Efectos prácticos y maquillaje impresionantes<br>
+          - Advertencia: Contenido extremadamente gráfico
         </p>
         
         <div class="trailer-pelicula">
-          <video controls poster="/Imagenes/JURRSIC.jpg">
-            <source src="/Videos/jurasiccV.mp4" type="">
+          <video controls poster="CINE 2 IMG/terrifer.jpg">
+            <source src="CINE 2 VID/terriV.mp4" type="">
             Tu navegador no soporta el video.
           </video>
         </div>
         
-        <button onclick="mostrarFormulario('compra-jurassic')" class="btn-comprar">
+        <button onclick="mostrarFormulario('compra-terrifer')" class="btn-comprar">
           Comprar Boletos
         </button>
         
-        <form id="compra-jurassic" class="form-compra modal-oculto">
+        <form id="compra-terrifer" class="form-compra modal-oculto">
           <label>Cantidad:</label>
           <input type="number" min="1" max="10" value="1">
           
@@ -945,16 +965,15 @@
           
           <label>Horario:</label>
           <select>
-            <option>15:00</option>
-            <option>18:00</option>
             <option>21:00</option>
+            <option>23:00</option>
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -967,14 +986,14 @@
   </div>
 </section>
 
-<!-- Detalle: JOKER -->
+<!-- Detalle JOKER -->
 <section id="detalle-joker" class="detalle-pelicula oculto">
   <div id="modal-joker" class="modal-pelicula modal-oculto">
     <div class="contenido-pelicula">
       <button class="btn-cerrar" onclick="volverCartelera()">×</button>
       
       <div class="columna-imagen">
-        <img src="/Imagenes/JOKER.jpg" alt="">
+        <img src="Imagenes/JOKER.jpg" alt="">
       </div>
       
       <div class="columna-info">
@@ -1000,8 +1019,8 @@
         </p>
         
         <div class="trailer-pelicula">
-          <video controls poster="/Imagenes/JOKER.jpg">
-            <source src="/Videos/jokerV.mp4" type="">
+          <video controls poster="Imagenes/JOKER.jpg">
+            <source src="Videos/jokerV.mp4" type="">
             Tu navegador no soporta el video.
           </video>
         </div>
@@ -1025,10 +1044,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -1041,14 +1060,14 @@
   </div>
 </section>
 
-<!-- Detalle: INTERESTELAR -->
+<!-- Detalle INTERESTELAR -->
 <section id="detalle-interstellar" class="detalle-pelicula oculto">
   <div id="modal-interstellar" class="modal-pelicula modal-oculto">
     <div class="contenido-pelicula">
       <button class="btn-cerrar" onclick="volverCartelera()">×</button>
       
       <div class="columna-imagen">
-        <img src="/Imagenes/INTERESTELAR.jpg" alt="">
+        <img src="Imagenes/INTERESTELAR.jpg" alt="">
       </div>
       
       <div class="columna-info">
@@ -1074,8 +1093,8 @@
         </p>
         
         <div class="trailer-pelicula">
-          <video controls poster="/Imagenes/INTERESTELAR.jpg">
-            <source src="/Videos/intereV.mp4" type="">
+          <video controls poster="Imagenes/INTERESTELAR.jpg">
+            <source src="Videos/intereV.mp4" type="">
             Tu navegador no soporta el video.
           </video>
         </div>
@@ -1099,10 +1118,10 @@
           </select>
           
           <label>Nombre:</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu nombre" required>
           
           <label>Email:</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" placeholder="tu@email.com" required>
           
           <button type="submit" class="btn-comprar">Confirmar compra</button>
         </form>
@@ -1121,7 +1140,7 @@
     <!-- Proximo estreno: FIVE NIGHTS AT FREDDY'S -->
     <div class="tarjeta-pelicula">
       <div class="etiqueta-genero">Terror - Suspenso</div>
-      <img src="/Imagenes/FNAF.jpg" alt="">
+      <img src="Imagenes/FNAF.jpg" alt="">
       <div class="info-pelicula">
         <h3>Five Nights at Freddy's Terror</h3> 
         <p>⏱ 105 min 📅 20 Nov 2025</p>
@@ -1131,7 +1150,7 @@
     <!-- Proximo estreno: AVENGERS DOOMSDAY -->
     <div class="tarjeta-pelicula">
       <div class="etiqueta-genero">Accion - Suspenso</div>
-      <img src="/Imagenes/DOOMSDAY.jpg" alt="">
+      <img src="Imagenes/DOOMSDAY.jpg" alt="">
       <div class="info-pelicula">
         <h3>Avengers: Doomsday Accion</h3>
         <p>⏱ 112 min 📅 25 Nov 2025</p>
@@ -1141,7 +1160,7 @@
     <!-- Proximo estreno: THE MANDALORIAN-->
     <div class="tarjeta-pelicula">
       <div class="etiqueta-genero">Acción - Ciencia Ficcion</div>
-      <img src="/Imagenes/MANDALORIAN.png" alt="">
+      <img src="Imagenes/MANDALORIAN.png" alt="">
       <div class="info-pelicula">
         <h3>The Mandalorian and Grogu</h3>
         <p>⏱ 130 min 📅 28 Nov 2025</p>
@@ -1151,7 +1170,7 @@
     <!-- Proximo estreno: BOB ESPONJA -->
     <div class="tarjeta-pelicula">
       <div class="etiqueta-genero">Infantil</div>
-      <img src="/Imagenes/BOB.jpg" alt="">
+      <img src="Imagenes/BOB.jpg" alt="">
       <div class="info-pelicula">
         <h3>Bob Esponja una Aventura Pirata</h3>
         <p>⏱ 95 min 📅 30 Nov 2025</p>
@@ -1166,7 +1185,7 @@
     
     <!-- Producto: PALOMITAS CLASICAS -->
     <div class="item-snack">
-      <img src="/Imagenes/PALOMITAS.png" alt="">
+      <img src="Imagenes/PALOMITAS.png" alt="">
       <h3>Palomitas <br>Clásicas</h3>
       <p>Precio: 12 Bs</p>
       <div class="contenedor-botones">
@@ -1177,7 +1196,7 @@
 
     <!-- Producto: REFRESCO GRANDE -->
     <div class="item-snack">
-      <img src="/Imagenes/REFRESCO.png" alt="">
+      <img src="Imagenes/REFRESCO.png" alt="">
       <h3>Refresco <br> Grande</h3>
       <p>Precio: 10 Bs</p>
       <div class="contenedor-botones">
@@ -1188,7 +1207,7 @@
 
     <!-- Producto: NACHOS CON QUESO -->
     <div class="item-snack">
-      <img src="/Imagenes/NACHOS.png" alt="">
+      <img src="Imagenes/NACHOS.png" alt="">
       <h3>Nachos <br>con Queso</h3>
       <p>Precio: 15 Bs</p>
       <div class="contenedor-botones">
@@ -1199,7 +1218,7 @@
 
     <!-- Producto: HOT DOG CLASICO -->
     <div class="item-snack">
-      <img src="/Imagenes/Hot Dog.png" alt="">
+      <img src="Imagenes/Hot Dog.png" alt="">
       <h3>Hot <br> Dog Clásico</h3>
       <p>Precio: 14 Bs</p>
       <div class="contenedor-botones">
@@ -1210,7 +1229,7 @@
 
     <!-- Producto: BARRA DE CHOCOLATE -->
     <div class="item-snack">
-      <img src="/Imagenes/CHOCOLATE.png" alt="">
+      <img src="Imagenes/CHOCOLATE.png" alt="">
       <h3>Barra de <br>Chocolate</h3>
       <p>Precio: 8 Bs</p>
       <div class="contenedor-botones">
@@ -1221,7 +1240,7 @@
 
     <!-- Producto: PALOMITAS COMBO -->
     <div class="item-snack">
-      <img src="/Imagenes/COMBO1.png" alt="">
+      <img src="Imagenes/COMBO1.png" alt="">
       <h3>Palomitas <br>Combo</h3>
       <p>Precio: 25 Bs</p>
       <div class="contenedor-botones">
@@ -1232,7 +1251,7 @@
 
     <!-- Producto: PALOMITAS FAMILIAR -->
     <div class="item-snack">
-      <img src="/Imagenes//COMBO TRIO.png" alt="">
+      <img src="Imagenes//COMBO TRIO.png" alt="">
       <h3>Palomitas <br>Familiar</h3>
       <p>Precio: 35 Bs</p>
       <div class="contenedor-botones">
@@ -1243,7 +1262,7 @@
 
     <!-- Producto: REFRESCO EDICION LIMITADA -->
     <div class="item-snack">
-      <img src="/Imagenes/REFRESCOP.png" alt="Refresco Premium">
+      <img src="Imagenes/REFRESCOP.png" alt="Refresco Premium">
       <h3>Refresco <br>Edición Limitada</h3>
       <p>Precio: 18 Bs</p>
       <div class="contenedor-botones">
@@ -1268,11 +1287,11 @@
       <label>Número de tarjeta:</label>
       <input type="text" maxlength="16" required>
 
-      <label>Fecha de expiración (MM/AA):</label>
-      <input type="text" maxlength="5" required>
+      <label for="fecha">Fecha de expiración (MM/AA):</label>
+      <input id="fecha" type="date" required>
 
       <label>Código CVV:</label>
-      <input type="number" maxlength="3" required>
+      <input id="cvv" type="text" maxlength="3" placeholder="•••" required>
 
       <button type="submit" class="boton-finalizar">Finalizar Compra</button>
     </form>
@@ -1311,9 +1330,9 @@
       <div class="bloque-pie">
         <h3> Síguenos</h3>
         <div class="iconos-redes">
-          <a href=""><img src="/Imagenes/facebook.png" alt="Facebook"></a>
-          <a href=""><img src="/Imagenes/intagram.png" alt="Instagram"></a>
-          <a href="https://wa.me/59171273856"><img src="/Imagenes/wasap.png" alt="WhatsApp"></a>
+          <a href=""><img src="Imagenes/facebook.png" alt="Facebook"></a>
+          <a href=""><img src="Imagenes/intagram.png" alt="Instagram"></a>
+          <a href="https://wa.me/59171273856"><img src="Imagenes/wasap.png" alt="WhatsApp"></a>
         </div>
       </div>
 
@@ -1325,6 +1344,6 @@
     </div>
   </footer>
 
-  <script src="/JS/login.js"></script>
+  <script src="JS/login.js"></script>
 </body>
 </html>
