@@ -70,7 +70,7 @@ body {
 .portada {
     text-align: center;               /* alinea horizontalmente TODO el texto dentro al centro*/
     padding: 50px 20px;                    
-    background: url("/Imagenes/fondo\ separado.png");
+    background: url("../Imagenes/fondo\ separado.png");
     background-size: cover;              /* LLENA todo el espacio (puede recortar bordes) */
     background-position: center;       /* Centra la imagen dentro del contenedor. */
     color: black;
